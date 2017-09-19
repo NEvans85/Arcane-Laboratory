@@ -1,0 +1,2 @@
+class CardPrinting < ApplicationRecord
+end

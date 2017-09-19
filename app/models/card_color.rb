@@ -1,0 +1,2 @@
+class CardColor < ApplicationRecord
+end
