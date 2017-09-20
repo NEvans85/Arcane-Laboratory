@@ -82,4 +82,4 @@ production:
   <<: *default
   database: arcane-laboratory_production
   username: arcane-laboratory
-  password: <%= ENV['MANASTACK_CLONE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['arcane-laboratory_DATABASE_PASSWORD'] %>

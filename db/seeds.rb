@@ -11,13 +11,11 @@ Color.create(name: "Blue", symbol: "{U}")
 Color.create(name: "Black", symbol: "{B}")
 Color.create(name: "Red", symbol: "{R}")
 Color.create(name: "Green", symbol: "{G}")
-puts "colors seeded"
 
 allSets = MTG::Set.all
 
 allSets.each do |expansion|
   Expansion.create(name: expansion.name, code: expansion.code)
-  puts "#{expansion.name} seeded"
 end
 
 # allCards = MTG::Card.all
@@ -54,13 +52,12 @@ allCards.each do |card|
     expansion = Expansion.find_by(code: printing)
     CardPrinting.create(card_id: card.id, expansion_id: expansion.id)
   end
-  # color identity is yet to be defined by the SDK, I have initiated a pull request with the improvement.
-  # if defined?(card.color_identity).nil?
-  #   card.color_identity.each do |color_symbol|
-  #     color = Color.find_by(symbol: "{#{color_symbol}}")
-  #     ColorIdentity.create(card_id: card.id, color_id: color.id)
-  #   end
-  # end
+  if defined?(card.color_identity).nil?
+    card.color_identity.each do |color_symbol|
+      color = Color.find_by(symbol: "{#{color_symbol}}")
+      ColorIdentity.create(card_id: card.id, color_id: color.id)
+    end
+  end
   to_add.save
   puts "#{card.name} seeded."
 end
