@@ -17,7 +17,6 @@ class SessionForm extends React.Component {
 
   render() {
     const label = this.props.formType === "signup" ? "Sign Up" : "Log In";
-    console.log(this.props);
     return (
       <div>
         <h2>{label}</h2>

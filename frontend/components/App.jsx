@@ -8,7 +8,8 @@ const App = () => (
       <h1>Arcane Laboratory</h1>
     </header>
     <div className="maincontent">
-      <SessionForm />
+      <Route path="/login" component={SessionForm} />
+      <Route path="/signup" component={SessionForm} />
     </div>
     <footer>
       <p>Temporary footer</p>

@@ -7,7 +7,6 @@ const initialState = [];
 
 const SessionErrorsReducer = (state = initialState, action) => {
   Object.freeze(state);
-  console.log(action);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return [];
