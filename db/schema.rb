@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920031134) do
+ActiveRecord::Schema.define(version: 20170920171322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,22 +37,21 @@ ActiveRecord::Schema.define(version: 20170920031134) do
     t.string "card_id", null: false
     t.string "name", null: false
     t.string "mana_cost"
-    t.string "type", null: false
     t.string "rarity", null: false
     t.text "rules_text"
     t.text "flavor_text"
     t.string "power"
     t.string "toughness"
     t.string "loyalty"
-    t.string "image_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "expansion_id"
     t.integer "cmc"
+    t.string "image_url"
+    t.string "card_type", null: false
     t.index ["card_id"], name: "index_cards_on_card_id"
     t.index ["cmc"], name: "index_cards_on_cmc"
     t.index ["name"], name: "index_cards_on_name"
-    t.index ["type"], name: "index_cards_on_type"
   end
 
   create_table "color_identities", force: :cascade do |t|

@@ -1,5 +1,12 @@
 {
   "name": "ManaStack_clone",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": "8.4.0",
+    "npm": "5.4.1"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  }
 }

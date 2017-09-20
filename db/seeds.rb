@@ -21,7 +21,7 @@ allSets.each do |expansion|
 end
 
 allCards = MTG::Card.all
-# allCards = MTG::Card.where(page: 5).where(pageSize: 100).all
+# allCards = MTG::Card.where(page: 100).where(pageSize: 100).all
 
 allCards.each do |card|
   to_add = Card.new
@@ -29,13 +29,14 @@ allCards.each do |card|
   to_add.card_id = card.id
   to_add.mana_cost = card.mana_cost
   to_add.cmc = card.cmc
-  to_add.type = card.type
+  to_add.card_type = card.type
   to_add.rarity = card.rarity
   to_add.rules_text = card.text
   to_add.flavor_text = card.flavor
   to_add.power = card.power
   to_add.toughness = card.toughness
   to_add.loyalty = card.loyalty
+  # TODO: Locate the English image_url in objects returned by SDK
   to_add.image_url = card.image_url
   if defined?(card.colors).nil?
     card.colors.each do |color|
@@ -49,11 +50,13 @@ allCards.each do |card|
     expansion = Expansion.find_by(code: printing)
     CardPrinting.create(card_id: card.id, expansion_id: expansion.id)
   end
-  if defined?(card.color_identity).nil?
-    card.color_identity.each do |color_symbol|
-      color = Color.find_by(symbol: "{#{color_symbol}}")
-      ColorIdentity.create(card_id: card.id, color_id: color.id)
-    end
-  end
+  # color identity is yet to be defined by the SDK, I have initiated a pull request with the improvement.
+  # if defined?(card.color_identity).nil?
+  #   card.color_identity.each do |color_symbol|
+  #     color = Color.find_by(symbol: "{#{color_symbol}}")
+  #     ColorIdentity.create(card_id: card.id, color_id: color.id)
+  #   end
+  # end
+  to_add.save
   puts "#{card.name} seeded."
 end
