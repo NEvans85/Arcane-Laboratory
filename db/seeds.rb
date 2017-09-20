@@ -11,14 +11,17 @@ Color.create(name: "Blue", symbol: "{U}")
 Color.create(name: "Black", symbol: "{B}")
 Color.create(name: "Red", symbol: "{R}")
 Color.create(name: "Green", symbol: "{G}")
+puts "colors seeded"
 
 allSets = MTG::Set.all
 
 allSets.each do |expansion|
   Expansion.create(name: expansion.name, code: expansion.code)
+  puts "#{expansion.name} seeded"
 end
 
 allCards = MTG::Card.all
+# allCards = MTG::Card.where(page: 5).where(pageSize: 100).all
 
 allCards.each do |card|
   to_add = Card.new
@@ -34,9 +37,11 @@ allCards.each do |card|
   to_add.toughness = card.toughness
   to_add.loyalty = card.loyalty
   to_add.image_url = card.image_url
-  card.colors.each do |color|
-    card_color = Color.find_by(name: color)
-    CardColor.create(card_id: card.id, color_id: card_color.id)
+  if defined?(card.colors).nil?
+    card.colors.each do |color|
+      card_color = Color.find_by(name: color)
+      CardColor.create(card_id: card.id, color_id: card_color.id)
+    end
   end
   card_exp = Expansion.find_by(code: card.set)
   to_add.expansion_id = card_exp.id
@@ -44,8 +49,11 @@ allCards.each do |card|
     expansion = Expansion.find_by(code: printing)
     CardPrinting.create(card_id: card.id, expansion_id: expansion.id)
   end
-  card.color_identity.each do |color_symbol|
-    color = Color.find_by(symbol: "{#{color_symbol}}")x
-    ColorIdentity.create(card_id: card.id, color_id: color.id)
+  if defined?(card.color_identity).nil?
+    card.color_identity.each do |color_symbol|
+      color = Color.find_by(symbol: "{#{color_symbol}}")
+      ColorIdentity.create(card_id: card.id, color_id: color.id)
+    end
   end
+  puts "#{card.name} seeded."
 end
