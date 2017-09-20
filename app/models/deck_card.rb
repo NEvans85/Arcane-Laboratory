@@ -10,4 +10,8 @@
 #
 
 class DeckCard < ApplicationRecord
+  validates :deck_id, :card_id, presence: true
+
+  belongs_to :deck
+  belongs_to :card
 end

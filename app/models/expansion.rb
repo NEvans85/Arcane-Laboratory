@@ -10,4 +10,8 @@
 #
 
 class Expansion < ApplicationRecord
+  validates :name, :code, presence: true, uniqueness: true
+
+  has_many :card_printings
+  has_many :cards
 end

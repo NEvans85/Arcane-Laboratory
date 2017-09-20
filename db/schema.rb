@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170919234734) do
+ActiveRecord::Schema.define(version: 20170920002706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20170919234734) do
 
   create_table "card_printings", force: :cascade do |t|
     t.string "card_id", null: false
-    t.integer "set_id", null: false
+    t.integer "expansion_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["card_id"], name: "index_card_printings_on_card_id"
-    t.index ["set_id"], name: "index_card_printings_on_set_id"
+    t.index ["expansion_id"], name: "index_card_printings_on_expansion_id"
   end
 
   create_table "cards", force: :cascade do |t|
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20170919234734) do
     t.string "mana_cost"
     t.string "type", null: false
     t.string "rarity", null: false
-    t.string "set", null: false
     t.text "rules_text"
     t.text "flavor_text"
     t.string "power"
@@ -48,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170919234734) do
     t.string "image_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "expansion_id"
     t.index ["card_id"], name: "index_cards_on_card_id"
     t.index ["name"], name: "index_cards_on_name"
     t.index ["type"], name: "index_cards_on_type"
