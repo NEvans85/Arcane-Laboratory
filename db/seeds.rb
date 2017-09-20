@@ -20,8 +20,12 @@ allSets.each do |expansion|
   puts "#{expansion.name} seeded"
 end
 
-allCards = MTG::Card.all
-# allCards = MTG::Card.where(page: 100).where(pageSize: 100).all
+# allCards = MTG::Card.all
+allCards = []
+100.times do |idx|
+  allCards.concat(MTG::Card.where(page: idx).where(pageSize: 100).all)
+end
+# allCards = MTG::Card.where(page: 0).where(pageSize: 100).all
 
 allCards.each do |card|
   to_add = Card.new
