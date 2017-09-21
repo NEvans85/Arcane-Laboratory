@@ -1,5 +1,5 @@
 import React from "react";
-import SessionForm from "./Session/session_form_container";
+import SessionForm from "./MainContent/Session/session_form_container";
 import { Route } from "react-router-dom";
 
 const App = () => (
