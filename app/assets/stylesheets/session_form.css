@@ -1,7 +1,7 @@
 .session-form-box {
   border: 1px solid red;
   padding: 20px;
-  margin: 200px;
+  margin: 100px;
   width: 50%;
   height: 500px;
   display: flex;
@@ -10,13 +10,20 @@
   justify-content: space-between;
 }
 
+.session-form-title {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-size: 32px;
+}
+
 .session-form {
   border: 1px solid purple;
   padding: 40px;
   height: 80%;
   width: 80%;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
@@ -24,4 +31,5 @@
 
 .session-form-label {
   font-size: 24px;
+  font-family: "Open Sans", sans-serif;
 }

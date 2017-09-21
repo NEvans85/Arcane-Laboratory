@@ -1,12 +1,9 @@
 import { connect } from "react-redux";
-import SiteNav from "component_path"
+import SiteNav from "./site_nav";
 
-const mapStateToProps(state) ({
-
-})
-
-const mapDispatchToProps(dispatch) ({
-
-})
+const mapStateToProps = (state, ownProps) => {
+  return null;
+};
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SiteNav);

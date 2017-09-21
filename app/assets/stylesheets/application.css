@@ -25,4 +25,5 @@
   display: flex;
   width: 80%;
   justify-content: space-around;
+  min-height: 800px;
 }

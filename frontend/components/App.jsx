@@ -1,11 +1,13 @@
 import React from "react";
 import SessionForm from "./MainContent/Session/session_form_container";
+import NavBar from "./NavBar/nav_bar_container";
+// import Footer from "./Footer/footer_container";
 import { Route } from "react-router-dom";
 
 const App = () => (
   <div className="body_root">
     <header>
-      <h1>Arcane Laboratory (tempheader)</h1>
+      <Route path="/" component={NavBar} />
     </header>
     <div className="maincontent">
       <Route path="/login" component={SessionForm} />
