@@ -3,9 +3,9 @@ import SessionForm from "./MainContent/Session/session_form_container";
 import { Route } from "react-router-dom";
 
 const App = () => (
-  <div>
+  <div className="body_root">
     <header>
-      <h1>Arcane Laboratory</h1>
+      <h1>Arcane Laboratory (tempheader)</h1>
     </header>
     <div className="maincontent">
       <Route path="/login" component={SessionForm} />

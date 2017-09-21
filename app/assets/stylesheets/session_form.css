@@ -1,6 +1,7 @@
 .session-form-box {
   border: 1px solid red;
   padding: 20px;
+  margin: 200px;
   width: 50%;
   height: 500px;
   display: flex;
