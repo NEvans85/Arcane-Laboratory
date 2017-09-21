@@ -1,0 +1,21 @@
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.site-nav {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-logo {
+  height: 60px;
+}
+
+.session-control {
+  display: flex;
+  flex-direction: column;
+}

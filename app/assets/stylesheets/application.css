@@ -27,3 +27,7 @@
   justify-content: space-around;
   min-height: 800px;
 }
+
+header {
+  width: 80%;
+}

@@ -1,17 +1,18 @@
 import React from "react";
-import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 class SessionControl extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.guestControl = this.guestControl.bind(this);
+    this.userControl = this.userControl.bind(this);
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="session-control">
-        {this.props.loggedin ? <this.userControl /> : <this.guestControl />}
+        {this.props.loggedIn ? <this.userControl /> : <this.guestControl />}
       </div>
     );
   }
@@ -19,29 +20,28 @@ class SessionControl extends React.Component {
   guestControl() {
     return (
       <div>
-        <button className="header-button" onClick={this.handleButton("signUp")}>
-          Sign Up
+        <button className="header-button">
+          <Link className="button-link" to="/signup">
+            Sign Up
+          </Link>
         </button>
-        <button className="header-button" onClick={this.handleButton("logIn")}>
-          Log In
+        <button className="header-button">
+          <Link className="button-link" to="/login">
+            Log In
+          </Link>
         </button>
       </div>
-    );
-  }
-
-  handleButton(type) {
-    return type === "signUp" ? (
-      <Redirect push to="/signUp" />
-    ) : (
-      <Redirect push to="/logIn" />
     );
   }
 
   userControl() {
     return (
       <div>
-        <p className="header-message"> Welcome, {currentUser.username}!</p>
-        <button className="header-button" onClick={logout}>
+        <p className="header-message">
+          {" "}
+          Welcome, {this.props.currentUser.username}!
+        </p>
+        <button className="header-button" onClick={this.props.logout}>
           Log Out
         </button>
       </div>

@@ -5,10 +5,10 @@ import SessionControl from "./SessionControl/session_control_container";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="nav-bar">
         <this.homeButton />
@@ -20,7 +20,12 @@ class NavBar extends React.Component {
 
   homeButton() {
     // NOTE: figure out how to display image asset
-    return <img src="%image_path" />;
+    return (
+      <img
+        className="site-logo"
+        src="http://res.cloudinary.com/arcane-lab/image/upload/v1506018405/SiteLogo_gqlnav.png"
+      />
+    );
   }
 }
 
