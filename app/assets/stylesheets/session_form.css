@@ -1,18 +1,24 @@
 .session-form-box {
   border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.session-form {
-  border: 1px solid purple;
-  height: 200px;
+  padding: 20px;
   width: 50%;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+.session-form {
+  border: 1px solid purple;
+  padding: 40px;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .session-form-label {

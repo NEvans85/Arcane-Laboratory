@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.maincontent {
+  display: flex;
+  justify-content: space-around;
+}
