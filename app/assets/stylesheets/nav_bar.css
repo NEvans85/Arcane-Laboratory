@@ -1,14 +1,35 @@
 .nav-bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
+  background: linear-gradient(#e0f2fe, #264490);
 }
 
 .site-nav {
-  width: 250px;
+  width: 350px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+}
+
+.site-nav a {
+  height: 20px;
+  padding: 10px;
+  background-color: #3399cc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-decoration: none;
+  font-family: "Goudy Bookletter 1911", serif;
+}
+.site-nav a:link,
+.site-nav a:visited {
+}
+
+.site-nav a:hover,
+.site-nav a:active {
+  background-color: #7e001e;
+  color: white;
 }
 
 .site-logo {
@@ -18,4 +39,9 @@
 .session-control {
   display: flex;
   flex-direction: column;
+}
+
+.header-button {
+  width: 120px;
+  height: 30px;
 }
