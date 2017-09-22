@@ -5,8 +5,10 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.defaultState();
+    this.formType = this.props.formType;
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoButton = this.handleDemoButton.bind(this);
     this.usernameField = this.usernameField.bind(this);
     this.passwordField = this.passwordField.bind(this);
     this.emailField = this.emailField.bind(this);
@@ -28,19 +30,21 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const label = this.props.formType === "signup" ? "Sign Up" : "Log In";
+    const label = this.formType === "signup" ? "Sign Up" : "Log In";
     return (
       <div className="session-form-view">
         <div className="session-form-box">
           <h2 className="session-form-title">{label}</h2>
-          <form className="session-form">
+          <form onSubmit={this.handleSubmit} className="session-form">
             <this.usernameField />
             <this.passwordField />
             {this.props.formType === "signup" ? <this.emailField /> : null}
             <this.sessionErrors />
-            <button className="session-form-button" onClick={this.handleSubmit}>
-              {label}
-            </button>
+            <input
+              className="session-form-button"
+              type="submit"
+              value={label}
+            />
             <button
               className="session-form-button"
               onClick={this.handleDemoButton}
@@ -56,7 +60,7 @@ class SessionForm extends React.Component {
   usernameField() {
     return (
       <label className="session-form-label">
-        Username:
+        <p>Username:</p>
         <input
           onChange={this.updateInput("username")}
           type="text"
@@ -69,7 +73,7 @@ class SessionForm extends React.Component {
   passwordField() {
     return (
       <label className="session-form-label">
-        Password:
+        <p>Password:</p>
         <input
           onChange={this.updateInput("password")}
           type="password"
@@ -111,6 +115,9 @@ class SessionForm extends React.Component {
 
   handleDemoButton(e) {
     e.preventDefault();
+    if (this.formType === "signup") {
+      this.props.history.push("/login");
+    }
   }
 
   updateInput(key) {

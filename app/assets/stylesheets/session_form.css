@@ -26,6 +26,7 @@
 .session-form-title {
   font-family: "Goudy Bookletter 1911", serif;
   font-size: 32px;
+  margin: 15px;
 }
 
 .session-form {
@@ -48,15 +49,24 @@
   font-size: 24px;
   font-family: "Open Sans", sans-serif;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 90%;
+}
+.session-form-label input {
+  margin: 8px;
 }
 
 .session-form-button {
   width: 60%;
   height: 30px;
+  border-radius: 5px;
+  background-color: #3399cc;
+  border-color: #264490;
   color: black;
   font-family: "Open Sans", sans-serif;
+  box-shadow: 0 2px #264490;
 }
 
 .error-list {
