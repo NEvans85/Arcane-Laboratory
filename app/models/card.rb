@@ -25,8 +25,18 @@ class Card < ApplicationRecord
            primary_key: :card_hash_id,
            class_name: :CardColor,
            foreign_key: :card_id
-  has_many :colors,
-           through: :card_colors,
+  def actual_colors
+    card_colors.map { |cc| cc.color }
+  end
+  # has_many :colors,
+  #          through: :card_colors,
+  #          source: :color
+
+  has_many :color_identities,
+           primary_key: :card_hash_id,
+           class_name: :ColorIdentity
+  has_many :color_identity,
+           through: :color_identities,
            source: :color
 
   has_many :card_printings,
@@ -37,7 +47,4 @@ class Card < ApplicationRecord
 
   belongs_to :expansion
 
-  # def actual_colors
-  #   card_colors.map { |cc| cc.color }
-  # end
 end
