@@ -7,8 +7,7 @@
 }
 
 .session-form-box {
-  background-color: black;
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 30px;
   padding: 20px;
   margin: 100px;
@@ -75,7 +74,7 @@
   opacity: 1;
   height: 30px;
   border-radius: 5px;
-  background-color: #3399cc;
+  background-color: rgba(51, 153, 204, 1);
   border-color: #264490;
   color: black;
   box-shadow: 0 2px #264490;
