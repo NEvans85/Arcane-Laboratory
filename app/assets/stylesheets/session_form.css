@@ -26,7 +26,7 @@
 .session-form-title {
   font-family: "Goudy Bookletter 1911", serif;
   color: white;
-  font-size: 32px;
+  font-size: 40px;
   margin: 15px;
 }
 
@@ -49,6 +49,12 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+}
+.session-form div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 .session-form-label {
@@ -73,7 +79,7 @@
   color: black;
   box-shadow: 0 2px #264490;
   font-family: "Goudy Bookletter 1911", serif;
-    font-size: 18px;'
+  font-size: 18px;
 }
 
 .error-list {

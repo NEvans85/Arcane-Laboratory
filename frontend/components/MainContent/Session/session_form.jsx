@@ -30,6 +30,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const label = this.formType === "signup" ? "Sign Up" : "Log In";
     return (
       <div className="session-form-view">
@@ -45,12 +46,31 @@ class SessionForm extends React.Component {
               type="submit"
               value={label}
             />
-            <button
-              className="session-form-button"
-              onClick={this.handleDemoButton}
-            >
-              Demo Login
-            </button>
+            {this.props.formType === "login" ? (
+              <button
+                className="session-form-button"
+                onClick={this.handleDemoButton}
+              >
+                Demo Login
+              </button>
+            ) : (
+              <div />
+            )}
+            {this.props.formType === "signup" ? (
+              <button
+                className="session-form-button"
+                onClick={() => this.props.history.push("/login")}
+              >
+                Go To Log In
+              </button>
+            ) : (
+              <button
+                className="session-form-button"
+                onClick={() => this.props.history.push("/signup")}
+              >
+                Go To Sign Up
+              </button>
+            )}
           </form>
         </div>
       </div>
@@ -118,9 +138,6 @@ class SessionForm extends React.Component {
 
     let demoInputInterval = () => {
       const intervalId = setInterval(() => {
-        if (this.formType === "signup") {
-          this.props.history.push("/login");
-        }
         if (demoUser.length > 0) {
           let username = this.state.username;
           username += demoUser.shift();
