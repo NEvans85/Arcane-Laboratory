@@ -25,7 +25,7 @@ class Card < ApplicationRecord
            primary_key: :card_hash_id,
            class_name: :CardColor,
            foreign_key: :card_id
-  def actual_colors
+  def colors
     card_colors.map { |cc| cc.color }
   end
   # has_many :colors,
