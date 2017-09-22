@@ -13,7 +13,6 @@ class SessionForm extends React.Component {
     this.passwordField = this.passwordField.bind(this);
     this.emailField = this.emailField.bind(this);
     this.sessionErrors = this.sessionErrors.bind(this);
-    this.demoFill = this.demoFill.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -84,14 +83,13 @@ class SessionForm extends React.Component {
 
   emailField() {
     return (
-      <label className="session-form-label">
-        Email:
-        <input
-          onChange={this.updateInput("email")}
-          type="text"
-          value={this.state.email}
-        />
-      </label>
+      <input
+        onChange={this.updateInput("email")}
+        type="text"
+        className="session-form-input"
+        placeholder="Email"
+        value={this.state.email}
+      />
     );
   }
 
@@ -114,26 +112,30 @@ class SessionForm extends React.Component {
 
   handleDemoButton(e) {
     e.preventDefault();
-    if (this.formType === "signup") {
-      this.props.history.push("/login");
-    }
-    this.demoFill("username", "DemoUser")
-      .then(this.demoFill("password", "DemoPassword"))
-      .then(this.props.processForm(Object.assign({}, this.state)));
-  }
+    this.setState(this.defaultState);
+    const demoUser = Array.from("DemoUser");
+    const demoPassword = Array.from("DemoPassword");
 
-  //
-  demoFill(field, input) {
-    let idx = 0;
-    const autoInput = setInterval(() => {
-      if (idx > input.length) {
-        clearInterval(autoInput);
-      } else {
-        this.setState({ [field]: input.slice(0, idx) });
-        idx++;
-      }
-    }, 100);
-    return true;
+    let demoInputInterval = () => {
+      const intervalId = setInterval(() => {
+        if (this.formType === "signup") {
+          this.props.history.push("/login");
+        }
+        if (demoUser.length > 0) {
+          let username = this.state.username;
+          username += demoUser.shift();
+          this.setState({ username: username });
+        } else if (demoPassword.length > 0) {
+          let password = this.state.password;
+          password += demoPassword.shift();
+          this.setState({ password: password });
+        } else {
+          clearInterval(intervalId);
+          this.props.processForm(this.state);
+        }
+      }, 100);
+    };
+    demoInputInterval();
   }
 
   updateInput(key) {
