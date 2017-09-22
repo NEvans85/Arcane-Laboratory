@@ -30,21 +30,25 @@ class SessionForm extends React.Component {
   render() {
     const label = this.props.formType === "signup" ? "Sign Up" : "Log In";
     return (
-      <div className="session-form-box">
-        <h2 className="session-form-title">{label}</h2>
-        <form onSubmit={this.handleSubmit} className="session-form">
-          <this.usernameField />
-          <this.passwordField />
-          {this.props.formType === "signup" ? <this.emailField /> : null}
-          <this.sessionErrors />
-          <input type="submit" value={label} />
-          <button onClick={this.handleDemoButton}>Demo Login</button>
-        </form>
-        {this.props.formType === "signup" ? (
-          <Link to="/login">Log In</Link>
-        ) : (
-          <Link to="/signup">Sign Up</Link>
-        )}
+      <div className="session-form-view">
+        <div className="session-form-box">
+          <h2 className="session-form-title">{label}</h2>
+          <form className="session-form">
+            <this.usernameField />
+            <this.passwordField />
+            {this.props.formType === "signup" ? <this.emailField /> : null}
+            <this.sessionErrors />
+            <button className="session-form-button" onClick={this.handleSubmit}>
+              {label}
+            </button>
+            <button
+              className="session-form-button"
+              onClick={this.handleDemoButton}
+            >
+              Demo Login
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
@@ -90,7 +94,7 @@ class SessionForm extends React.Component {
 
   sessionErrors() {
     return (
-      <ul>
+      <ul className="error-list">
         {this.props.errors.map(errorMessage => {
           return <li>{errorMessage}</li>;
         })}

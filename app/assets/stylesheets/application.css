@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+body {
+  margin: 0px;
+}
 
 .body_root {
   display: flex;
@@ -22,10 +25,7 @@
 }
 
 .maincontent {
-  display: flex;
-  width: 80%;
-  justify-content: space-around;
-  min-height: 800px;
+  width: 100%;
 }
 
 header {

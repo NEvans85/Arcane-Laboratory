@@ -15,6 +15,7 @@ class Api::CardsController < ApplicationController
       :colors,
       :exact_colors?,
       :type,
-      :set)
+      :set
+      )
   end
 end

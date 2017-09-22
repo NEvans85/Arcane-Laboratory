@@ -1,13 +1,26 @@
+.session-form-view {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-size: 100% 100%;
+  background-image: url(http://res.cloudinary.com/arcane-lab/image/upload/v1506045232/Art_SOI_Island_Andreas-Rocha_CN_qwpoez.jpg);
+}
+
 .session-form-box {
-  border: 1px solid red;
+  background-color: #fee295;
+  opacity: 0.9;
+  border-radius: 30px;
   padding: 20px;
   margin: 100px;
   width: 50%;
+  min-width: 400px;
+  max-width: 500px;
   height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 80px;
 }
 
 .session-form-title {
@@ -16,7 +29,9 @@
 }
 
 .session-form {
-  border: 1px solid purple;
+  background-color: #420161;
+  border-radius: 30px;
+  color: white;
   padding: 40px;
   height: 80%;
   width: 80%;
@@ -32,4 +47,27 @@
 .session-form-label {
   font-size: 24px;
   font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.session-form-button {
+  width: 60%;
+  height: 30px;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+}
+
+.error-list {
+  background-color: #fae7ed;
+  list-style: none;
+  color: #c6113c;
+  margin-left: 0px;
+  padding: 0px;
+  opacity: 1;
+}
+
+.error-list li {
+  padding: 5px;
 }
