@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     this.passwordField = this.passwordField.bind(this);
     this.emailField = this.emailField.bind(this);
     this.sessionErrors = this.sessionErrors.bind(this);
+    this.demoFill = this.demoFill.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -59,7 +60,7 @@ class SessionForm extends React.Component {
 
   usernameField() {
     return (
-      <label className="session-form-label">
+      <label className="session-form-label username">
         <p>Username:</p>
         <input
           onChange={this.updateInput("username")}
@@ -72,7 +73,7 @@ class SessionForm extends React.Component {
 
   passwordField() {
     return (
-      <label className="session-form-label">
+      <label className="session-form-label password">
         <p>Password:</p>
         <input
           onChange={this.updateInput("password")}
@@ -118,6 +119,23 @@ class SessionForm extends React.Component {
     if (this.formType === "signup") {
       this.props.history.push("/login");
     }
+    this.demoFill("username", "DemoUser")
+      .then(this.demoFill("password", "DemoPassword"))
+      .then(this.props.processForm(Object.assign({}, this.state)));
+  }
+
+  //
+  demoFill(field, input) {
+    let idx = 0;
+    const autoInput = setInterval(() => {
+      if (idx > input.length) {
+        clearInterval(autoInput);
+      } else {
+        this.setState({ [field]: input.slice(0, idx) });
+        idx++;
+      }
+    }, 500);
+    return true;
   }
 
   updateInput(key) {
