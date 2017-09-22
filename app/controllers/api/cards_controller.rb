@@ -5,7 +5,8 @@ class Api::CardsController < ApplicationController
   end
 
   def show(card_hash_id)
-
+    @card = Card.find_by(card_hash_id: card_hash_id)
+    render :show
   end
 
   def card_params
