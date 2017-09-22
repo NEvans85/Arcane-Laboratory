@@ -3,7 +3,8 @@ import SiteNav from "./site_nav";
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  errors: state.errors
 });
 const mapDispatchToProps = dispatch => ({});
 

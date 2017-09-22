@@ -18,12 +18,13 @@ class NavBar extends React.Component {
   }
 
   homeButton() {
-    // NOTE: figure out how to display image asset
     return (
-      <img
-        className="site-logo"
-        src="http://res.cloudinary.com/arcane-lab/image/upload/v1506018405/SiteLogo_gqlnav.png"
-      />
+      <a href="/">
+        <img
+          className="site-logo"
+          src="http://res.cloudinary.com/arcane-lab/image/upload/v1506095816/SiteLogo_ttle6p.png"
+        />
+      </a>
     );
   }
 }

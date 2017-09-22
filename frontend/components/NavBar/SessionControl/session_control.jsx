@@ -20,16 +20,12 @@ class SessionControl extends React.Component {
   guestControl() {
     return (
       <div>
-        <button className="header-button">
-          <Link className="button-link" to="/signup">
-            Sign Up
-          </Link>
-        </button>
-        <button className="header-button">
-          <Link className="button-link" to="/login">
-            Log In
-          </Link>
-        </button>
+        <a href="/#/signup">
+          <button className="header-button">Sign Up</button>
+        </a>
+        <a href="/#/login">
+          <button className="header-button">Log In</button>
+        </a>
       </div>
     );
   }
@@ -38,7 +34,6 @@ class SessionControl extends React.Component {
     return (
       <div>
         <p className="header-message">
-          {" "}
           Welcome, {this.props.currentUser.username}!
         </p>
         <button className="header-button" onClick={this.props.logout}>

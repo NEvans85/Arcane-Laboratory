@@ -16,20 +16,16 @@
 .site-nav a {
   height: 20px;
   padding: 10px;
-  background-color: #3399cc;
+  background-color: #052746;
+  color: #e0f2fe;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  text-decoration: none;
   font-family: "Goudy Bookletter 1911", serif;
-}
-.site-nav a:link,
-.site-nav a:visited {
 }
 
 .site-nav a:hover,
 .site-nav a:active {
   background-color: #7e001e;
-  color: white;
 }
 
 .site-logo {
@@ -38,10 +34,28 @@
 
 .session-control {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+
+.session-control div {
+  width: 280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .header-button {
   width: 120px;
   height: 30px;
+  background-color: #e0f2fe;
+  margin: 5px;
+  box-shadow: 0 2px #264490;
+}
+
+.header-button:hover {
+  cursor: pointer;
+}
+
+.button-link:active {
+  text-decoration: none;
 }

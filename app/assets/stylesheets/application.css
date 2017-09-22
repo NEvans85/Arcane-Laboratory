@@ -42,6 +42,7 @@ nav {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-decoration: none;
 }
 body {
   margin: 0px;
@@ -56,8 +57,14 @@ body {
 
 .maincontent {
   width: 100%;
+  min-height: 800px;
 }
 
 header {
   width: 100%;
+}
+
+button {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-size: 18px;
 }

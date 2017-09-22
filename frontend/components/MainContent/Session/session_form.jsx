@@ -60,27 +60,25 @@ class SessionForm extends React.Component {
 
   usernameField() {
     return (
-      <label className="session-form-label username">
-        <p>Username:</p>
-        <input
-          onChange={this.updateInput("username")}
-          type="text"
-          value={this.state.username}
-        />
-      </label>
+      <input
+        onChange={this.updateInput("username")}
+        type="text"
+        className="session-form-input"
+        placeholder="Username"
+        value={this.state.username}
+      />
     );
   }
 
   passwordField() {
     return (
-      <label className="session-form-label password">
-        <p>Password:</p>
-        <input
-          onChange={this.updateInput("password")}
-          type="password"
-          value={this.state.password}
-        />
-      </label>
+      <input
+        onChange={this.updateInput("password")}
+        type="password"
+        className="session-form-input"
+        placeholder="Password"
+        value={this.state.password}
+      />
     );
   }
 
@@ -134,7 +132,7 @@ class SessionForm extends React.Component {
         this.setState({ [field]: input.slice(0, idx) });
         idx++;
       }
-    }, 500);
+    }, 100);
     return true;
   }
 
