@@ -13,5 +13,6 @@ class DeckCard < ApplicationRecord
   validates :deck_id, :card_id, presence: true
 
   belongs_to :deck
-  belongs_to :card
+  belongs_to :card,
+             primary_key: :card_hash_id
 end

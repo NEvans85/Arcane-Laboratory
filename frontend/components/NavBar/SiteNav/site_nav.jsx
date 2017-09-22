@@ -7,11 +7,15 @@ class SiteNav extends React.Component {
   }
 
   render() {
+    console.log(this.props);
+    const deckBuilderUrl = this.props.loggedIn
+      ? `/users/${this.props.currentUser.id}/decks`
+      : "/login";
     return (
       <div className="site-nav">
         <Link to="/">Home</Link>
-        <Link to="/decks">Decks</Link>
-        <Link to="/cards">Cards</Link>
+        <Link to={deckBuilderUrl}>Deck Builder</Link>
+        <Link to="/cards">Card Search</Link>
       </div>
     );
   }

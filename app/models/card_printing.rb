@@ -10,6 +10,7 @@
 #
 
 class CardPrinting < ApplicationRecord
-  belongs_to :card
+  belongs_to :card,
+             primary_key: :card_hash_id
   belongs_to :expansion
 end

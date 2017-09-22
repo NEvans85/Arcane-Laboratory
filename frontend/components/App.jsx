@@ -1,8 +1,9 @@
 import React from "react";
 import SessionForm from "./MainContent/Session/session_form_container";
 import NavBar from "./NavBar/nav_bar_container";
-// import Footer from "./Footer/footer_container";
+import Footer from "./Footer/footer_container";
 import { Route } from "react-router-dom";
+import CardSearch from "./MainContent/CardSearch/card_search_container";
 
 const App = () => (
   <div className="body_root">
@@ -12,9 +13,10 @@ const App = () => (
     <div className="maincontent">
       <Route path="/login" component={SessionForm} />
       <Route path="/signup" component={SessionForm} />
+      <Route path="/cards" component={CardSearch} />
     </div>
     <footer>
-      <p>Temporary footer</p>
+      <Route path="/" component={Footer} />
     </footer>
   </div>
 );

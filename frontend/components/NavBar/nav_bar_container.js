@@ -3,7 +3,7 @@ import NavBar from "./nav_bar";
 
 const mapStateToProps = state => {
   return {
-    loggedIn: !!state.session.currentUser,
+    loggedIn: Boolean(state.session.currentUser),
     currentUser: state.session.currentUser
   };
 };

@@ -38,6 +38,7 @@ class SessionForm extends React.Component {
           {this.props.formType === "signup" ? <this.emailField /> : null}
           <this.sessionErrors />
           <input type="submit" value={label} />
+          <button onClick={this.handleDemoButton}>Demo Login</button>
         </form>
         {this.props.formType === "signup" ? (
           <Link to="/login">Log In</Link>
@@ -102,6 +103,10 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     this.setState(this.defaultState);
+  }
+
+  handleDemoButton(e) {
+    e.preventDefault();
   }
 
   updateInput(key) {

@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import Footer from "./footer";
+import CardSearch from "./card_search";
 
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Footer);
+export default connect(mapStateToProps, mapDispatchToProps)(CardSearch);

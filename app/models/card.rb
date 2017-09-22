@@ -3,30 +3,41 @@
 # Table name: cards
 #
 #  id           :integer          not null, primary key
-#  card_id      :string           not null
 #  name         :string           not null
 #  mana_cost    :string
-#  type         :string           not null
 #  rarity       :string           not null
 #  rules_text   :text
 #  flavor_text  :text
 #  power        :string
 #  toughness    :string
 #  loyalty      :string
-#  image_url    :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  expansion_id :integer
+#  cmc          :integer
+#  image_url    :string
+#  card_type    :string           not null
+#  card_hash_id :string
 #
 
 class Card < ApplicationRecord
-  has_many :card_colors
+  has_many :card_colors,
+           primary_key: :card_hash_id,
+           class_name: :CardColor,
+           foreign_key: :card_id
   has_many :colors,
-           through: :card_colors
+           through: :card_colors,
+           source: :color
 
-  has_many :card_printings
+  has_many :card_printings,
+           primary_key: :card_hash_id
   has_many :printings,
-           through: :card_printings
+           through: :card_printings,
+           source: :expansion
 
   belongs_to :expansion
+
+  # def actual_colors
+  #   card_colors.map { |cc| cc.color }
+  # end
 end
