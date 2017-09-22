@@ -26,8 +26,9 @@ class Card < ApplicationRecord
            class_name: :CardColor,
            foreign_key: :card_id
   def colors
-    card_colors.map { |cc| cc.color }
+    card_colors.map(&:color)
   end
+  # this association curiously returns an middleman object,
   # has_many :colors,
   #          through: :card_colors,
   #          source: :color

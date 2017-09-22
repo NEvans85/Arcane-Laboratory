@@ -72,6 +72,7 @@
 
 .session-form-button {
   width: 60%;
+  opacity: 1;
   height: 30px;
   border-radius: 5px;
   background-color: #3399cc;
@@ -80,6 +81,9 @@
   box-shadow: 0 2px #264490;
   font-family: "Goudy Bookletter 1911", serif;
   font-size: 18px;
+}
+.session-form-button:hover {
+  cursor: pointer;
 }
 
 .error-list {

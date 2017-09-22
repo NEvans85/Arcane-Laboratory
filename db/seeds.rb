@@ -51,13 +51,14 @@ allCards.each do |card|
       CardColor.create!(card_id: card.id, color_id: card_color.id)
     end
   end
-  unless card.color_identity.nil?
-    card.color_identity.each do |color_symbol|
-      puts "#{card.name} identifies as #{color_symbol}"
-      color = Color.find_by(symbol: "#{color_symbol}")
-      ColorIdentity.create!(card_id: card.id, color_id: color.id)
-    end
-  end
+  # color_identity does not seem to be valid on the remote gem server yet.
+  # unless card.color_identity.nil?
+  #   card.color_identity.each do |color_symbol|
+  #     puts "#{card.name} identifies as #{color_symbol}"
+  #     color = Color.find_by(symbol: "#{color_symbol}")
+  #     ColorIdentity.create!(card_id: card.id, color_id: color.id)
+  #   end
+  # end
   card.printings.each do |printing|
     expansion = Expansion.find_by(code: printing)
     CardPrinting.create(card_id: card.id, expansion_id: expansion.id)
