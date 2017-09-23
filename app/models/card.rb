@@ -33,12 +33,14 @@ class Card < ApplicationRecord
   #          through: :card_colors,
   #          source: :color
 
-  has_many :color_identities,
-           primary_key: :card_hash_id,
-           class_name: :ColorIdentity
-  has_many :color_identity,
-           through: :color_identities,
-           source: :color
+  # cut color_identitites because the gem has not yet updated on the gem server and
+  # to cut down on rows to fit on Heroku's free db
+  # has_many :color_identities,
+  #          primary_key: :card_hash_id,
+  #          class_name: :ColorIdentity
+  # has_many :color_identity,
+  #          through: :color_identities,
+  #          source: :color
 
   has_many :card_printings,
            primary_key: :card_hash_id
@@ -48,4 +50,30 @@ class Card < ApplicationRecord
 
   belongs_to :expansion
 
+  def self.search(name: nil, cmc: nil, card_type: nil, expansion_id: nil, color_ids: nil)
+    query = Card.joins(:card_colors).where(nil)
+
+    if name.present?
+      query = query.where('lower(name) = ?', "%#{name.downcase}%")
+    end
+
+    if card_type.present?
+      query = query.where('lower(card_type) = ?', "%#{card_type.downcase}%")
+    end
+
+    if cmc.present?
+      query = query.where(cmc: cmc)
+    end
+
+    if expansion_id.present?
+      query = query.where(expansion_id: expansion_id)
+    end
+
+    if color_ids.present?
+      color_ids.each do |color_id|
+        query = query.where()
+      end
+    end
+    query
+  end
 end

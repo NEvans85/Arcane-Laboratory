@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921234043) do
+ActiveRecord::Schema.define(version: 20170923010736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "card_colors", force: :cascade do |t|
     t.string "card_id", null: false
-    t.string "color_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "color_id"
     t.index ["card_id"], name: "index_card_colors_on_card_id"
-    t.index ["color_id"], name: "index_card_colors_on_color_id"
   end
 
   create_table "card_printings", force: :cascade do |t|

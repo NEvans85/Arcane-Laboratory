@@ -1,18 +1,7 @@
 class Api::CardsController < ApplicationController
 
   def index
-    @cards = Card.all
-                 .where('lower(name) = ?', "%#{params[:name].downcase}%")
-                 .where('lower(card_type) = ?', "%#{params[:type].downcase}%")
-                 .where(expansion: params[:set])
-                 .where(cmc: params[:cmc])
-    if params[:colors]
-      @cards = @cards.select do |card|
-        card.colors.map(&:name).any? do |color|
-          params[:colors].include?(color)
-        end
-      end
-    end
+    @cards = Card.search(params)
     render :index
   end
 
@@ -21,12 +10,4 @@ class Api::CardsController < ApplicationController
     render :show
   end
 
-  def card_params
-    params.permit(
-      :name,
-      :cmc,
-      :type,
-      :set
-    )
-  end
 end
