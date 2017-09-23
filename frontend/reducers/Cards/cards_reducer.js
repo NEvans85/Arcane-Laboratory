@@ -9,7 +9,7 @@ const CardsReducer = (state = {}, action) => {
   const newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_CARD:
-      newState[action.card.id] = action.card;
+      newState["selectedCard"] = action.card;
       return newState;
     case RECEIVE_SEARCH_RESULTS:
       return action.cards;
