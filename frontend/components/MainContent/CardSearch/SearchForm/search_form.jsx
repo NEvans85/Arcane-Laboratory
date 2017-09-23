@@ -4,6 +4,7 @@ class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.defaultState();
+    this.selectedColors = [];
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleColorSelect = this.handleColorSelect.bind(this);
@@ -14,8 +15,8 @@ class SearchForm extends React.Component {
       name: "",
       set: "",
       type: "",
-      cmc: null,
-      colors: [],
+      cmc: "",
+      colors: "",
       page: 0
     };
   }
@@ -63,28 +64,33 @@ class SearchForm extends React.Component {
         <div className="color-radio-box">
           <input
             type="checkbox"
-            onInput={handleColorSelect("white")}
+            onChange={this.handleColorSelect("white")}
             className="white-color-search"
+            value=""
           />
           <input
             type="checkbox"
-            onInput={handleColorSelect("blue")}
+            onChange={this.handleColorSelect("blue")}
             className="blue-color-search"
+            value=""
           />
           <input
             type="checkbox"
-            onInput={handleColorSelect("black")}
+            onChange={this.handleColorSelect("black")}
             className="black-color-search"
+            value=""
           />
           <input
             type="checkbox"
-            onInput={handleColorSelect("red")}
+            onChange={this.handleColorSelect("red")}
             className="red-color-search"
+            value=""
           />
           <input
             type="checkbox"
-            onInput={handleColorSelect("green")}
+            onChange={this.handleColorSelect("green")}
             className="green-color-search"
+            value=""
           />
         </div>
         <input type="submit" value="Search" />
@@ -99,21 +105,23 @@ class SearchForm extends React.Component {
 
   handleColorSelect(color) {
     return e => {
-      let colors = this.state.colors;
       if (e.target.checked) {
-        colors.push(color);
+        this.selectedColors.push(color);
       } else {
-        colors = colors.filter(el => el !== color);
+        this.selectedColors = this.selectedColors.filter(el => el !== color);
       }
-      this.setState({ colors: colors });
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const colorsStr = state.colors.toString();
+    console.log(this.selectedColors);
+    const colorsStr = this.selectedColors.toString();
+    console.log(colorsStr);
     this.setState({ colors: colorsStr });
+    console.log(this.state.colors);
     const queryParams = Object.assign({}, this.state);
+    console.log(queryParams);
     this.props.search(queryParams);
     this.setState(this.defaultState);
   }
