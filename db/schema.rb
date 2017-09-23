@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923010736) do
+ActiveRecord::Schema.define(version: 20170923025324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,10 @@ ActiveRecord::Schema.define(version: 20170923010736) do
     t.string "image_url"
     t.string "card_type", null: false
     t.string "card_hash_id"
+    t.index ["card_hash_id"], name: "index_cards_on_card_hash_id"
+    t.index ["card_type"], name: "index_cards_on_card_type"
     t.index ["cmc"], name: "index_cards_on_cmc"
+    t.index ["expansion_id"], name: "index_cards_on_expansion_id"
     t.index ["name"], name: "index_cards_on_name"
   end
 

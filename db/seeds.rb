@@ -25,7 +25,8 @@ end
 # 343.times do |idx|
 #   allCards.concat(MTG::Card.where(page: idx).where(pageSize: 100).all)
 # end
-stdSets = %w[kld aer akh hou]
+# stdSets = %w[kld aer akh hou]
+stdSets = ["kld"]
 stdCards = []
 stdSets.each do |set|
   stdCards.concat(MTG::Card.where(set: set).all)

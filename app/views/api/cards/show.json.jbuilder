@@ -1,12 +1,14 @@
-json.extract! @card, :name, :mana_cost,
-                     :rarity, :rules_text,
-                     :flavor_text, :power,
-                     :toughness, :loyalty,
-                     :cmc, :image_url,
-                     :card_type
-
-json.expansion @card.expansion.name
-
-json.colors @card.colors.map(&:name)
-
-json.printings @card.printings.map(&:name)
+json.name @card.name
+json.mana_cost @card.mana_cost
+json.rarity @card.rarity
+json.text @card.text
+json.flavor @card.flavor
+json.power @card.power
+json.toughness @card.toughness
+json.loyalty @card.loyalty
+json.cmc @card.cmc
+json.image_url @card.image_url
+json.type @card.type
+json.set_name @card.set_name
+json.colors @card.colors
+json.printings @card.printings
