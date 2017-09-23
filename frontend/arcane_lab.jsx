@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
 
+// For Testing
+import * as CardActions from "./actions/card_search_actions";
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   let store;
@@ -17,4 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // For Testing
   window.getState = store.getState;
+  window.dispatch = store.dispatch;
 });
+
+window.search = CardActions.search;
+window.cardDetails = CardActions.cardDetails;

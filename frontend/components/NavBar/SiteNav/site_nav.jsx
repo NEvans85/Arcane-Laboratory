@@ -7,7 +7,6 @@ class SiteNav extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const deckBuilderUrl = this.props.loggedIn
       ? `/users/${this.props.currentUser.id}/decks`
       : "/login";

@@ -17,7 +17,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     case "signup":
       return { processForm: user => dispatch(signup(user)) };
     default:
-      console.log("formType matche rror in MDisp2P in session form container");
       break;
   }
 };

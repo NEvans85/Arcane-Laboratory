@@ -9,7 +9,6 @@ class SessionControl extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="session-control">
         {this.props.loggedIn ? <this.userControl /> : <this.guestControl />}

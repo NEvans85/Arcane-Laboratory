@@ -30,7 +30,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const label = this.formType === "signup" ? "Sign Up" : "Log In";
     return (
       <div className="session-form-view">

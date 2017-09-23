@@ -5,7 +5,7 @@ import SessionReducer from "./Session/session_reducer";
 import CardsReducer from "./Cards/cards_reducer";
 
 const RootReducer = combineReducers({
-  session: CardsReducer,
+  session: SessionReducer,
   errors: ErrorsReducer,
   cards: CardsReducer
 });

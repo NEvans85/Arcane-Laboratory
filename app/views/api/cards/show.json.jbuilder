@@ -1,3 +1,4 @@
+
 json.name @card.name
 json.mana_cost @card.mana_cost
 json.rarity @card.rarity
@@ -12,3 +13,4 @@ json.type @card.type
 json.set_name @card.set_name
 json.colors @card.colors
 json.printings @card.printings
+json.id @card.id

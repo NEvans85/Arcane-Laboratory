@@ -12,8 +12,9 @@ const CardsReducer = (state = {}, action) => {
       newState[action.card.id] = action.card;
       return newState;
     case RECEIVE_SEARCH_RESULTS:
-      return Object.assign(newState, action.cards);
+      return action.cards;
     default:
+      return state;
   }
 };
 

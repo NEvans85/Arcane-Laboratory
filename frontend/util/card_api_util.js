@@ -1,12 +1,12 @@
 export const indexQuery = queryParams =>
   $.ajax({
-    method: "INDEX",
+    method: "GET",
     url: "api/cards",
-    data: cardQuery
+    data: queryParams
   });
 
 export const showCard = cardID =>
   $.ajax({
-    method: "SHOW",
+    method: "GET",
     url: `api/cards/${cardID}`
   });

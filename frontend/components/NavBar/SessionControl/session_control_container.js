@@ -3,7 +3,6 @@ import SessionControl from "./session_control";
 import { logout } from "../../../actions/session_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
   return {
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser)

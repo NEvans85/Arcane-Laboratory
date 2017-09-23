@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import NavBar from "./nav_bar";
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
   return {
     loggedIn: Boolean(state.session.currentUser),
     currentUser: state.session.currentUser
