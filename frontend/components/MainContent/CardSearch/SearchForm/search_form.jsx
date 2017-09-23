@@ -115,13 +115,9 @@ class SearchForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.selectedColors);
     const colorsStr = this.selectedColors.toString();
-    console.log(colorsStr);
     this.setState({ colors: colorsStr });
-    console.log(this.state.colors);
     const queryParams = Object.assign({}, this.state);
-    console.log(queryParams);
     this.props.search(queryParams);
     this.setState(this.defaultState);
   }
