@@ -4,7 +4,8 @@ import { findKey } from "lodash";
 class SearchResults extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+
+    this.handleResultClick = this.handleResultClick.bind(this);
   }
 
   render() {
@@ -17,7 +18,7 @@ class SearchResults extends React.Component {
         <ul>
           {uniqNameKeys.map(key => {
             return (
-              <li key={key} id={key}>
+              <li key={key} id={key} onClick={this.handleResultClick}>
                 {cards[key].name}
               </li>
             );
@@ -25,6 +26,10 @@ class SearchResults extends React.Component {
         </ul>
       </div>
     );
+  }
+
+  handleResultClick(e) {
+    this.props.cardDetails(e.target.id);
   }
 }
 
