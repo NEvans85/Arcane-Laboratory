@@ -10,65 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923025324) do
+ActiveRecord::Schema.define(version: 20170924194652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "card_colors", force: :cascade do |t|
-    t.string "card_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "color_id"
-    t.index ["card_id"], name: "index_card_colors_on_card_id"
+  create_table "card_subtypes", force: :cascade do |t|
+    t.integer "card_id"
+    t.integer "subtype_id"
+    t.index ["card_id"], name: "index_card_subtypes_on_card_id"
+    t.index ["subtype_id"], name: "index_card_subtypes_on_subtype_id"
   end
 
-  create_table "card_printings", force: :cascade do |t|
-    t.string "card_id", null: false
-    t.integer "expansion_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["card_id"], name: "index_card_printings_on_card_id"
-    t.index ["expansion_id"], name: "index_card_printings_on_expansion_id"
+  create_table "card_supertypes", force: :cascade do |t|
+    t.integer "supertype_id"
+    t.integer "card_id"
   end
 
   create_table "cards", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "mana_cost"
-    t.string "rarity", null: false
-    t.text "rules_text"
-    t.text "flavor_text"
-    t.string "power"
-    t.string "toughness"
-    t.string "loyalty"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "expansion_id"
-    t.integer "cmc"
+    t.string "api_id"
+    t.string "name"
     t.string "image_url"
-    t.string "card_type", null: false
-    t.string "card_hash_id"
-    t.index ["card_hash_id"], name: "index_cards_on_card_hash_id"
-    t.index ["card_type"], name: "index_cards_on_card_type"
-    t.index ["cmc"], name: "index_cards_on_cmc"
-    t.index ["expansion_id"], name: "index_cards_on_expansion_id"
-    t.index ["name"], name: "index_cards_on_name"
-  end
-
-  create_table "color_identities", force: :cascade do |t|
-    t.integer "color_id"
-    t.string "card_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["card_id"], name: "index_color_identities_on_card_id"
-    t.index ["color_id"], name: "index_color_identities_on_color_id"
-  end
-
-  create_table "colors", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "symbol", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "type"
+    t.index ["api_id"], name: "index_cards_on_api_id", unique: true
   end
 
   create_table "comments", force: :cascade do |t|
@@ -88,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170923025324) do
     t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
     t.index ["card_id"], name: "index_deck_cards_on_card_id"
     t.index ["deck_id"], name: "index_deck_cards_on_deck_id"
   end
@@ -105,12 +70,12 @@ ActiveRecord::Schema.define(version: 20170923025324) do
     t.index ["title"], name: "index_decks_on_title"
   end
 
-  create_table "expansions", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "code", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["code"], name: "index_expansions_on_code"
+  create_table "subtypes", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "supertypes", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|

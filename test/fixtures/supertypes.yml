@@ -1,12 +1,9 @@
 # == Schema Information
 #
-# Table name: card_colors
+# Table name: supertypes
 #
-#  id         :integer          not null, primary key
-#  card_id    :string           not null
-#  color_id   :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id   :integer          not null, primary key
+#  name :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

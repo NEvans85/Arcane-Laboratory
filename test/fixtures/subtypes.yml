@@ -1,12 +1,9 @@
 # == Schema Information
 #
-# Table name: cards
+# Table name: subtypes
 #
-#  id        :integer          not null, primary key
-#  api_id    :string
-#  name      :string
-#  image_url :string
-#  type      :string
+#  id   :integer          not null, primary key
+#  name :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -2,53 +2,19 @@
 #
 # Table name: cards
 #
-#  id           :integer          not null, primary key
-#  name         :string           not null
-#  mana_cost    :string
-#  rarity       :string           not null
-#  rules_text   :text
-#  flavor_text  :text
-#  power        :string
-#  toughness    :string
-#  loyalty      :string
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  expansion_id :integer
-#  cmc          :integer
-#  image_url    :string
-#  card_type    :string           not null
-#  card_hash_id :string
+#  id        :integer          not null, primary key
+#  api_id    :string
+#  name      :string
+#  image_url :string
+#  type      :string
 #
 
 class Card < ApplicationRecord
-  has_many :card_colors,
-           primary_key: :card_hash_id,
-           class_name: :CardColor,
-           foreign_key: :card_id
-  # def colors
-  #   card_colors.map(&:color)
-  # end
-  # this association curiously returns an middleman object,
-  has_many :colors,
-           through: :card_colors,
-           source: :color
-
-  # cut color_identitites because the gem has not yet updated on the gem server and
-  # to cut down on rows to fit on Heroku's free db
-  # has_many :color_identities,
-  #          primary_key: :card_hash_id,
-  #          class_name: :ColorIdentity
-  # has_many :color_identity,
-  #          through: :color_identities,
-  #          source: :color
-
-  has_many :card_printings,
-           primary_key: :card_hash_id
-  has_many :printings,
-           through: :card_printings,
-           source: :expansion
-
-  belongs_to :expansion
+  has_many :card_subtypes
+  has_many :subtypes, through: :card_subtypes
+  
+  has_many :card_supertypes
+  has_many :supertypes, through: :card_supertypes
 
   def self.search(query_hash = {})
     @cards = MTG::Card.where(query_hash).all
