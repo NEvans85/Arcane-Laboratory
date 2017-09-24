@@ -12,7 +12,7 @@
 #
 
 class Deck < ApplicationRecord
-  validates :creator, :title, :description, :upvotes, presence: true
+  validates :creator, :upvotes, presence: true
 
   has_many :deck_cards
 
@@ -20,17 +20,19 @@ class Deck < ApplicationRecord
            through: :deck_cards
 
   belongs_to :creator,
+             foreign_key: :creator_id,
              class_name: :User
 
   def add_card(api_id)
-    card = Card.find_or_create_by(api_id: api_id)
-    deck_card = DeckCard.find_or_create_by(card_id: card.id, deck_id: id)
+    card = Card.find_by(api_id: api_id)
+    card ||= Card.create_by_api_id(api_id)
+    deck_card = DeckCard.find_or_create_by(card_id: card.api_id, deck_id: id)
     deck_card.increment_quantity
   end
 
   def remove_card(api_id)
     card = Card.find_by(id: api_id)
-    deck_card = DeckCard.find_by(card_id: card.id, deck_id: id)
+    deck_card = DeckCard.find_by(card_id: card.api_id, deck_id: id)
     deck_card.decrement_quantity
   end
 

@@ -6,8 +6,8 @@
 #  api_id    :string
 #  name      :string
 #  image_url :string
-#  type      :string
 #  cmc       :integer
+#  full_type :string
 #
 
 require 'test_helper'

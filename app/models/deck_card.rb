@@ -11,10 +11,11 @@
 #
 
 class DeckCard < ApplicationRecord
-  validates :deck_id, :card_id, presence: true
+  validates :deck, :card, presence: true
 
   belongs_to :deck
-  belongs_to :card
+  belongs_to :card,
+             primary_key: :api_id
 
   def increment_quantity
     self.quantity += 1
