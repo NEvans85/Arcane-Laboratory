@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :decks, only: [:index, :show, :create, :update, :destroy] do
       resources :comments, only: [:create, :index]
     end
-    resources :cards, only: [:show, :index, :create, :destroy]
+    resources :cards, only: [:show, :index]
   end
 end

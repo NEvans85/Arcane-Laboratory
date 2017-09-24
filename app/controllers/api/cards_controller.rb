@@ -10,6 +10,8 @@ class Api::CardsController < ApplicationController
     render :show
   end
 
+private
+
   def card_params
     params.permit(:name, :type, :set, :cmc, :colors, :page)
   end

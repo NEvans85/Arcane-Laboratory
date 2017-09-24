@@ -8,6 +8,6 @@
 #
 
 class CardSubtype < ApplicationRecord
-  belongs_to :card_id
-  belongs_to :subtype_id
+  belongs_to :card
+  belongs_to :subtype
 end

@@ -7,6 +7,7 @@
 #  name      :string
 #  image_url :string
 #  type      :string
+#  cmc       :integer
 #
 
 require 'test_helper'

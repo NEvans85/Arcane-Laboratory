@@ -4,16 +4,15 @@
 #
 #  id          :integer          not null, primary key
 #  creator_id  :integer          not null
-#  title       :string           not null
+#  title       :string           default("")
 #  description :text             default("")
-#  format      :string           not null
 #  upvotes     :integer          default(0)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 class Deck < ApplicationRecord
-  validates :creator_id, :title, :description, :format, :upvotes, presence: true
+  validates :creator, :title, :description, :upvotes, presence: true
 
   has_many :deck_cards
 
@@ -22,4 +21,16 @@ class Deck < ApplicationRecord
 
   belongs_to :creator,
              class_name: :User
+
+  def add_card(api_id)
+    card = Card.find_or_create_by(api_id: api_id)
+    deck_card = DeckCard.find_or_create_by(card_id: card.id, deck_id: id)
+    deck_card.increment_quantity
+  end
+
+  def remove_card(api_id)
+    card = Card.find_by(id: api_id)
+    deck_card = DeckCard.find_by(card_id: card.id, deck_id: id)
+    deck_card.decrement_quantity
+  end
 end

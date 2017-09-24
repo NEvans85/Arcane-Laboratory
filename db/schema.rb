@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924194652) do
+ActiveRecord::Schema.define(version: 20170924201827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 20170924194652) do
     t.string "name"
     t.string "image_url"
     t.string "type"
+    t.integer "cmc"
     t.index ["api_id"], name: "index_cards_on_api_id", unique: true
+    t.index ["cmc"], name: "index_cards_on_cmc"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -52,22 +54,21 @@ ActiveRecord::Schema.define(version: 20170924194652) do
     t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.index ["card_id"], name: "index_deck_cards_on_card_id"
     t.index ["deck_id"], name: "index_deck_cards_on_deck_id"
   end
 
   create_table "decks", force: :cascade do |t|
     t.integer "creator_id", null: false
-    t.string "title", null: false
+    t.string "title", default: ""
     t.text "description", default: ""
-    t.string "format", null: false
     t.integer "upvotes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_decks_on_creator_id"
-    t.index ["format"], name: "index_decks_on_format"
     t.index ["title"], name: "index_decks_on_title"
+    t.index ["upvotes"], name: "index_decks_on_upvotes"
   end
 
   create_table "subtypes", force: :cascade do |t|
