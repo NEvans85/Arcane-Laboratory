@@ -9,6 +9,7 @@
 #  cmc       :integer
 #  full_type :string
 #
+require 'byebug'
 
 class Card < ApplicationRecord
   has_many :card_subtypes
@@ -34,16 +35,17 @@ class Card < ApplicationRecord
                     cmc: new_card.cmc }
     card = new(card_params)
     card.save!
-    if new_card.supertypes
+    debugger
+    unless new_card.supertypes.nil?
       new_card.supertypes.each do |name|
         supertype = Supertype.find_by(name: name)
-        CardSupertype.create(card_id: card.id, supertype_id: supertype)
+        CardSupertype.create(card_id: card.id, supertype_id: supertype.id)
       end
     end
-    if new_card.subtypes
+    unless new_card.subtypes.nil?
       new_card.subtypes.each do |name|
         subtype = Subtype.find_by(name: name)
-        CardSubtype.create(card_id: card.id, subtype_id: subtype)
+        CardSubtype.create(card_id: card.id, subtype_id: subtype.id)
       end
     end
     card
