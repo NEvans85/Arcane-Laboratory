@@ -13,7 +13,14 @@ class Api::DeckController < ApplicationController
 
   def update
     @deck = Deck.find(params[:id])
-    @deck.add_card(params[:api_id])
+    case params[:update_type]
+    when 'add_card'
+      @deck.add_card(params[:api_id])
+    when 'remove_card'
+      @deck.remove_card(params[:api_id])
+    when 'upvote'
+      @deck.upvote
+    end
     render :show
   end
 

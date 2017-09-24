@@ -33,4 +33,8 @@ class Deck < ApplicationRecord
     deck_card = DeckCard.find_by(card_id: card.id, deck_id: id)
     deck_card.decrement_quantity
   end
+
+  def upvote
+    self.upvotes += 1
+  end
 end
