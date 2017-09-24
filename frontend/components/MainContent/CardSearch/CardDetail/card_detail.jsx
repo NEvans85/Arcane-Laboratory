@@ -12,19 +12,25 @@ class CardDetail extends React.Component {
         delete selectedCard[key];
       }
     });
+    delete selectedCard["id"];
+    delete selectedCard["image_url"];
     return (
       <div className="card-details">
         <h2>Card Details</h2>
-        {Object.keys(selectedCard).map(attr => {
-          return (
-            <label>
-              {attr} :
-              <p>{selectedCard.attr}</p>
-            </label>
-          );
-        })}
+        <ul>
+          {Object.keys(selectedCard).map(attr => {
+            return (
+              <li key={attr}>
+                {this.capitalize(attr)} : {selectedCard[attr]}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     );
+  }
+  capitalize(string) {
+    return string[0].toUpperCase() + string.slice(1);
   }
 }
 
