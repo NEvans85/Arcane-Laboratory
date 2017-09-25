@@ -19,10 +19,11 @@ class DeckCard < ApplicationRecord
 
   def increment_quantity
     self.quantity += 1
+    save
   end
 
   def decrement_quantity
     self.quantity -= 1
-    destroy if self.quantity.zero?
+    save
   end
 end

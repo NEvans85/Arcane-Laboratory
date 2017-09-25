@@ -31,9 +31,10 @@ class Deck < ApplicationRecord
   end
 
   def remove_card(api_id)
-    card = Card.find_by(id: api_id)
+    card = Card.find_by(api_id: api_id)
     deck_card = DeckCard.find_by(card_id: card.api_id, deck_id: id)
     deck_card.decrement_quantity
+    deck_card.destroy if deck_card.quantity.zero?
   end
 
   def upvote

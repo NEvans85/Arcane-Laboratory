@@ -19,6 +19,25 @@ supertypes = MTG::Supertype.all
 supertypes.each do |supertype|
   Supertype.create(name: supertype)
 end
+
+5.times do |i|
+  User.create(username: "User#{i + 1}",
+              password: 'password',
+              email: "User#{i + 1}@email.com")
+end
+
+user_count = User.all.length
+
+silly_cards = MTG::Card.where(set: 'unh,ugl').all
+
+10.times do |i|
+  d = Deck.create(creator_id: rand(user_count), title: "RandomSillyDeck ##{i}")
+  5.times do
+    c = silly_cards.sample
+    d.add_card(c.id)
+    puts "#{c.name} added to #{d.title}"
+  end
+end
 # Color.create(name: "White", symbol: "W")
 # Color.create(name: "Blue", symbol: "U")
 # Color.create(name: "Black", symbol: "B")

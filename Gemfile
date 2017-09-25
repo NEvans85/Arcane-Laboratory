@@ -42,6 +42,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rename'
   gem 'annotate'
+  gem 'faker'
 
 end
 

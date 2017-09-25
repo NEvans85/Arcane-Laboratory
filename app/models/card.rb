@@ -35,7 +35,6 @@ class Card < ApplicationRecord
                     cmc: new_card.cmc }
     card = new(card_params)
     card.save!
-    debugger
     unless new_card.supertypes.nil?
       new_card.supertypes.each do |name|
         supertype = Supertype.find_by(name: name)
@@ -45,7 +44,7 @@ class Card < ApplicationRecord
     unless new_card.subtypes.nil?
       new_card.subtypes.each do |name|
         subtype = Subtype.find_by(name: name)
-        CardSubtype.create(card_id: card.id, subtype_id: subtype.id)
+        CardSubtype.create(card_id: card.id, subtype_id: subtype.id) if subtype
       end
     end
     card
