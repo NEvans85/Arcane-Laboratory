@@ -1,10 +1,16 @@
-export const fetchDecks = (index_type, user_id) => {
+export const fetchDecks = index_type => {
   return $.ajax({
     method: "GET",
     url: "api/decks",
-    data: { index_type, user_id }
+    data: { index_type }
   });
 };
+
+export const fetchUserDecks = user_id =>
+  $.ajax({
+    method: "GET",
+    url: `api/users/${user_id}/decks`
+  });
 
 export const fetchDeck = deck_id =>
   $.ajax({

@@ -19,7 +19,7 @@ const receiveErrors = errors => ({
   errors
 });
 
-export const createDeck = creator_id => dispatch =>
+export const postDeck = creator_id => dispatch =>
   DeckAPIUtil.postDeck(creator_id).then(
     deck => dispatch(receiveDeck(deck)),
     errs => dispatch(receiveErrors(errs))
@@ -31,44 +31,16 @@ export const deleteDeck = id => dispatch =>
     errs => dispatch(receiveErrors(errs))
   );
 
-export const addCard = (deck_data, api_id) => dispatch =>
-  DeckAPIUtil.updateDeck("addCard", deck_data, api_id).then(
+export const updateDeck = (deck_data, update_type, api_id = 0) => dispatch =>
+  DeckAPIUtil.updateDeck(update_type, deck_data, api_id).then(
     deck => dispatch(receiveDeck(deck)),
     errs => dispatch(receiveErrors(errs))
   );
 
-export const removeCard = (deck_data, api_id) => dispatch =>
-  DeckAPIUtil.updateDeck("removeCard", deck_data, api_id).then(
-    deck => dispatch(receiveDeck(deck)),
-    errs => dispatch(receiveErrors(errs))
-  );
-export const upvote = deck_data => dispatch =>
-  DeckAPIUtil.updateDeck("upvote", deck_data).then(
-    deck => dispatch(receiveDeck(deck)),
-    errs => dispatch(receiveErrors(errs))
-  );
-export const updateAttributes = deck_data => dispatch =>
-  DeckAPIUtil.updateDeck("updateAttributes", deck_data).then(
-    deck => dispatch(receiveDeck(deck)),
-    errs => dispatch(receiveErrors(errs))
-  );
-
-export const fetchTopDecks = () => dispatch =>
-  DeckAPIUtil.fetchDecks("top").then(
+export const fetchDecks = category => dispatch =>
+  DeckAPIUtil.fetchDecks(category).then(
     decks => dispatch(receiveDecks(decks)),
-    errs => dispatch(receiveErrors(errs))
-  );
-
-export const fetchNewDecks = () => dispatch =>
-  DeckAPIUtil.fetchDecks("new").then(
-    decks => dispatch(receiveDecks(decks)),
-    errs => dispatch(receiveErrors(errs))
-  );
-
-export const fetchUserDecks = user_id => dispatch =>
-  DeckAPIUtil.fetchDecks("user", user_id).then(
-    decks => dispatch(receiveDecks(decks)),
-    errs => dispatch(receiveErrors(errs))
+    errs => dispatch(receiveErrors)
   );
 
 export const fetchDeck = deck_id => dispatch =>

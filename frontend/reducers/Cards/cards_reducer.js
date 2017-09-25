@@ -2,6 +2,7 @@ import {
   RECEIVE_CARD,
   RECEIVE_SEARCH_RESULTS
 } from "../../actions/card_search_actions";
+import { RECEIVE_DECK } from "../../actions/deck_actions";
 import { merge } from "lodash";
 
 const CardsReducer = (state = {}, action) => {
@@ -13,6 +14,8 @@ const CardsReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_SEARCH_RESULTS:
       return action.cards;
+    case RECEIVE_DECK:
+      return action.deck.cards;
     default:
       return state;
   }

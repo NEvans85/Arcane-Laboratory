@@ -4,7 +4,7 @@ import Root from "./components/root";
 import configureStore from "./store/store";
 
 // For Testing
-import * as CardActions from "./actions/card_search_actions";
+import * as DeckActions from "./actions/deck_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -23,5 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
 });
 
-window.search = CardActions.search;
-window.cardDetails = CardActions.cardDetails;
+window.postDeck = DeckActions.postDeck;
+window.updateDeck = DeckActions.updateDeck;
+window.deleteDeck = DeckActions.deleteDeck;
+window.fetchDecks = DeckActions.fetchDecks;
+window.fetchDeck = DeckActions.fetchDeck;
