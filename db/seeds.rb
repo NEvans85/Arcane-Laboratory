@@ -34,7 +34,7 @@ silly_cards = MTG::Card.where(set: 'unh,ugl').all
   d = Deck.create(creator_id: rand(user_count), title: "RandomSillyDeck ##{i}")
   5.times do
     c = silly_cards.sample
-    d.add_card(c.id)
+    d.add_card!(c.id)
     puts "#{c.name} added to #{d.title}"
   end
 end

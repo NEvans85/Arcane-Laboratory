@@ -1,25 +1,29 @@
 class Api::DeckController < ApplicationController
 
   def create
-    @deck = Deck.create(creator_id: 1)
+    @deck = Deck.create(creator_id: params[:creator_id])
     render :show
   end
 
   def destroy
-    deck = Deck.find(params[:id])
-    deck.destroy
-    redirect_to action: 'index'
+    @deck = Deck.find(params[:id])
+    @deck.destroy
+    render :show
   end
 
   def update
-    @deck = Deck.find(params[:id])
+    @deck = Deck.find(params[:deck_data[:id]])
     case params[:update_type]
-    when 'add_card'
-      @deck.add_card(params[:api_id])
-    when 'remove_card'
-      @deck.remove_card(params[:api_id])
+    when 'addCard'
+      @deck.add_card!(params[:api_id])
+    when 'removeCard'
+      @deck.remove_card!(params[:api_id])
     when 'upvote'
       @deck.upvote
+    when 'updateAttributes'
+      unless @deck.update_attributes(deck_params)
+        render json: @deck.errors.full_massages, status: 422
+      end
     end
     render :show
   end
@@ -42,5 +46,9 @@ class Api::DeckController < ApplicationController
     end
     @decks = Deck.all unless @decks
     render :index
+  end
+
+  def deck_params
+    params[:deck_data].permit(:id, :title, :description)
   end
 end
