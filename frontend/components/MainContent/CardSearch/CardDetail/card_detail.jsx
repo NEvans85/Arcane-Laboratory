@@ -7,6 +7,9 @@ class CardDetail extends React.Component {
 
   render() {
     const selectedCard = this.props.selectedCard;
+    if (!selectedCard) {
+      return <div className="card-details search-component" />;
+    }
     Object.keys(selectedCard).forEach(key => {
       if (selectedCard[key] == null) {
         delete selectedCard[key];

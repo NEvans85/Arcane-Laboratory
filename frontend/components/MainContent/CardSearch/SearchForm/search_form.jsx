@@ -71,34 +71,29 @@ class SearchForm extends React.Component {
 
         <label>Color:</label>
         <div className="color-checkbox-box">
-          <input
-            type="checkbox"
-            onChange={this.handleColorSelect("white")}
-            className="color-checkbox-white"
+          <button
+            onClick={this.handleColorSelect("white")}
+            className="color-button-white"
             value=""
           />
-          <input
-            type="checkbox"
-            onChange={this.handleColorSelect("blue")}
-            className="color-checkbox-blue"
+          <button
+            onClick={this.handleColorSelect("blue")}
+            className="color-button-blue"
             value=""
           />
-          <input
-            type="checkbox"
-            onChange={this.handleColorSelect("black")}
-            className="color-checkbox-black"
+          <button
+            onClick={this.handleColorSelect("black")}
+            className="color-button-black"
             value=""
           />
-          <input
-            type="checkbox"
-            onChange={this.handleColorSelect("red")}
-            className="color-checkbox-red"
+          <button
+            onClick={this.handleColorSelect("red")}
+            className="color-button-red"
             value=""
           />
-          <input
-            type="checkbox"
-            onChange={this.handleColorSelect("green")}
-            className="color-checkbox-green"
+          <button
+            onClick={this.handleColorSelect("green")}
+            className="color-button-green"
             value=""
           />
         </div>
@@ -114,21 +109,26 @@ class SearchForm extends React.Component {
 
   handleColorSelect(color) {
     return e => {
-      if (e.target.checked) {
+      e.preventDefault();
+      if (e.target.class !== "selected") {
         this.selectedColors.push(color);
+        e.target.addClass("selected");
       } else {
         this.selectedColors = this.selectedColors.filter(el => el !== color);
+        e.target.removeClass("selected");
       }
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state);
     const colorsStr = this.selectedColors.toString();
-    this.setState({ colors: colorsStr });
-    const queryParams = Object.assign({}, this.state);
-    this.props.search(queryParams);
-    this.setState(this.defaultState);
+    this.setState({ colors: colorsStr }, () => {
+      const queryParams = Object.assign({}, this.state);
+      this.props.search(queryParams);
+      this.setState(this.defaultState);
+    });
   }
 }
 
