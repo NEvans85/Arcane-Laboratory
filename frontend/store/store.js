@@ -18,7 +18,8 @@ const emptyState = {
       toughness: null,
       loyalty: null,
       cmc: null,
-      image_url: null,
+      image_url:
+        "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=5764&type=card",
       type: null,
       set_name: null,
       colors: null,

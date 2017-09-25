@@ -15,7 +15,7 @@ class CardDetail extends React.Component {
     delete selectedCard["id"];
     delete selectedCard["image_url"];
     return (
-      <div className="card-details search-container">
+      <div className="card-details search-component">
         <h2>Card Details</h2>
         <ul>
           {Object.keys(selectedCard).map(attr => {

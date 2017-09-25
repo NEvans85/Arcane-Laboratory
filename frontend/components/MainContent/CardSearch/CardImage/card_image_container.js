@@ -6,7 +6,8 @@ const mapStateToProps = state => {
   if (state.cards.selectedCard) {
     imageUrl = state.cards.selectedCard.image_url;
   } else {
-    imageUrl = "";
+    imageUrl =
+      "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=5764&type=card";
   }
   return {
     imageUrl: imageUrl

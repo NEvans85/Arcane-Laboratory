@@ -25,7 +25,7 @@ class SearchForm extends React.Component {
   render() {
     return (
       <form
-        className="search-form search-container"
+        className="search-form search-component"
         onSubmit={this.handleSubmit}
       >
         <h2>Card Search</h2>
@@ -70,35 +70,35 @@ class SearchForm extends React.Component {
         />
 
         <label>Color:</label>
-        <div className="color-radio-box">
+        <div className="color-checkbox-box">
           <input
             type="checkbox"
             onChange={this.handleColorSelect("white")}
-            className="white-color-search"
+            className="color-checkbox-white"
             value=""
           />
           <input
             type="checkbox"
             onChange={this.handleColorSelect("blue")}
-            className="blue-color-search"
+            className="color-checkbox-blue"
             value=""
           />
           <input
             type="checkbox"
             onChange={this.handleColorSelect("black")}
-            className="black-color-search"
+            className="color-checkbox-black"
             value=""
           />
           <input
             type="checkbox"
             onChange={this.handleColorSelect("red")}
-            className="red-color-search"
+            className="color-checkbox-red"
             value=""
           />
           <input
             type="checkbox"
             onChange={this.handleColorSelect("green")}
-            className="green-color-search"
+            className="color-checkbox-green"
             value=""
           />
         </div>

@@ -11,7 +11,7 @@ class CardSearch extends React.Component {
 
   render() {
     return (
-      <div className="card-search-container">
+      <div className="card-search-component">
         <SearchForm />
         <SearchResults />
         <CardImage />

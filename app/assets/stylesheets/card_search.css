@@ -1,4 +1,4 @@
-.card-search-container {
+.card-search-component {
   display: flex;
   min-height: inherit;
   flex-wrap: wrap;
@@ -15,29 +15,37 @@
   justify-content: space-around;
   margin: 2%;
   padding: 2%;
-  border: 2px solid blue;
   background-color: rgba(254, 226, 149, 0.9);
 }
 
 .search-form h2 {
   font-size: 24px;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .search-form input {
   width: 80%;
+  height: 20px;
   margin: auto;
 }
 
-.color-radio-box {
+.color-checkbox-box {
   width: 90%;
   display: flex;
   justify-content: space-between;
   margin: auto;
 }
 
-.search-container {
-  height: 400px;
+.color-checkbox-box input {
+  width: auto;
+  transform: scale(2);
+}
+
+.color-checkbox-white {
+}
+
+.search-component {
+  height: 450px;
   margin: 2%;
   padding: 1%;
   border: 2px solid #052746;
@@ -55,8 +63,10 @@
 }
 
 .search-results ul li {
-  height: 8%;
+  height: auto;
   border: 1px solid rgba(228, 150, 4, 0.9);
+  margin: 1px;
+  padding: 2%;
 }
 .search-results ul li:hover {
   cursor: pointer;
@@ -64,11 +74,14 @@
 
 .card-details {
   width: 80%;
+  min-height: 350px;
   height: auto;
+  font-size: 18px;
 }
 
 .search-image {
-  width: 25%;
+  height: 450px;
+  width: 321px;
   margin: 2%;
-  padding: 4px;
+  padding: 1%;
 }
