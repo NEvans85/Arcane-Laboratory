@@ -14,7 +14,7 @@ class SearchResults extends React.Component {
     const uniqNames = Array.from(new Set(names)).sort();
     const uniqNameKeys = uniqNames.map(name => findKey(cards, { name: name }));
     return (
-      <div className="search-results">
+      <div className="search-results search-container">
         <ul>
           {uniqNameKeys.map(key => {
             return (

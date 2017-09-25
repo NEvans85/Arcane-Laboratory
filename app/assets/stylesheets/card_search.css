@@ -1,0 +1,74 @@
+.card-search-container {
+  display: flex;
+  min-height: inherit;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-size: 100% 100%;
+  background-image: url(http://res.cloudinary.com/arcane-lab/image/upload/v1506045235/Art_SOI_Plains_Andreas-Rocha_fv0ofa.jpg);
+}
+
+.search-form {
+  width: 25%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 2%;
+  padding: 2%;
+  border: 2px solid blue;
+  background-color: rgba(254, 226, 149, 0.9);
+}
+
+.search-form h2 {
+  font-size: 24px;
+  margin-bottom: 10%;
+}
+
+.search-form input {
+  width: 80%;
+  margin: auto;
+}
+
+.color-radio-box {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.search-container {
+  height: 400px;
+  margin: 2%;
+  padding: 1%;
+  border: 2px solid #052746;
+  font-family: "Goudy Bookletter 1911", serif;
+  background-color: rgba(254, 226, 149, 0.9);
+}
+
+.search-results {
+  width: 20%;
+  overflow: auto;
+}
+
+.search-results ul {
+  height: 100%;
+}
+
+.search-results ul li {
+  height: 8%;
+  border: 1px solid rgba(228, 150, 4, 0.9);
+}
+.search-results ul li:hover {
+  cursor: pointer;
+}
+
+.card-details {
+  width: 80%;
+  height: auto;
+}
+
+.search-image {
+  width: 25%;
+  margin: 2%;
+  padding: 4px;
+}

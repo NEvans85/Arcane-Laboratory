@@ -43,6 +43,7 @@ nav {
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
+  list-style-type: none;
 }
 body {
   margin: 0px;

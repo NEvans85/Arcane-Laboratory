@@ -6,7 +6,7 @@ class CardImage extends React.Component {
   }
 
   render() {
-    return <img src={this.props.imageUrl} />;
+    return <img className="search-image" src={this.props.imageUrl} />;
   }
 }
 

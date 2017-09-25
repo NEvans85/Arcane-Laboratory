@@ -13,7 +13,7 @@ class Api::CardsController < ApplicationController
 private
 
   def card_params
-    params.permit(:name, :type, :set, :cmc, :colors, :page)
+    params.permit(:name, :type, :set, :text, :cmc, :colors, :page)
   end
 
 end

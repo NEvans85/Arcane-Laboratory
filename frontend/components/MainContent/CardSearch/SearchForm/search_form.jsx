@@ -15,6 +15,7 @@ class SearchForm extends React.Component {
       name: "",
       set: "",
       type: "",
+      text: "",
       cmc: "",
       colors: "",
       page: 0
@@ -23,44 +24,52 @@ class SearchForm extends React.Component {
 
   render() {
     return (
-      <form className="search-form" onSubmit={this.handleSubmit}>
+      <form
+        className="search-form search-container"
+        onSubmit={this.handleSubmit}
+      >
         <h2>Card Search</h2>
-        <label>
-          Card Name
-          <input
-            onChange={this.updateInput("name")}
-            type="text"
-            placeholder="Card Name"
-            value={this.state.name}
-          />
-        </label>
-        <label>
-          Card Type
-          <input
-            onChange={this.updateInput("type")}
-            type="text"
-            placeholder="Ex: angel, legendary, creature"
-            value={this.state.type}
-          />
-        </label>
-        <label>
-          Converted Mana Cost
-          <input
-            onChange={this.updateInput("cmc")}
-            type="text"
-            placeholder="Ex: 2, 7, 16"
-            value={this.state.cmc}
-          />
-        </label>
-        <label>
-          Set
-          <input
-            onChange={this.updateInput("set")}
-            type="text"
-            placeholder="Ex: kld, emn, rav"
-            value={this.state.set}
-          />
-        </label>
+        <label>Card Name: </label>
+        <input
+          onChange={this.updateInput("name")}
+          type="text"
+          placeholder="Card Name"
+          value={this.state.name}
+        />
+
+        <label>Card Type: </label>
+        <input
+          onChange={this.updateInput("type")}
+          type="text"
+          placeholder="Ex: angel, legendary, creature"
+          value={this.state.type}
+        />
+
+        <label>Text Includes: </label>
+        <input
+          onChange={this.updateInput("text")}
+          type="text"
+          placeholder="Ex: vigilance, flying"
+          value={this.state.text}
+        />
+
+        <label>Converted Mana Cost:</label>
+        <input
+          onChange={this.updateInput("cmc")}
+          type="text"
+          placeholder="Ex: 2, 7, 16"
+          value={this.state.cmc}
+        />
+
+        <label>Set</label>
+        <input
+          onChange={this.updateInput("set")}
+          type="text"
+          placeholder="Ex: kld, emn, rav"
+          value={this.state.set}
+        />
+
+        <label>Color:</label>
         <div className="color-radio-box">
           <input
             type="checkbox"
