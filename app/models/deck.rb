@@ -39,5 +39,6 @@ class Deck < ApplicationRecord
 
   def upvote
     self.upvotes += 1
+    save
   end
 end

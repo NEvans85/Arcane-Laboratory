@@ -30,8 +30,16 @@ class Api::DeckController < ApplicationController
   end
 
   def index
-    @decks = Deck.find_by(creator_id: params[:user_id]) if params[:user_id]
-    @decks = Deck.find_by(format: params[:format]) if params[:format]
+    case params[:index_type]
+    when 'top'
+      @decks = Deck.order(upvotes: :desc).limit(10)
+    when 'new'
+      @decks = Deck.order(created_at: :desc).limit(10)
+    when 'user'
+      @decks = Deck.find_by(creator_id: params[:user_id]) if params[:user_id]
+    # when 'format'
+      # @decks = Deck.find_by(format: params[:format]) if params[:format]
+    end
     @decks = Deck.all unless @decks
     render :index
   end
