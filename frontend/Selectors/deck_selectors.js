@@ -1,4 +1,4 @@
-export const selectCardsByType = (state, type) => {
+export const sortCardsByType = state => {
   const sortedState = {
     creatures: [],
     lands: [],

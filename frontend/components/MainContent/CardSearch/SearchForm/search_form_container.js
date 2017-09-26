@@ -6,7 +6,9 @@ import {
 } from "../../../../actions/card_search_actions";
 import { startLoading } from "../../../../actions/ui_actions";
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  loading: state.ui.loading
+});
 
 const mapDispatchToProps = dispatch => ({
   search: queryParams => dispatch(search(queryParams)),

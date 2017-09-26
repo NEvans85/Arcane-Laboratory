@@ -24,6 +24,7 @@ class SearchForm extends React.Component {
 
   render() {
     const colors = ["white", "blue", "black", "red", "green"];
+    console.log(this.props);
     return (
       <form
         className="search-form search-component"
@@ -69,8 +70,16 @@ class SearchForm extends React.Component {
           placeholder="Ex: kld, emn, rav"
           value={this.state.set}
         />
-        <input className="search-form-submit" type="submit" value="Search" />
-
+        {this.props.loading ? (
+          <input
+            className="search-form-submit"
+            type="submit"
+            value="Search"
+            disabled
+          />
+        ) : (
+          <input className="search-form-submit" type="submit" value="Search" />
+        )}
         <label>Color:</label>
         <div className="color-button-box">
           {colors.map(color => (
