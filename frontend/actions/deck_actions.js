@@ -31,14 +31,20 @@ export const deleteDeck = id => dispatch =>
     errs => dispatch(receiveErrors(errs))
   );
 
-export const updateDeck = (deck_data, update_type, api_id = 0) => dispatch =>
-  DeckAPIUtil.updateDeck(update_type, deck_data, api_id).then(
+export const updateDeck = (deck, update_type, api_id = 0) => dispatch =>
+  DeckAPIUtil.updateDeck(deck, update_type, api_id).then(
     deck => dispatch(receiveDeck(deck)),
     errs => dispatch(receiveErrors(errs))
   );
 
 export const fetchDecks = category => dispatch =>
   DeckAPIUtil.fetchDecks(category).then(
+    decks => dispatch(receiveDecks(decks)),
+    errs => dispatch(receiveErrors)
+  );
+
+export const fetchUserDecks = user_id => dispatch =>
+  DeckAPIUtil.fetchUserDecks(user_id).then(
     decks => dispatch(receiveDecks(decks)),
     errs => dispatch(receiveErrors)
   );

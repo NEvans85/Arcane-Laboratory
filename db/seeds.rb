@@ -17,13 +17,16 @@ end
 
 user_count = User.all.length
 
-silly_cards = MTG::Card.where(set: 'unh,ugl').all
+kld_block_cards = MTG::Card.where(set: 'kld,aer').all
 
 10.times do |i|
-  d = Deck.create(creator_id: rand(user_count), title: "RandomSillyDeck ##{i}")
-  5.times do
-    c = silly_cards.sample
-    d.add_card!(c.id)
-    puts "#{c.name} added to #{d.title}"
+  d = Deck.create(creator_id: rand(user_count), title: "RandomDeck ##{i}")
+  card_count = 0
+  until card_count >= 60 do
+    c = kld_block_cards.sample
+    copies = rand(1..4)
+    copies.times { d.add_card!(c.id) }
+    card_count += copies
+    puts "#{copies} x #{c.name} added to #{d.title}"
   end
 end

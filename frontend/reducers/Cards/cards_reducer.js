@@ -4,6 +4,7 @@ import {
 } from "../../actions/card_search_actions";
 import { RECEIVE_DECK } from "../../actions/deck_actions";
 import { merge } from "lodash";
+import { sortCardsByType } from "../../Selectors/deck_selectors";
 
 const CardsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -15,7 +16,7 @@ const CardsReducer = (state = {}, action) => {
     case RECEIVE_SEARCH_RESULTS:
       return action.cards;
     case RECEIVE_DECK:
-      return action.deck.cards;
+      return sortCardsByType(action.deck.cards);
     default:
       return state;
   }

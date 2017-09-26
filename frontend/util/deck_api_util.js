@@ -1,15 +1,15 @@
-export const fetchDecks = index_type => {
+export const fetchDecks = category => {
   return $.ajax({
     method: "GET",
     url: "api/decks",
-    data: { index_type }
+    data: { category }
   });
 };
 
 export const fetchUserDecks = user_id =>
   $.ajax({
     method: "GET",
-    url: `api/users/${user_id}/decks`
+    url: `api/user/${user_id}/decks`
   });
 
 export const fetchDeck = deck_id =>
@@ -25,11 +25,11 @@ export const postDeck = creator_id =>
     data: { creator_id }
   });
 
-export const updateDeck = (deck_data, update_type, api_id) =>
+export const updateDeck = (deck, update_type, api_id) =>
   $.ajax({
     method: "PATCH",
-    url: `api/decks/${deck_data[id]}`,
-    data: { update_type, api_id, deck_data }
+    url: `api/decks/${deck.id}`,
+    data: { update_type, api_id, deck }
   });
 
 export const deleteDeck = id =>

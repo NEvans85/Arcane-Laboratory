@@ -12,7 +12,7 @@ class Api::DecksController < ApplicationController
     end
 
     def update
-      @deck = Deck.find(params[:deck_data[:id]])
+      @deck = Deck.find(params[:deck][:id].to_i)
       case params[:update_type]
       when 'addCard'
         @deck.add_card!(params[:api_id])
@@ -34,8 +34,8 @@ class Api::DecksController < ApplicationController
     end
 
     def index
-      @decks = Deck.find_by(creator_id: params[:user_id]) if params[:user_id]
-      case params[:index_type]
+      @decks = Deck.where(creator_id: params[:user_id]) if params[:user_id]
+      case params[:category]
       when 'top'
         @decks = Deck.order(upvotes: :desc).limit(10)
       when 'new'
@@ -46,6 +46,6 @@ class Api::DecksController < ApplicationController
     end
 
     def deck_params
-      params[:deck_data].permit(:id, :title, :description)
+      params[:deck].permit(:id, :title, :description)
     end
 end

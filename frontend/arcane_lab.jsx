@@ -27,4 +27,5 @@ window.postDeck = DeckActions.postDeck;
 window.updateDeck = DeckActions.updateDeck;
 window.deleteDeck = DeckActions.deleteDeck;
 window.fetchDecks = DeckActions.fetchDecks;
+window.fetchUserDecks = DeckActions.fetchUserDecks;
 window.fetchDeck = DeckActions.fetchDeck;
