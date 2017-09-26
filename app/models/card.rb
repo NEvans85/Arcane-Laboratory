@@ -12,12 +12,6 @@
 require 'byebug'
 
 class Card < ApplicationRecord
-  has_many :card_subtypes
-  has_many :subtypes, through: :card_subtypes
-
-  has_many :card_supertypes
-  has_many :supertypes, through: :card_supertypes
-
   has_many :deck_cards,
            primary_key: :api_id
   has_many :decks, through: :deck_cards

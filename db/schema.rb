@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924230349) do
+ActiveRecord::Schema.define(version: 20170926142725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "card_subtypes", force: :cascade do |t|
-    t.integer "card_id"
-    t.integer "subtype_id"
-    t.index ["card_id"], name: "index_card_subtypes_on_card_id"
-    t.index ["subtype_id"], name: "index_card_subtypes_on_subtype_id"
-  end
-
-  create_table "card_supertypes", force: :cascade do |t|
-    t.integer "supertype_id"
-    t.integer "card_id"
-  end
 
   create_table "cards", force: :cascade do |t|
     t.string "api_id"
@@ -69,14 +57,6 @@ ActiveRecord::Schema.define(version: 20170924230349) do
     t.index ["creator_id"], name: "index_decks_on_creator_id"
     t.index ["title"], name: "index_decks_on_title"
     t.index ["upvotes"], name: "index_decks_on_upvotes"
-  end
-
-  create_table "subtypes", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "supertypes", force: :cascade do |t|
-    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
