@@ -10,14 +10,26 @@ class SearchResults extends React.Component {
 
   render() {
     const cards = this.props.cards;
-    const names = Object.keys(cards).map(key => cards[key].name);
-    const uniqNames = Array.from(new Set(names)).sort();
-    const uniqNameKeys = uniqNames.map(name => findKey(cards, { name: name }));
-
+    const uniqCardKeys = [];
+    const uniqCardNames = [];
+    Object.keys(cards).forEach(key => {
+      if (cards[key].image_url && !uniqCardNames.includes(cards[key].name)) {
+        uniqCardNames.push(cards[key].name);
+        uniqCardKeys.push(key);
+      }
+    });
+    const keysSortedByName = uniqCardKeys.sort((a, b) => {
+      const aName = cards[a].name.toUpperCase();
+      const bName = cards[b].name.toUpperCase();
+      if (aName < bName) {
+        return -1;
+      }
+      return 1;
+    });
     return (
       <div className="search-results search-component">
         <ul>
-          {uniqNameKeys.map(key => {
+          {uniqCardKeys.map(key => {
             return (
               <li key={key} id={key} onClick={this.handleResultClick}>
                 {cards[key].name}

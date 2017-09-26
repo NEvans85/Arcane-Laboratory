@@ -23,6 +23,7 @@ class SearchForm extends React.Component {
   }
 
   render() {
+    const colors = ["white", "blue", "black", "red", "green"];
     return (
       <form
         className="search-form search-component"
@@ -70,32 +71,16 @@ class SearchForm extends React.Component {
         />
 
         <label>Color:</label>
-        <div className="color-checkbox-box">
-          <button
-            onClick={this.handleColorSelect("white")}
-            className="color-button-white"
-            value=""
-          />
-          <button
-            onClick={this.handleColorSelect("blue")}
-            className="color-button-blue"
-            value=""
-          />
-          <button
-            onClick={this.handleColorSelect("black")}
-            className="color-button-black"
-            value=""
-          />
-          <button
-            onClick={this.handleColorSelect("red")}
-            className="color-button-red"
-            value=""
-          />
-          <button
-            onClick={this.handleColorSelect("green")}
-            className="color-button-green"
-            value=""
-          />
+        <div className="color-button-box">
+          {colors.map(color => (
+            <button
+              onClick={this.handleColorSelect(`${color}`)}
+              className={`color-button-${color}`}
+              selected="false"
+              key={`${color}`}
+              value=""
+            />
+          ))}
         </div>
         <input type="submit" value="Search" />
       </form>
@@ -110,24 +95,30 @@ class SearchForm extends React.Component {
   handleColorSelect(color) {
     return e => {
       e.preventDefault();
-      if (e.target.class !== "selected") {
-        this.selectedColors.push(color);
-        e.target.addClass("selected");
-      } else {
+      if (e.target.classList.contains("selected")) {
         this.selectedColors = this.selectedColors.filter(el => el !== color);
-        e.target.removeClass("selected");
+        e.target.classList.remove("selected");
+        // e.target.selected = "true";
+      } else {
+        this.selectedColors.push(color);
+        e.target.classList.add("selected");
+        // e.target.selected = "false";
       }
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
     const colorsStr = this.selectedColors.toString();
     this.setState({ colors: colorsStr }, () => {
       const queryParams = Object.assign({}, this.state);
       this.props.search(queryParams);
       this.setState(this.defaultState);
+      const colorButtons = document.getElementsByClassName("selected");
+      const numButtons = colorButtons.length;
+      for (var i = 0; i < numButtons; i++) {
+        colorButtons[0].classList.remove("selected");
+      }
     });
   }
 }

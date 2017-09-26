@@ -17,6 +17,8 @@ class CardDetail extends React.Component {
     });
     delete selectedCard["id"];
     delete selectedCard["image_url"];
+    selectedCard["printings"] = selectedCard["printings"].join(", ");
+    selectedCard["colors"] = selectedCard["colors"].join(", ");
     return (
       <div className="card-details search-component">
         <h2>Card Details</h2>

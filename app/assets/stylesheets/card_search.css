@@ -29,19 +29,38 @@
   margin: auto;
 }
 
-.color-checkbox-box {
+.color-button-box {
   width: 90%;
   display: flex;
   justify-content: space-between;
   margin: auto;
 }
 
-.color-checkbox-box input {
-  width: auto;
-  transform: scale(2);
+.color-button-box button {
+  width: 10%;
+  height: 20px;
+  border-radius: 10px;
+  outline: none;
 }
 
-.color-checkbox-white {
+.selected {
+  border: 2px solid red;
+}
+
+.color-button-white {
+  background-color: #e49604;
+}
+.color-button-blue {
+  background-color: #264490;
+}
+.color-button-black {
+  background-color: #420161;
+}
+.color-button-red {
+  background-color: #7e001e;
+}
+.color-button-green {
+  background-color: #006633;
 }
 
 .search-component {
