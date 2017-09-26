@@ -12,8 +12,6 @@
 #  updated_at :datetime         not null
 #
 
-require 'byebug'
-
 class Card < ApplicationRecord
   has_many :deck_cards,
            primary_key: :api_id,
