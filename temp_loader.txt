@@ -1,0 +1,443 @@
+Spinning Dots*********************************************************
+
+<div class="cssload-loader">
+	<div class="cssload-dot"></div>
+	<div class="cssload-dot"></div>
+	<div class="cssload-dot"></div>
+	<div class="cssload-dot"></div>
+	<div class="cssload-dot"></div>
+</div>
+
+.cssload-loader * {
+	box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+}
+
+.cssload-loader {
+	position: absolute;
+	left: 50%;
+
+	width: 185px;
+	height: 185px;
+
+	margin-top: -92px;
+	margin-left: -92px;
+
+	perspective: 92px;
+		-o-perspective: 92px;
+		-ms-perspective: 92px;
+		-webkit-perspective: 92px;
+		-moz-perspective: 92px;
+	transform-type: preserve-3d;
+		-o-transform-type: preserve-3d;
+		-ms-transform-type: preserve-3d;
+		-webkit-transform-type: preserve-3d;
+		-moz-transform-type: preserve-3d;
+
+	animation: cssload-loader 7.8s cubic-bezierrgb(255,255,255) infinite;
+		-o-animation: cssload-loader 7.8s cubic-bezierrgb(255,255,255) infinite;
+		-ms-animation: cssload-loader 7.8s cubic-bezierrgb(255,255,255) infinite;
+		-webkit-animation: cssload-loader 7.8s cubic-bezierrgb(255,255,255) infinite;
+		-moz-animation: cssload-loader 7.8s cubic-bezierrgb(255,255,255) infinite;
+}
+
+
+
+
+.cssload-dot {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+
+	width: 18px;
+	height: 18px;
+
+	margin-top: -83px;
+	margin-left: -9px;
+
+	border-radius: 9px;
+
+	background-color: rgb(228,149,4);
+
+	transform-type: preserve-3d;
+		-o-transform-type: preserve-3d;
+		-ms-transform-type: preserve-3d;
+		-webkit-transform-type: preserve-3d;
+		-moz-transform-type: preserve-3d;
+	transform-origin: 50% 83px;
+		-o-transform-origin: 50% 83px;
+		-ms-transform-origin: 50% 83px;
+		-webkit-transform-origin: 50% 83px;
+		-moz-transform-origin: 50% 83px;
+	transform: rotateZ(30deg);
+		-o-transform: rotateZ(30deg);
+		-ms-transform: rotateZ(30deg);
+		-webkit-transform: rotateZ(30deg);
+		-moz-transform: rotateZ(30deg);
+
+	animation: cssload-dot1 1.95s cubic-bezier(.6,0,.4,1) infinite;
+		-o-animation: cssload-dot1 1.95s cubic-bezier(.6,0,.4,1) infinite;
+		-ms-animation: cssload-dot1 1.95s cubic-bezier(.6,0,.4,1) infinite;
+		-webkit-animation: cssload-dot1 1.95s cubic-bezier(.6,0,.4,1) infinite;
+		-moz-animation: cssload-dot1 1.95s cubic-bezier(.6,0,.4,1) infinite;
+}
+
+.cssload-dot:nth-child(2) {
+	transform: rotateZ(15deg);
+		-o-transform: rotateZ(15deg);
+		-ms-transform: rotateZ(15deg);
+		-webkit-transform: rotateZ(15deg);
+		-moz-transform: rotateZ(15deg);
+	animation-name: cssload-dot2;
+		-o-animation-name: cssload-dot2;
+		-ms-animation-name: cssload-dot2;
+		-webkit-animation-name: cssload-dot2;
+		-moz-animation-name: cssload-dot2;
+	animation-delay: 195ms;
+		-o-animation-delay: 195ms;
+		-ms-animation-delay: 195ms;
+		-webkit-animation-delay: 195ms;
+		-moz-animation-delay: 195ms;
+	background-color: rgb(38,68,144);
+}
+
+.cssload-dot:nth-child(3) {
+	transform: rotateZ(0deg);
+		-o-transform: rotateZ(0deg);
+		-ms-transform: rotateZ(0deg);
+		-webkit-transform: rotateZ(0deg);
+		-moz-transform: rotateZ(0deg);
+	animation-name: cssload-dot3;
+		-o-animation-name: cssload-dot3;
+		-ms-animation-name: cssload-dot3;
+		-webkit-animation-name: cssload-dot3;
+		-moz-animation-name: cssload-dot3;
+	animation-delay: 390ms;
+		-o-animation-delay: 390ms;
+		-ms-animation-delay: 390ms;
+		-webkit-animation-delay: 390ms;
+		-moz-animation-delay: 390ms;
+	background-color: rgb(67,1,97);
+}
+
+.cssload-dot:nth-child(4) {
+	transform: rotateZ(-15deg);
+		-o-transform: rotateZ(-15deg);
+		-ms-transform: rotateZ(-15deg);
+		-webkit-transform: rotateZ(-15deg);
+		-moz-transform: rotateZ(-15deg);
+	animation-name: cssload-dot4;
+		-o-animation-name: cssload-dot4;
+		-ms-animation-name: cssload-dot4;
+		-webkit-animation-name: cssload-dot4;
+		-moz-animation-name: cssload-dot4;
+	animation-delay: 585ms;
+		-o-animation-delay: 585ms;
+		-ms-animation-delay: 585ms;
+		-webkit-animation-delay: 585ms;
+		-moz-animation-delay: 585ms;
+	background-color: rgb(126,0,29);
+}
+
+.cssload-dot:nth-child(5) {
+	transform: rotateZ(-30deg);
+		-o-transform: rotateZ(-30deg);
+		-ms-transform: rotateZ(-30deg);
+		-webkit-transform: rotateZ(-30deg);
+		-moz-transform: rotateZ(-30deg);
+	animation-name: cssload-dot5;
+		-o-animation-name: cssload-dot5;
+		-ms-animation-name: cssload-dot5;
+		-webkit-animation-name: cssload-dot5;
+		-moz-animation-name: cssload-dot5;
+	animation-delay: 780ms;
+		-o-animation-delay: 780ms;
+		-ms-animation-delay: 780ms;
+		-webkit-animation-delay: 780ms;
+		-moz-animation-delay: 780ms;
+	background-color: rgb(0,102,51);
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes cssload-loader {
+	0% {
+		transform: rotateX(30deg) rotateZ(0deg);
+	}
+	100% {
+		transform: rotateX(30deg) rotateZ(-360deg);
+	}
+}
+
+@-o-keyframes cssload-loader {
+	0% {
+		-o-transform: rotateX(30deg) rotateZ(0deg);
+	}
+	100% {
+		-o-transform: rotateX(30deg) rotateZ(-360deg);
+	}
+}
+
+@-ms-keyframes cssload-loader {
+	0% {
+		-ms-transform: rotateX(30deg) rotateZ(0deg);
+	}
+	100% {
+		-ms-transform: rotateX(30deg) rotateZ(-360deg);
+	}
+}
+
+@-webkit-keyframes cssload-loader {
+	0% {
+		-webkit-transform: rotateX(30deg) rotateZ(0deg);
+	}
+	100% {
+		-webkit-transform: rotateX(30deg) rotateZ(-360deg);
+	}
+}
+
+@-moz-keyframes cssload-loader {
+	0% {
+		-moz-transform: rotateX(30deg) rotateZ(0deg);
+	}
+	100% {
+		-moz-transform: rotateX(30deg) rotateZ(-360deg);
+	}
+}
+
+@keyframes cssload-dot1 {
+	0% {
+		transform: rotateZ(30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		transform: rotateZ(390deg) rotateX(10deg);
+	}
+}
+
+@-o-keyframes cssload-dot1 {
+	0% {
+		-o-transform: rotateZ(30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-o-transform: rotateZ(390deg) rotateX(10deg);
+	}
+}
+
+@-ms-keyframes cssload-dot1 {
+	0% {
+		-ms-transform: rotateZ(30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-ms-transform: rotateZ(390deg) rotateX(10deg);
+	}
+}
+
+@-webkit-keyframes cssload-dot1 {
+	0% {
+		-webkit-transform: rotateZ(30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-webkit-transform: rotateZ(390deg) rotateX(10deg);
+	}
+}
+
+@-moz-keyframes cssload-dot1 {
+	0% {
+		-moz-transform: rotateZ(30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-moz-transform: rotateZ(390deg) rotateX(10deg);
+	}
+}
+
+@keyframes cssload-dot2 {
+	0% {
+		transform: rotateZ(15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		transform: rotateZ(375deg) rotateX(10deg);
+	}
+}
+
+@-o-keyframes cssload-dot2 {
+	0% {
+		-o-transform: rotateZ(15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-o-transform: rotateZ(375deg) rotateX(10deg);
+	}
+}
+
+@-ms-keyframes cssload-dot2 {
+	0% {
+		-ms-transform: rotateZ(15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-ms-transform: rotateZ(375deg) rotateX(10deg);
+	}
+}
+
+@-webkit-keyframes cssload-dot2 {
+	0% {
+		-webkit-transform: rotateZ(15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-webkit-transform: rotateZ(375deg) rotateX(10deg);
+	}
+}
+
+@-moz-keyframes cssload-dot2 {
+	0% {
+		-moz-transform: rotateZ(15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-moz-transform: rotateZ(375deg) rotateX(10deg);
+	}
+}
+
+@keyframes cssload-dot3 {
+	0% {
+		transform: rotateZ(0deg) rotateX(10deg);
+	}
+	95%, 100% {
+		transform: rotateZ(360deg) rotateX(10deg);
+	}
+}
+
+@-o-keyframes cssload-dot3 {
+	0% {
+		-o-transform: rotateZ(0deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-o-transform: rotateZ(360deg) rotateX(10deg);
+	}
+}
+
+@-ms-keyframes cssload-dot3 {
+	0% {
+		-ms-transform: rotateZ(0deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-ms-transform: rotateZ(360deg) rotateX(10deg);
+	}
+}
+
+@-webkit-keyframes cssload-dot3 {
+	0% {
+		-webkit-transform: rotateZ(0deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-webkit-transform: rotateZ(360deg) rotateX(10deg);
+	}
+}
+
+@-moz-keyframes cssload-dot3 {
+	0% {
+		-moz-transform: rotateZ(0deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-moz-transform: rotateZ(360deg) rotateX(10deg);
+	}
+}
+
+@keyframes cssload-dot4 {
+	0% {
+		transform: rotateZ(-15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		transform: rotateZ(345deg) rotateX(10deg);
+	}
+}
+
+@-o-keyframes cssload-dot4 {
+	0% {
+		-o-transform: rotateZ(-15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-o-transform: rotateZ(345deg) rotateX(10deg);
+	}
+}
+
+@-ms-keyframes cssload-dot4 {
+	0% {
+		-ms-transform: rotateZ(-15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-ms-transform: rotateZ(345deg) rotateX(10deg);
+	}
+}
+
+@-webkit-keyframes cssload-dot4 {
+	0% {
+		-webkit-transform: rotateZ(-15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-webkit-transform: rotateZ(345deg) rotateX(10deg);
+	}
+}
+
+@-moz-keyframes cssload-dot4 {
+	0% {
+		-moz-transform: rotateZ(-15deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-moz-transform: rotateZ(345deg) rotateX(10deg);
+	}
+}
+
+@keyframes cssload-dot5 {
+	0% {
+		transform: rotateZ(-30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		transform: rotateZ(330deg) rotateX(10deg);
+	}
+}
+
+@-o-keyframes cssload-dot5 {
+	0% {
+		-o-transform: rotateZ(-30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-o-transform: rotateZ(330deg) rotateX(10deg);
+	}
+}
+
+@-ms-keyframes cssload-dot5 {
+	0% {
+		-ms-transform: rotateZ(-30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-ms-transform: rotateZ(330deg) rotateX(10deg);
+	}
+}
+
+@-webkit-keyframes cssload-dot5 {
+	0% {
+		-webkit-transform: rotateZ(-30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-webkit-transform: rotateZ(330deg) rotateX(10deg);
+	}
+}
+
+@-moz-keyframes cssload-dot5 {
+	0% {
+		-moz-transform: rotateZ(-30deg) rotateX(10deg);
+	}
+	95%, 100% {
+		-moz-transform: rotateZ(330deg) rotateX(10deg);
+	}
+}

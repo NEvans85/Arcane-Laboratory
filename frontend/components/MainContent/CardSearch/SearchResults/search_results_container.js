@@ -3,7 +3,8 @@ import SearchResults from "./search_results";
 import { cardDetails } from "../../../../actions/card_search_actions";
 
 const mapStateToProps = state => ({
-  cards: state.cards
+  cards: state.cards,
+  loading: state.ui.loading
 });
 
 const mapDispatchToProps = dispatch => ({

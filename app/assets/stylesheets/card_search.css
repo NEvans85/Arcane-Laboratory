@@ -91,6 +91,10 @@
   cursor: pointer;
 }
 
+.search-form-submit {
+  order: 1;
+}
+
 .card-details {
   width: 80%;
   min-height: 350px;

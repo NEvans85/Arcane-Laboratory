@@ -2,10 +2,10 @@
 #
 # Table name: deck_cards
 #
-#  id          :integer          not null, primary key
-#  card_api_id :string           not null
-#  deck_id     :integer          not null
-#  quantity    :integer          default(0)
+#  id       :integer          not null, primary key
+#  deck_id  :integer          not null
+#  quantity :integer          default(0)
+#  card_id  :integer
 #
 
 require 'test_helper'

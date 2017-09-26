@@ -26,14 +26,14 @@ class Deck < ApplicationRecord
   def add_card!(api_id)
     card = Card.find_by(api_id: api_id)
     card ||= Card.create_by_api_id(api_id)
-    deck_card = DeckCard.find_or_create_by(card_api_id: card.api_id, deck_id: id)
+    deck_card = DeckCard.find_or_create_by(card_id: card.id, deck_id: id)
     deck_card.increment_quantity
     card
   end
 
   def remove_card!(api_id)
     card = Card.find_by(api_id: api_id)
-    deck_card = DeckCard.find_by(card_id: card.api_id, deck_id: id)
+    deck_card = DeckCard.find_by(card_id: card.id, deck_id: id)
     deck_card.decrement_quantity
     deck_card.destroy if deck_card.quantity.zero?
     card

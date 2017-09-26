@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926164237) do
+ActiveRecord::Schema.define(version: 20170926194932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 20170926164237) do
   end
 
   create_table "deck_cards", force: :cascade do |t|
-    t.string "card_api_id", null: false
     t.integer "deck_id", null: false
     t.integer "quantity", default: 0
-    t.index ["card_api_id"], name: "index_deck_cards_on_card_api_id"
+    t.integer "card_id"
+    t.index ["card_id"], name: "index_deck_cards_on_card_id"
     t.index ["deck_id"], name: "index_deck_cards_on_deck_id"
   end
 

@@ -69,6 +69,7 @@ class SearchForm extends React.Component {
           placeholder="Ex: kld, emn, rav"
           value={this.state.set}
         />
+        <input className="search-form-submit" type="submit" value="Search" />
 
         <label>Color:</label>
         <div className="color-button-box">
@@ -82,7 +83,6 @@ class SearchForm extends React.Component {
             />
           ))}
         </div>
-        <input type="submit" value="Search" />
       </form>
     );
   }
@@ -109,6 +109,8 @@ class SearchForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.resetCardState();
+    this.props.startLoading();
     const colorsStr = this.selectedColors.toString();
     this.setState({ colors: colorsStr }, () => {
       const queryParams = Object.assign({}, this.state);

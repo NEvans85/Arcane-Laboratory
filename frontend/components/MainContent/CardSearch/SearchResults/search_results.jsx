@@ -37,6 +37,17 @@ class SearchResults extends React.Component {
             );
           })}
         </ul>
+        {this.props.loading ? (
+          <div className="cssload-loader">
+            <div className="cssload-dot" />
+            <div className="cssload-dot" />
+            <div className="cssload-dot" />
+            <div className="cssload-dot" />
+            <div className="cssload-dot" />
+          </div>
+        ) : (
+          <div />
+        )}
       </div>
     );
   }
