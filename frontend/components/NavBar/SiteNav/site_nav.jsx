@@ -12,7 +12,7 @@ class SiteNav extends React.Component {
       : "/login";
     return (
       <div className="site-nav">
-        <Link to="/">Home</Link>
+        <Link to="/decks">Browse Decks</Link>
         <Link to={deckBuilderUrl}>Deck Builder</Link>
         <Link to="/cards">Card Search</Link>
       </div>

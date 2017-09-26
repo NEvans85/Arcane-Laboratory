@@ -1,5 +1,4 @@
 export const sortCardsByType = state => {
-  console.log(state);
   const sortedCards = {
     creatures: [],
     lands: [],
@@ -30,6 +29,5 @@ export const sortCardsByType = state => {
       sortedCards["other"].push(state[cardID]);
     }
   });
-  console.log(sortedCards);
   return sortedCards;
 };
