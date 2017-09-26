@@ -26,7 +26,7 @@ class Deck < ApplicationRecord
   def add_card!(api_id)
     card = Card.find_by(api_id: api_id)
     card ||= Card.create_by_api_id(api_id)
-    deck_card = DeckCard.find_or_create_by(card_id: card.api_id, deck_id: id)
+    deck_card = DeckCard.find_or_create_by(card_api_id: card.api_id, deck_id: id)
     deck_card.increment_quantity
     card
   end
