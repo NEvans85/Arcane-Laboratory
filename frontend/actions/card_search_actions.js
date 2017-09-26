@@ -20,3 +20,6 @@ export const search = queryParams => dispatch =>
 
 export const cardDetails = cardID => dispatch =>
   CardAPIUtil.showCard(cardID).then(card => dispatch(receiveCard(card)));
+
+export const resetCardState = () => dispatch =>
+  dispatch(receiveSearchResults({}));

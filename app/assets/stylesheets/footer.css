@@ -1,0 +1,40 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e0f2fe;
+}
+
+.footer a,
+.footer a:visited,
+.footer a:link {
+  display: flex;
+  color: black;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #052746;
+  background: linear-gradient(#e0f2fe, #264490);
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 1%;
+}
+.footer img {
+  width: 90%;
+}
+
+.footer label {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-size: 20px;
+}
+
+.footer label:hover {
+  cursor: pointer;
+}
+
+.footer p {
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  width: 60%;
+  margin: 1%;
+}
