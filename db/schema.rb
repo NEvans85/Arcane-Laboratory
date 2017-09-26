@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926142725) do
+ActiveRecord::Schema.define(version: 20170926164237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.string "api_id"
-    t.string "name"
-    t.string "image_url"
-    t.integer "cmc"
-    t.string "full_type"
+    t.string "api_id", null: false
+    t.string "name", null: false
+    t.string "image_url", null: false
+    t.string "full_type", null: false
+    t.integer "cmc", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["api_id"], name: "index_cards_on_api_id", unique: true
     t.index ["cmc"], name: "index_cards_on_cmc"
   end
@@ -38,12 +40,10 @@ ActiveRecord::Schema.define(version: 20170926142725) do
   end
 
   create_table "deck_cards", force: :cascade do |t|
+    t.string "card_api_id", null: false
     t.integer "deck_id", null: false
-    t.string "card_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "quantity", default: 0
-    t.index ["card_id"], name: "index_deck_cards_on_card_id"
+    t.index ["card_api_id"], name: "index_deck_cards_on_card_api_id"
     t.index ["deck_id"], name: "index_deck_cards_on_deck_id"
   end
 
@@ -55,8 +55,6 @@ ActiveRecord::Schema.define(version: 20170926142725) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_decks_on_creator_id"
-    t.index ["title"], name: "index_decks_on_title"
-    t.index ["upvotes"], name: "index_decks_on_upvotes"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,9 +62,6 @@ ActiveRecord::Schema.define(version: 20170926142725) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
