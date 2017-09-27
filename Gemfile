@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'mtg_sdk'
 
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -42,7 +43,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rename'
   gem 'annotate'
-  gem 'faker'
 
 end
 
