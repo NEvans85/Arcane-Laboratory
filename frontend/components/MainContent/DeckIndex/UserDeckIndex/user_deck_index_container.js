@@ -6,7 +6,8 @@ import {
 } from "../../../../actions/deck_actions";
 
 const mapStateToProps = state => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  decks: state.decks
 });
 
 const mapDispatchToProps = dispatch => ({

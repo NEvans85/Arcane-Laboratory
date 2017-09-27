@@ -8,16 +8,26 @@ class UserDeckIndex extends React.Component {
   }
 
   componentWillMount() {
-    this.props.resetDeckState();
     this.props.fetchUserDecks(this.currentUser.id);
   }
 
+  content() {
+    if (this.props.decks.user) {
+      return (
+        <div className="user-decks">
+          <DeckList
+            title={`${this.currentUser.username}'s Decks`}
+            category="user"
+          />
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+
   render() {
-    return (
-      <div className="user-decks">
-        <DeckList title={`${currentUser.username}'s Decks`} />
-      </div>
-    );
+    return this.content();
   }
 }
 

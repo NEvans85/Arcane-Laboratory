@@ -11,7 +11,8 @@ const DecksReducer = (state = initialState, action) => {
       delete newState["currentDeck"]["cards"];
       return newState;
     case RECEIVE_DECKS:
-      return merge({}, newState, action.decks);
+      newState[action.category] = action.decks;
+      return newState;
     default:
       return state;
   }

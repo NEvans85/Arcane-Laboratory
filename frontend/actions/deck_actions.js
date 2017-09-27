@@ -9,9 +9,10 @@ const receiveDeck = deck => ({
   deck
 });
 
-const receiveDecks = decks => ({
+const receiveDecks = (decks, category) => ({
   type: RECEIVE_DECKS,
-  decks
+  decks,
+  category
 });
 
 const receiveErrors = errors => ({
@@ -29,7 +30,7 @@ export const postDeck = creator_id => dispatch =>
 
 export const deleteDeck = id => dispatch =>
   DeckAPIUtil.deleteDeck(id).then(
-    deck => dispatch(receiveDeck(deck)),
+    deck => dispatch(fetchUserDecks(deck.creator_id)),
     errs => dispatch(receiveErrors(errs))
   );
 
@@ -41,13 +42,13 @@ export const updateDeck = (deck, update_type, api_id = 0) => dispatch =>
 
 export const fetchDecks = category => dispatch =>
   DeckAPIUtil.fetchDecks(category).then(
-    decks => dispatch(receiveDecks(decks)),
+    decks => dispatch(receiveDecks(decks, category)),
     errs => dispatch(receiveErrors)
   );
 
 export const fetchUserDecks = user_id => dispatch =>
   DeckAPIUtil.fetchUserDecks(user_id).then(
-    decks => dispatch(receiveDecks(decks)),
+    decks => dispatch(receiveDecks(decks, "user")),
     errs => dispatch(receiveErrors)
   );
 
