@@ -1,9 +1,6 @@
 import { connect } from "react-redux";
 import UserDeckIndex from "./user_deck_index";
-import {
-  fetchUserDecks,
-  resetDeckState
-} from "../../../../actions/deck_actions";
+import { fetchUserDecks } from "../../../../actions/deck_actions";
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
@@ -11,8 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchUserDecks: userId => dispatch(fetchUserDecks(userId)),
-  resetDeckState: () => dispatch(resetDeckState())
+  fetchUserDecks: userId => dispatch(fetchUserDecks(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDeckIndex);

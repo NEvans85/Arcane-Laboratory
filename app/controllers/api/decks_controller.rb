@@ -36,9 +36,9 @@ class Api::DecksController < ApplicationController
     def index
       @decks = Deck.where(creator_id: params[:user_id]) if params[:user_id]
       case params[:category]
-      when 'top'
+      when 'Top'
         @decks = Deck.order(upvotes: :desc).limit(10)
-      when 'new'
+      when 'New'
         @decks = Deck.order(created_at: :desc).limit(10)
       end
       @decks = Deck.all unless @decks

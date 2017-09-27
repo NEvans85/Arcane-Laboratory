@@ -1,4 +1,8 @@
-import { RECEIVE_DECK, RECEIVE_DECKS } from "../../actions/deck_actions";
+import {
+  RECEIVE_DECK,
+  RECEIVE_DECKS,
+  RESET_CURRENT_DECK
+} from "../../actions/deck_actions";
 import { merge } from "lodash";
 
 const initialState = {};
@@ -12,6 +16,9 @@ const DecksReducer = (state = initialState, action) => {
       return newState;
     case RECEIVE_DECKS:
       newState[action.category] = action.decks;
+      return newState;
+    case RESET_CURRENT_DECK:
+      delete newState["currentDeck"];
       return newState;
     default:
       return state;

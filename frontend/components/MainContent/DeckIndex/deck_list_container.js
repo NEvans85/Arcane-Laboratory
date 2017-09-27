@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import DeckList from "./deck_list";
-import { deleteDeck } from "../../../actions/deck_actions";
+import { withRouter } from "react-router-dom";
+import { deleteDeck, resetCurrentDeck } from "../../../actions/deck_actions";
 
 const mapStateToProps = state => {
   return {
@@ -9,7 +10,10 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  deleteDeck: id => dispatch(deleteDeck(id))
+  deleteDeck: id => dispatch(deleteDeck(id)),
+  resetCurrentDeck: () => dispatch(resetCurrentDeck())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeckList);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(DeckList)
+);

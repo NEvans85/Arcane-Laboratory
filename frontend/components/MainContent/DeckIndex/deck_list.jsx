@@ -9,13 +9,14 @@ class DeckList extends React.Component {
   }
 
   render() {
+    console.log(this.targetDecks);
     return (
       <div className="deck-list">
         <ul>
           {this.deckIds.map(deckId => {
             const deck = this.targetDecks[deckId];
             return (
-              <li key={deckId}>
+              <li key={deckId} onClick={() => this.handleDeckClick(deckId)}>
                 <h4>{deck.title}</h4>
                 <p>
                   Created by: {deck.creator.username}. Last updated:{" "}
@@ -27,6 +28,12 @@ class DeckList extends React.Component {
         </ul>
       </div>
     );
+  }
+
+  handleDeckClick(deckId) {
+    console.log(deckId);
+    this.props.resetCurrentDeck();
+    this.props.history.push(`/decks/${deckId}`);
   }
 }
 

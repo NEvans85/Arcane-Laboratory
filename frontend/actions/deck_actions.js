@@ -3,6 +3,7 @@ import * as DeckAPIUtil from "../util/deck_api_util";
 export const RECEIVE_DECK = "RECEIVE_DECK";
 export const RECEIVE_DECKS = "RECEIVE_DECKS";
 export const RECEIVE_DECK_ERRORS = "RECEIVE_DECK_ERRORS";
+export const RESET_CURRENT_DECK = "RESET_CURRENT_DECK";
 
 const receiveDeck = deck => ({
   type: RECEIVE_DECK,
@@ -20,7 +21,9 @@ const receiveErrors = errors => ({
   errors
 });
 
-export const resetDeckState = () => dispatch => dispatch(receiveDecks({}));
+export const resetCurrentDeck = () => ({
+  type: RESET_CURRENT_DECK
+});
 
 export const postDeck = creator_id => dispatch =>
   DeckAPIUtil.postDeck(creator_id).then(
