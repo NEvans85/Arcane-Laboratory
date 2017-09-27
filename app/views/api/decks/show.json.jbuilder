@@ -1,5 +1,7 @@
-json.extract! @deck, :id, :title, :description, :upvotes,
-                     :created_at, :updated_at
+
+json.extract! @deck, :id, :title, :description, :upvotes
+json.created_at time_ago_in_words(@deck.created_at)
+json.updated_at time_ago_in_words(@deck.updated_at)
 json.set! 'creator' do
   json.partial! 'api/users/user', user: @deck.creator
 end

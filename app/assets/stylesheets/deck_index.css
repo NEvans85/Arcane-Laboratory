@@ -1,0 +1,63 @@
+.deck-index,
+.deck-view-container {
+  height: 800px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-size: 100% 100%;
+  background-repeat: repeat-y;
+  background-position: center;
+  background-image: url(http://res.cloudinary.com/arcane-lab/image/upload/e_brightness:-33/v1506533056/Art_Swamp_162360_James_Paick_eymdhs.jpg);
+}
+
+.deck-lists,
+.user-decks {
+  width: 90%;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: auto;
+  padding: 2%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 20px;
+}
+
+.deck-list-container {
+  width: 45%;
+  height: 370px;
+  background-color: rgba(202, 131, 65, 0.8);
+  border-radius: 4px;
+  padding: 2%;
+}
+
+.deck-list {
+  height: 350px;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.deck-list-container h3 {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.deck-list-item {
+  font-family: "Open Sans", sans-serif;
+  padding: 2px;
+  border: 1px solid grey;
+}
+
+.deck-list-item h4 {
+}
+.deck-list-item p {
+  font-size: 10px;
+}
+
+.deck-list-item:hover {
+  cursor: pointer;
+}

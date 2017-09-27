@@ -15,20 +15,22 @@ class DeckIndex extends React.Component {
 
   render() {
     return (
-      <div className="deck-lists">
-        {this.categories.map(category => {
-          if (this.props.decks[category]) {
-            return (
-              <DeckList
-                key={category}
-                title={`${category} Decks`}
-                category={category}
-              />
-            );
-          } else {
-            return <div key={category} />;
-          }
-        })}
+      <div className="deck-index">
+        <div className="deck-lists">
+          {this.categories.map(category => {
+            if (this.props.decks[category]) {
+              return (
+                <DeckList
+                  key={category}
+                  title={`${category} Decks`}
+                  category={category}
+                />
+              );
+            } else {
+              return <div key={category} />;
+            }
+          })}
+        </div>
       </div>
     );
   }

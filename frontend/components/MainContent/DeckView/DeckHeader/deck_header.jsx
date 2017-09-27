@@ -16,8 +16,8 @@ class DeckHeader extends React.Component {
       <div className="deck-header">
         <h2>{this.title}</h2>
         <h3>
-          Created By: {this.creatorName} on {this.createdAt}, Last Updated:{" "}
-          {this.updatedAt}, Upvotes: {this.upvotes}
+          Created By: {this.creatorName} {this.createdAt} ago, Last Updated {" "}
+          {this.updatedAt} ago, Upvotes: {this.upvotes}
         </h3>
         <p>{this.description}</p>
         <button onClick={() => this.props.upvote(this.props.currentDeck)}>

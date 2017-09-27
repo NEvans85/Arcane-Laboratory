@@ -14,11 +14,13 @@ class UserDeckIndex extends React.Component {
   content() {
     if (this.props.decks.user) {
       return (
-        <div className="user-decks">
-          <DeckList
-            title={`${this.currentUser.username}'s Decks`}
-            category="user"
-          />
+        <div className="deck-index">
+          <div className="user-decks">
+            <DeckList
+              title={`${this.currentUser.username}'s Decks`}
+              category="user"
+            />
+          </div>
         </div>
       );
     } else {

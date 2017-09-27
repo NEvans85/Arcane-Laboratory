@@ -8,8 +8,8 @@ class CardList extends React.Component {
   render() {
     return (
       <div className="card-list">
+        <h3>{this.props.title}</h3>
         <ul>
-          <li>{this.props.title}</li>
           {this.props.cards.map(card => (
             <li key={card.id}>
               {card.count} x {card.name}
