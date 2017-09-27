@@ -25,7 +25,7 @@ deck_types = %w[Agro Control Ramp Mid-Range Combo Zoo Tokens Agro-Control]
   rand_deck_colors = colors.sample(rand(1..3))
   title = rand_deck_colors.join('-') + ' ' + deck_types.sample
   d = Deck.create(creator_id: rand(user_count),
-                  title: title)
+                  title: title, upvotes: rand(50))
   card_count = 0
   while card_count < 20
     c = kld_block_lands.sample
