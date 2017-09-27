@@ -24,7 +24,6 @@ class SearchForm extends React.Component {
 
   render() {
     const colors = ["white", "blue", "black", "red", "green"];
-    console.log(this.props);
     return (
       <form
         className="search-form search-component"

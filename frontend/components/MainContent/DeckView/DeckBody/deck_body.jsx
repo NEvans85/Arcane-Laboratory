@@ -16,8 +16,6 @@ class DeckBody extends React.Component {
   }
 
   render() {
-    console.log(this.presentTypes);
-    console.log(this.sortedCards);
     return (
       <div className="deck-body">
         {this.presentTypes.map(type => (

@@ -9,8 +9,6 @@ class DeckList extends React.Component {
   }
 
   render() {
-    console.log(this.targetDecks);
-    console.log(this.deckIds);
     return (
       <div className="deck-list">
         <ul>
