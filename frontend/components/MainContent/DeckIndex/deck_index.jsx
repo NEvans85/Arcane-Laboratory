@@ -6,7 +6,7 @@ class DeckIndex extends React.Component {
   }
 
   render() {
-    return <div />;
+    return <div>Dummy Text</div>;
   }
 }
 

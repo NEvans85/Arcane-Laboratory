@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import DeckList from "./deck_list";
 
 const mapStateToProps = state => ({
-  userDecks: state.decks
+  decks: state.decks
 });
 
 const mapDispatchToProps = dispatch => ({});
