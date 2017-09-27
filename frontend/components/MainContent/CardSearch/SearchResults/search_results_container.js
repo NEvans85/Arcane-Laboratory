@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SearchResults from "./search_results";
-import { cardDetails } from "../../../../actions/card_search_actions";
+import { cardDetails } from "../../../../actions/card_actions";
 
 const mapStateToProps = state => ({
   cards: state.cards,

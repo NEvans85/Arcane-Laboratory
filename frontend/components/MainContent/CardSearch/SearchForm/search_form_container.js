@@ -3,7 +3,7 @@ import SearchForm from "./search_form";
 import {
   search,
   resetCardState
-} from "../../../../actions/card_search_actions";
+} from "../../../../actions/card_actions";
 import { startLoading } from "../../../../actions/ui_actions";
 
 const mapStateToProps = state => ({

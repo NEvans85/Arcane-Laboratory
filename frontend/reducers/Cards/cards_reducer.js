@@ -1,7 +1,7 @@
 import {
   RECEIVE_CARD,
   RECEIVE_SEARCH_RESULTS
-} from "../../actions/card_search_actions";
+} from "../../actions/card_actions";
 import { RECEIVE_DECK } from "../../actions/deck_actions";
 import { merge } from "lodash";
 import { sortCardsByType } from "../../Selectors/deck_selectors";

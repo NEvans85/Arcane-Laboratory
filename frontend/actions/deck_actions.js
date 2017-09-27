@@ -19,6 +19,8 @@ const receiveErrors = errors => ({
   errors
 });
 
+export const resetDeckState = () => dispatch => dispatch(receiveDecks({}));
+
 export const postDeck = creator_id => dispatch =>
   DeckAPIUtil.postDeck(creator_id).then(
     deck => dispatch(receiveDeck(deck)),
