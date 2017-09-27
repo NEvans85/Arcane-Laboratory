@@ -21,11 +21,13 @@ kld_block_cards = MTG::Card.where(set: 'kld,aer').all
 kld_block_lands = MTG::Card.where(set: 'kld,aer', type: 'land').all
 colors = %w[White Blue Green Black Red]
 deck_types = %w[Agro Control Ramp Mid-Range Combo Zoo Tokens Agro-Control]
+formats = %w[Standard Modern Legacy Casual]
 50.times do
   rand_deck_colors = colors.sample(rand(1..3))
   title = rand_deck_colors.join('-') + ' ' + deck_types.sample
-  d = Deck.create(creator_id: rand(user_count),
-                  title: title, upvotes: rand(50))
+  d = Deck.create(creator_id: rand(user_count), title: title,
+                  upvotes: rand(50), description: Faker::Lorem.paragraph,
+                  format: formats.sample)
   card_count = 0
   while card_count < 20
     c = kld_block_lands.sample
