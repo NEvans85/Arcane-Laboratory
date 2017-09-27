@@ -14,7 +14,7 @@ class DeckView extends React.Component {
   content() {
     if (this.props.currentDeck) {
       return (
-        <div>
+        <div className="deck-view">
           <DeckHeader />
           <DeckBody />
         </div>

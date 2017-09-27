@@ -3,12 +3,21 @@ import React from "react";
 class CardList extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
   }
 
   render() {
-    console.log(this.props);
-    return <div>{this.props.title}</div>;
+    return (
+      <div className="card-list">
+        <ul>
+          <li>{this.props.title}</li>
+          {this.props.cards.map(card => (
+            <li key={card.id}>
+              {card.count} x {card.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   }
 }
 

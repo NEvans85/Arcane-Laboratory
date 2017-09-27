@@ -19,10 +19,10 @@ class DeckBody extends React.Component {
     console.log(this.presentTypes);
     console.log(this.sortedCards);
     return (
-      <div>
-        {this.presentTypes.map(type => {
-          <CardList title={type} cards={this.sortedCards[type]} />;
-        })}
+      <div className="deck-body">
+        {this.presentTypes.map(type => (
+          <CardList key={type} title={type} cards={this.sortedCards[type]} />
+        ))}
       </div>
     );
   }
