@@ -14,15 +14,12 @@ class DeckHeader extends React.Component {
   render() {
     return (
       <div className="deck-header">
-        <h2>{this.title}</h2>
-        <h3>
+        <h2 className="deck-title">{this.title}</h2>
+        <h3 className="deck-details">
           Created By: {this.creatorName} {this.createdAt} ago, Last Updated {" "}
           {this.updatedAt} ago, Upvotes: {this.upvotes}
         </h3>
-        <p>{this.description}</p>
-        <button onClick={() => this.props.upvote(this.props.currentDeck)}>
-          Upvote
-        </button>
+        <p className="deck-description">{this.description}</p>
       </div>
     );
   }

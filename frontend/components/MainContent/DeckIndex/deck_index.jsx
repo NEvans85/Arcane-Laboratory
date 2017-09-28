@@ -4,7 +4,7 @@ import DeckList from "./deck_list_container";
 class DeckIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.categories = ["New", "Top"];
+    this.categories = ["New", "Top", "Standard", "Modern"];
   }
 
   componentWillMount() {

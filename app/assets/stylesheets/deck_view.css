@@ -1,9 +1,16 @@
 .card-list {
-  background-color: rgba(202, 131, 65, 0.6);
+  background-color: rgba(202, 131, 65, 0.8);
   padding: 5px;
-  margin: 5px;
-  width: 25%;
+  margin: 20px 0px;
+  width: 20%;
   border-radius: 4px;
+}
+
+.card-list h3 {
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 18px;
 }
 
 .card-list li {
@@ -11,16 +18,24 @@
 }
 
 .deck-header {
-  background-color: rgba(202, 131, 65, 0.6);
+  background-color: rgba(202, 131, 65, 0.8);
+  padding: 20px 30px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 .deck-body {
   width: 100%;
-  height: 400px;
+  height: 500px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: 1px solid rgba(202, 131, 65, 1);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .deck-view {
@@ -30,4 +45,16 @@
   justify-content: space-around;
   flex-direction: column;
   flex-wrap: wrap;
+  font-family: "Goudy Bookletter 1911", serif;
+  margin-top: 50px;
+}
+
+.deck-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.deck-details {
+  margin: 10px 0px;
 }
