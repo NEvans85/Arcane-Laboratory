@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-size: 100% 100%;
+  background-size: 100% 800px;
   background-repeat: repeat-y;
   background-position: center;
   background-image: url(http://res.cloudinary.com/arcane-lab/image/upload/v1506533056/Art_Swamp_162360_James_Paick_eymdhs.jpg);

@@ -34,7 +34,6 @@ class Api::DecksController < ApplicationController
   end
 
   def index
-    @decks = Deck.where(creator_id: params[:user_id]) if params[:user_id]
     case params[:category]
     when 'Top'
       @decks = Deck.order(upvotes: :desc).limit(15)
@@ -44,6 +43,7 @@ class Api::DecksController < ApplicationController
       @decks = Deck.where(format: params[:category])
                    .order(upvotes: :desc).limit(20)
     end
+    @decks = Deck.where(creator_id: params[:user_id]) if params[:user_id]
     @decks = Deck.all unless @decks
     render :index
   end

@@ -9,6 +9,7 @@ class DeckList extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="deck-list-container">
         <h3>{this.props.title}</h3>
