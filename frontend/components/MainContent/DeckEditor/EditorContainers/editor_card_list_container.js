@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  removeCard: (deck, ApiId) => dispatch(updateDeck(deck, "removeCard", ApiId))
+  removeCard: (deck, ApiId) => dispatch(updateDeck(deck, "removeCard", ApiId)),
+  addCard: (deck, apiId) => dispatch(updateDeck(deck, "addCard", apiId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardList);

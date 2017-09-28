@@ -7,15 +7,23 @@ class CardList extends React.Component {
 
   cardListItem(card) {
     return this.props.editor ? (
-      <li
-        key={card.id}
-        onClick={() =>
-          this.props.removeCard(this.props.currentDeck, card.api_id)}
-      >
-        {card.count} x {card.name} (edit
+      <li className="editor-card-list-item" key={card.id}>
+        {card.count} x {card.name}
+        <button
+          onClick={() =>
+            this.props.addCard(this.props.currentDeck, card.api_id)}
+        >
+          +
+        </button>
+        <button
+          onClick={() =>
+            this.props.removeCard(this.props.currentDeck, card.api_id)}
+        >
+          -
+        </button>
       </li>
     ) : (
-      <li key={card.id}>
+      <li key={card.id} className="card-list-item">
         {card.count} x {card.name}
       </li>
     );

@@ -7,9 +7,10 @@ class EditorDeckForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.currentDeck);
     return (
-      <div>
-        <form>
+      <div className="editor-form-container">
+        <form className="editor-form" onSubmit={this.handleSubmit}>
           <label>
             Deck Title:
             <input
@@ -21,11 +22,13 @@ class EditorDeckForm extends React.Component {
           </label>
           <label>
             Format:
-            <select>
-              <option value="Casual">Casual</option>
-              <option value="Standard">Standard</option>
-              <option value="Modern">Modern</option>
-              <option value="Legacy">Legacy</option>
+            <select
+              value={this.state.format}
+              onChange={this.updateInput("format")}
+            >
+              {["Casual", "Standard", "Modern", "Legacy"].map(format => (
+                <option value={format}>{format}</option>
+              ))}
             </select>
           </label>
           <label>
@@ -48,6 +51,11 @@ class EditorDeckForm extends React.Component {
     return e => {
       this.setState({ [key]: e.target.value });
     };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.updateDeck(this.state);
   }
 
   handleDelete(e) {

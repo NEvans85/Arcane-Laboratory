@@ -1,5 +1,5 @@
 
-json.extract! @deck, :id, :title, :description, :upvotes
+json.extract! @deck, :id, :title, :description, :upvotes, :format
 json.created_at time_ago_in_words(@deck.created_at)
 json.updated_at time_ago_in_words(@deck.updated_at)
 json.set! 'creator' do
