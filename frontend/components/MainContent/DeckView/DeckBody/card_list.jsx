@@ -3,17 +3,16 @@ import React from "react";
 class CardList extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
   }
 
   cardListItem(card) {
-    return this.props.removeCard ? (
+    return this.props.editor ? (
       <li
         key={card.id}
         onClick={() =>
           this.props.removeCard(this.props.currentDeck, card.api_id)}
       >
-        {card.count} x {card.name}
+        {card.count} x {card.name} (edit
       </li>
     ) : (
       <li key={card.id}>

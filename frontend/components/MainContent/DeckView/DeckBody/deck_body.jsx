@@ -23,7 +23,7 @@ class DeckBody extends React.Component {
     return (
       <div className="deck-body">
         {this.presentTypes.map(type => {
-          return this.props.deleteDeck ? (
+          return this.props.editor ? (
             <EditorCardList
               key={type}
               title={type}

@@ -5,7 +5,8 @@ import { updateDeck } from "../../../../actions/deck_actions";
 const mapStateToProps = state => ({
   cards: state.cards,
   loading: state.ui.loading,
-  currentDeck: state.decks.currentDeck
+  currentDeck: state.decks.currentDeck,
+  editor: true
 });
 
 const mapDispatchToProps = dispatch => ({

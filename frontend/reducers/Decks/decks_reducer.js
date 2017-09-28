@@ -12,8 +12,6 @@ const DecksReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_DECK:
       newState["currentDeck"] = action.deck;
-      delete newState["currentDeck"]["cards"];
-      delete newState["currentDeck"]["comments"];
       return newState;
     case RECEIVE_DECKS:
       newState[action.category] = action.decks;
