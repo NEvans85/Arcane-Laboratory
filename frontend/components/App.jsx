@@ -6,6 +6,7 @@ import CardSearch from "./MainContent/CardSearch/card_search_container";
 import DeckView from "./MainContent/DeckView/deck_view_container";
 import DeckIndex from "./MainContent/DeckIndex/deck_index_container";
 import UserDeckIndex from "./MainContent/DeckIndex/UserDeckIndex/user_deck_index_container";
+import DeckEditor from "./MainContent/DeckEditor/deck_editor_container";
 import Footer from "./Footer/footer_container";
 
 const App = () => (
@@ -18,8 +19,9 @@ const App = () => (
       <Route path="/signup" component={SessionForm} />
       <Route path="/cards" component={CardSearch} />
       <Route exact path="/decks" component={DeckIndex} />
-      <Route path="/users/:user_id/decks" component={UserDeckIndex} />
-      <Route path="/decks/:deck_id" component={DeckView} />
+      <Route path="/users/:userId/decks" component={UserDeckIndex} />
+      <Route exact path="/decks/:deckId" component={DeckView} />
+      <Route path="/decks/:deckId/edit" component={DeckEditor} />
     </div>
     <footer>
       <Route path="/" component={Footer} />

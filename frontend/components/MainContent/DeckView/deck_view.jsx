@@ -9,7 +9,7 @@ class DeckView extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchDeck(this.props.match.params.deck_id);
+    this.props.fetchDeck(this.props.match.params.deckId);
   }
 
   content() {

@@ -6,16 +6,16 @@ export const fetchDecks = category => {
   });
 };
 
-export const fetchUserDecks = user_id =>
+export const fetchUserDecks = userId =>
   $.ajax({
     method: "GET",
-    url: `api/user/${user_id}/decks`
+    url: `api/user/${userId}/decks`
   });
 
-export const fetchDeck = deck_id =>
+export const fetchDeck = deckId =>
   $.ajax({
     method: "GET",
-    url: `api/decks/${deck_id}`
+    url: `api/decks/${deckId}`
   });
 
 export const postDeck = creator_id =>

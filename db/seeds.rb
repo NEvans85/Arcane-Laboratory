@@ -23,7 +23,7 @@ def create_rand_deck(user_id)
   rand_deck_colors = colors.sample(rand(1..3))
   title = rand_deck_colors.join('-') + ' ' + deck_types.sample
   d = Deck.create(creator_id: user_id, title: title,
-                  upvotes: rand(50), description: Faker::Lorem.paragraph(rand(8)),
+                  upvotes: rand(50), description: Faker::Lorem.paragraph(rand(1..8)),
                   format: formats.sample)
   card_count = 0
   while card_count < 20
@@ -47,19 +47,21 @@ user_count = User.all.length
   create_rand_deck(1)
 end
 50.times do
-  create_rand_deck(rand(user_count))
+  create_rand_deck(rand(1..user_count))
 end
 
 deck_count = Deck.all.length
 
 100.times do
-  Comment.create(author_id: rand(user_count), deck_id: rand(deck_count),
+  Comment.create(author_id: rand(1..user_count), deck_id: rand(1..deck_count),
                  body: Faker::Lorem.paragraphs(rand(1..3)))
 end
 
 200.times do
   comment_count = Comment.all.length
-  Comment.create(author_id: rand(user_count), deck_id: rand(deck_count),
+  response_to = rand(1..comment_count)
+  response_deck_id = Comment.find(response_to).deck.id
+  Comment.create(author_id: rand(1..user_count), deck_id: response_deck_id,
                  body: Faker::Lorem.paragraphs(rand(1..3)),
-                 comment_id: rand(comment_count))
+                 comment_id: response_to)
 end

@@ -49,14 +49,14 @@ export const fetchDecks = category => dispatch =>
     errs => dispatch(receiveErrors)
   );
 
-export const fetchUserDecks = user_id => dispatch =>
-  DeckAPIUtil.fetchUserDecks(user_id).then(
+export const fetchUserDecks = userId => dispatch =>
+  DeckAPIUtil.fetchUserDecks(userId).then(
     decks => dispatch(receiveDecks(decks, "user")),
     errs => dispatch(receiveErrors)
   );
 
-export const fetchDeck = deck_id => dispatch =>
-  DeckAPIUtil.fetchDeck(deck_id).then(
+export const fetchDeck = deckId => dispatch =>
+  DeckAPIUtil.fetchDeck(deckId).then(
     deck => dispatch(receiveDeck(deck)),
     errs => dispatch(receiveErrors(errs))
   );
