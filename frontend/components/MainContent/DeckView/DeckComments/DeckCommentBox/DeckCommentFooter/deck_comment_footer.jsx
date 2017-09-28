@@ -8,12 +8,16 @@ class DeckCommentFooter extends React.Component {
   render() {
     return (
       <div>
-        <p>
+        <p className="comment-footer-text">
           Created {this.props.comment.created} ago by{" "}
           {this.props.comment.author}
         </p>
-        <button onClick={this.handleReplyButton}>Reply</button>
-        <button onClick={this.handleReportButton}>Report</button>
+        {this.props.loggedIn ? (
+          <div className="comment-buttons">
+            <button onClick={this.handleReplyButton}>Reply</button>
+            <button onClick={this.handleReportButton}>Report</button>
+          </div>
+        ) : null}}
       </div>
     );
   }

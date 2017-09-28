@@ -8,7 +8,6 @@ class DeckCommentMeta extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <DeckCommentFooter id={this.props.id} />

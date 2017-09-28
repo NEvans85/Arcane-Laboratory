@@ -9,7 +9,9 @@ class DeckCommentsHeader extends React.Component {
     return (
       <div>
         <h3>Comments</h3>
-        <button>Leave a Comment</button>
+        {this.props.loggedIn ? (
+          <button onClick={this.handleNewCommentButton}>Leave a Comment</button>
+        ) : null}
       </div>
     );
   }

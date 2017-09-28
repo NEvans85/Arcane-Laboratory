@@ -38,7 +38,6 @@ class DeckList extends React.Component {
   }
 
   handleDeckClick(deckId) {
-    console.log(deckId);
     this.props.resetCurrentDeck();
     this.props.history.push(`/decks/${deckId}`);
   }
