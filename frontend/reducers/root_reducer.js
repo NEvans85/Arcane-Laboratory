@@ -11,6 +11,7 @@ const RootReducer = combineReducers({
   errors: ErrorsReducer,
   cards: CardsReducer,
   decks: DecksReducer,
+  comments: CommentsReducer,
   ui: UiReducer
 });
 

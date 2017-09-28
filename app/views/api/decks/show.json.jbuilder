@@ -12,3 +12,9 @@ json.set! 'cards' do
     end
   end
 end
+
+json.set! 'comments' do
+  @deck.responses.each do |response|
+    json.partial! 'api/comments/comment', comment: response
+  end
+end

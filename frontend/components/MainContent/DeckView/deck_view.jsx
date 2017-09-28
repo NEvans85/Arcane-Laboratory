@@ -1,6 +1,7 @@
 import React from "react";
 import DeckHeader from "./DeckHeader/deck_header_container";
 import DeckBody from "./DeckBody/deck_body_container";
+import DeckComments from "./DeckComments/deck_comments_container";
 
 class DeckView extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class DeckView extends React.Component {
           <div className="deck-view">
             <DeckHeader />
             <DeckBody />
+            <DeckComments />
           </div>
         </div>
       );
