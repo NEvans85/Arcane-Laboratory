@@ -5,7 +5,12 @@ const CommentsReducer = (state = {}, action) => {
   const newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_DECK:
-      return action.deck.comments;
+      if (action.deck.comments) {
+        return action.deck.comments;
+      } else {
+        return {};
+      }
+
     default:
       return newState;
   }

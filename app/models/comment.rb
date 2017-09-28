@@ -17,9 +17,6 @@ class Comment < ApplicationRecord
   belongs_to :deck
   belongs_to :author,
              class_name: :User
-  belongs_to :origin,
-             class_name: :Comment,
-             foreign_key: :comment_id
   has_many :responses,
            class_name: :Comment,
            foreign_key: :comment_id
