@@ -1,6 +1,6 @@
 import React from "react";
 
-class ClassName extends React.Component {
+class DeckCommentBody extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -10,4 +10,4 @@ class ClassName extends React.Component {
   }
 }
 
-export default ClassName;
+export default DeckCommentBody;

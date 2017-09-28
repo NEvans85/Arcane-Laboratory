@@ -1,4 +1,6 @@
 import React from "react";
+import DeckCommentBody from "./DeckCommentBody/deck_comment_body";
+import DeckCommentMeta from "./DeckCommentMeta/deck_comment_meta_container";
 
 class DeckCommentBox extends React.Component {
   constructor(props) {

@@ -8,13 +8,14 @@ class DeckComments extends React.Component {
   }
 
   render() {
-    return;
-    <div>
-      <DeckCommentsHeader />
-      {this.props.parentComments.map(comment => (
-        <DeckCommentBox comment={comment} />
-      ))}
-    </div>;
+    return (
+      <div>
+        <DeckCommentsHeader />
+        {this.props.parentComments.map(comment => (
+          <DeckCommentBox comment={comment} />
+        ))}
+      </div>
+    );
   }
 }
 

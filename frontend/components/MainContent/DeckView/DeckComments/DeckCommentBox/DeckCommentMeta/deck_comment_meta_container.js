@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import DeckCommentMeta from "component_path";
+import DeckCommentMeta from "./deck_comment_meta";
 import { childComments } from "../../../../../../Selectors/comments_selector";
 
 const mapStateToProps = (state, ownProps) => ({
