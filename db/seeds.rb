@@ -23,7 +23,7 @@ def create_rand_deck(user_id)
   rand_deck_colors = colors.sample(rand(1..3))
   title = rand_deck_colors.join('-') + ' ' + deck_types.sample
   d = Deck.create(creator_id: user_id, title: title,
-                  upvotes: rand(50), description: Faker::Lorem.paragraph(rand(5)),
+                  upvotes: rand(50), description: Faker::Lorem.paragraph(rand(8)),
                   format: formats.sample)
   card_count = 0
   while card_count < 20

@@ -7,7 +7,7 @@
   background-size: 100% 100%;
   background-repeat: repeat-y;
   background-position: center;
-  background-image: url(http://res.cloudinary.com/arcane-lab/image/upload/e_brightness:-33/v1506533056/Art_Swamp_162360_James_Paick_eymdhs.jpg);
+  background-image: url(http://res.cloudinary.com/arcane-lab/image/upload/v1506533056/Art_Swamp_162360_James_Paick_eymdhs.jpg);
 }
 
 .deck-lists,
@@ -15,7 +15,7 @@
   width: 90%;
   height: 90%;
   background-color: rgba(0, 0, 0, 0.6);
-  margin: auto;
+  margin: 30px auto;
   padding: 2%;
   box-sizing: border-box;
   display: flex;
