@@ -2,6 +2,7 @@ import React from "react";
 import SearchForm from "../CardSearch/SearchForm/search_form_container";
 import SearchResults from "./EditorContainers/editor_search_results_container";
 import DeckBody from "./EditorContainers/editor_deck_body_container";
+import EditorDeckForm from "./EditorDeckForm/editor_deck_form_container";
 
 class DeckEditor extends React.Component {
   constructor(props) {
@@ -18,7 +19,12 @@ class DeckEditor extends React.Component {
       <div className="deck-editor">
         <SearchForm />
         <SearchResults />
-        {this.props.currentDeck ? <DeckBody /> : null}
+        {this.props.currentDeck ? (
+          <div>
+            <EditorDeckForm />
+            <DeckBody />
+          </div>
+        ) : null}
       </div>
     );
   }

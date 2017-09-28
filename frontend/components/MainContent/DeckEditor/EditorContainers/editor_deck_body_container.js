@@ -6,8 +6,6 @@ const mapStateToProps = state => ({
   sortedDeckCards: state.cards
 });
 
-const mapDispatchToProps = dispatch => ({
-  deleteDeck: id => dispatch(deleteDeck(id))
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckBody);
