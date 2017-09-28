@@ -55,7 +55,7 @@ class SearchResults extends React.Component {
   handleResultClick(e) {
     if (this.props.cardDetails) this.props.cardDetails(e.target.id);
     else if (this.props.addCard) {
-      this.props.AddCard(this.props.currentDeck, e.target.id);
+      this.props.addCard(this.props.currentDeck, e.target.id);
     }
   }
 }
