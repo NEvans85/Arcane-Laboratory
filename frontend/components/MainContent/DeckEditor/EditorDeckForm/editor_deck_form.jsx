@@ -20,6 +20,15 @@ class EditorDeckForm extends React.Component {
             />
           </label>
           <label>
+            Format:
+            <select>
+              <option value="Casual">Casual</option>
+              <option value="Standard">Standard</option>
+              <option value="Modern">Modern</option>
+              <option value="Legacy">Legacy</option>
+            </select>
+          </label>
+          <label>
             Deck Description:
             <input
               className="editor-description"

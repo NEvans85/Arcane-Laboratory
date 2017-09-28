@@ -6,6 +6,7 @@ class DeckList extends React.Component {
     this.targetDecks = this.props.decks[this.props.category];
     this.deckIds = Object.keys(this.targetDecks);
     this.title = this.props.title;
+    this.handleDeckClick = this.handleDeckClick.bind(this);
   }
 
   render() {
@@ -21,7 +22,7 @@ class DeckList extends React.Component {
                 <li
                   key={deckId}
                   className="deck-list-item"
-                  onClick={() => this.handleDeckClick(deckId)}
+                  onClick={() => this.handleDeckClick(deck)}
                 >
                   <h4>{deck.title}</h4>
                   <p>
@@ -37,9 +38,15 @@ class DeckList extends React.Component {
     );
   }
 
-  handleDeckClick(deckId) {
+  handleDeckClick(deck) {
     this.props.resetCurrentDeck();
-    this.props.history.push(`/decks/${deckId}`);
+    console.log(deck);
+    console.log(this.props);
+    const targetUrl =
+      deck.creator.id == this.props.currentUserId
+        ? `/decks/${deck.id}/edit`
+        : `/decks/${deck.id}`;
+    this.props.history.push(targetUrl);
   }
 }
 

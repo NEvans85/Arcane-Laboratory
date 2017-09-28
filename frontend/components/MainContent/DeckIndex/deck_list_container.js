@@ -5,7 +5,9 @@ import { deleteDeck, resetCurrentDeck } from "../../../actions/deck_actions";
 
 const mapStateToProps = state => {
   return {
-    decks: state.decks
+    decks: state.decks,
+    loggedIn: Boolean(state.session.currentUser),
+    currentUserId: state.session.currentUser.id
   };
 };
 

@@ -17,7 +17,7 @@ class UserDeckIndex extends React.Component {
         <div className="deck-index">
           <div className="user-decks">
             <DeckList
-              title={`${this.currentUser.username}'s Decks`}
+              title={`${this.currentUser.username}'s Decks - Click To Edit`}
               category="user"
             />
           </div>
