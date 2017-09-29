@@ -22,7 +22,7 @@
 .search-form h2 {
   font-size: 24px;
   margin-bottom: 5%;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .search-form input {
@@ -85,7 +85,7 @@
 }
 
 .search-results h3 {
-  font-weight: bolder;
+  font-weight: bold;
   font-size: 20px;
 }
 

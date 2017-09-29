@@ -9,7 +9,6 @@ class SearchResults extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const cards = this.props.cards;
     const uniqCardKeys = [];
     const uniqCardNames = [];
