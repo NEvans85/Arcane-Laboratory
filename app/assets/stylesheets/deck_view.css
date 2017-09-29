@@ -57,8 +57,12 @@
   font-size: 24px;
   text-align: center;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .deck-details {
   margin: 10px 0px;
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
 }
