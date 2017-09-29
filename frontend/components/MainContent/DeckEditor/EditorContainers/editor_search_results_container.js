@@ -3,7 +3,7 @@ import SearchResults from "../../CardSearch/SearchResults/search_results";
 import { updateDeck } from "../../../../actions/deck_actions";
 
 const mapStateToProps = state => ({
-  cards: state.cards,
+  cards: state.cards.search,
   loading: state.ui.loading,
   currentDeck: state.decks.currentDeck,
   editor: true

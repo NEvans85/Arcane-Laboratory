@@ -6,7 +6,7 @@ import { RECEIVE_DECK } from "../../actions/deck_actions";
 import { merge } from "lodash";
 import { sortCardsByType } from "../../Selectors/deck_selectors";
 
-const CardsReducer = (state = {}, action) => {
+const CardsReducer = (state = { search: {}, deckCards: {} }, action) => {
   Object.freeze(state);
   const newState = merge({}, state);
   switch (action.type) {
