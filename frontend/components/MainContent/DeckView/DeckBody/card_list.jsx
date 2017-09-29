@@ -10,9 +10,6 @@ class CardList extends React.Component {
 
   componentWillReceiveProps(newProps) {
     this.setState({ cards: newProps.cards });
-    // this.setState((state, newProps) => {
-    //   return newProps.cards;
-    // });
   }
 
   cardListItem(card) {
@@ -34,15 +31,9 @@ class CardList extends React.Component {
   }
 
   handleChange(key, card) {
-    // const oneMore = this.state[card.id].count + 1;
-    // const oneLess = this.state[card.id].count - 1;
-    // const cardToChange = this.state[card.id];
-    // cardT
     if (key === "+") {
-      // this.setState({ [card.id]: });
       this.props.addCard(this.props.currentDeck, card.api_id);
     } else {
-      // this.setState({ [card.id]: oneLess });
       this.props.removeCard(this.props.currentDeck, card.api_id);
     }
   }

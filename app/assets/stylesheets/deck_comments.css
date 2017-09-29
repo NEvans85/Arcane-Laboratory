@@ -11,14 +11,18 @@
 .deck-comment-body {
   background-color: rgba(202, 131, 65, 0.8);
   padding: 2%;
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   margin-top: 1%;
 }
 
 .deck-comment-footer {
   background-color: rgba(202, 131, 65, 0.8);
   padding-left: 2%;
-  border-radius: 8px;
+  padding-right: 2%;
+  padding-bottom: 1%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   display: flex;
   justify-content: space-between;
 }
@@ -40,6 +44,16 @@
   align-self: flex-start;
 }
 
+.comment-buttons {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-buttons button {
+  width: 70px;
+}
+
 .deck-comment-form-container {
   width: 70%;
   display: flex;
@@ -47,6 +61,7 @@
   background-color: rgba(202, 131, 65, 0.8);
   margin-top: 50px;
   align-items: center;
+  border-radius: 8px;
 }
 
 .deck-comment-form {
@@ -56,7 +71,9 @@
   align-items: center;
 }
 
-.comment-form h4 {
+.deck-comment-form-container h4 {
+  font-size: 24px;
+  margin: 10px;
 }
 
 .comment-input {

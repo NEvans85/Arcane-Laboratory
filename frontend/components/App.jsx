@@ -1,5 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import LandingPage from "./MainContent/LandingPage/landing_page";
 import NavBar from "./NavBar/nav_bar_container";
 import SessionForm from "./MainContent/Session/session_form_container";
 import CardSearch from "./MainContent/CardSearch/card_search_container";
@@ -15,6 +16,7 @@ const App = () => (
       <Route path="/" component={NavBar} />
     </header>
     <div className="maincontent">
+      <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={SessionForm} />
       <Route path="/signup" component={SessionForm} />
       <Route path="/cards" component={CardSearch} />

@@ -58,7 +58,7 @@ body {
 
 .maincontent {
   width: 100%;
-  min-height: 800px;
+  min-height: 700px;
 }
 
 header {
@@ -69,4 +69,5 @@ button,
 .button {
   font-family: "Goudy Bookletter 1911", serif;
   font-size: 18px;
+  border-radius: 4px;
 }

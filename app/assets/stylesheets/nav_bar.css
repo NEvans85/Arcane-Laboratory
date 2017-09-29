@@ -3,11 +3,11 @@
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  background: linear-gradient(#e0f2fe, #264490);
+  background-color: #264490;
 }
 
 .site-nav {
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -15,7 +15,8 @@
 
 .site-nav a {
   height: 20px;
-  padding: 10px;
+  padding: 10px 20px;
+  font-size: 22px;
   background-color: #052746;
   color: #e0f2fe;
   border-top-left-radius: 5px;
@@ -30,6 +31,9 @@
 
 .site-logo {
   height: 60px;
+  padding: 3px;
+  background-color: #e0f2fe;
+  border-radius: 4px;
 }
 
 .session-control {
@@ -38,10 +42,17 @@
 }
 
 .session-control div {
-  width: 280px;
+  width: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.session-control div p {
+  color: white;
+  font-size: 18px;
+  margin-right: 10px;
 }
 
 .header-button {

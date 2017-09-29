@@ -7,14 +7,15 @@
 }
 
 .cssload-loader {
-  position: relative;
-  left: 55%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 
   width: 185px;
   height: 185px;
 
-  margin-top: -325px;
-  margin-left: -100px;
+  margin-top: -92.5px;
+  margin-left: -92.5px;
 
   perspective: 92px;
   -o-perspective: 92px;

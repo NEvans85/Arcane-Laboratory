@@ -12,6 +12,8 @@
   margin: 2%;
   padding: 1%;
   background-color: rgba(202, 131, 65, 0.8);
+  border: 2px solid #052746;
+  border-radius: 8px;
 }
 
 .editor-form {
@@ -19,6 +21,9 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+}
+.editor-form input {
+  background-color: #e0f2fe;
 }
 
 .editor-description {
@@ -29,9 +34,14 @@
 .editor-form-action-buttons {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
 }
 
 .editor-card-list-item {
   display: flex;
   justify-content: space-between;
+}
+.change-buttons {
+  font-family: "Open Sans", sans-serif;
 }
