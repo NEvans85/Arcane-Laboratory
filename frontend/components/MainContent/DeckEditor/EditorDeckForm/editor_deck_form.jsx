@@ -33,13 +33,13 @@ class EditorDeckForm extends React.Component {
           </select>
 
           <label>Deck Description:</label>
-          <input
+          <textarea
             className="editor-description"
             onChange={this.updateInput("description")}
-            type="textarea"
             placeholder="Deck Description"
-            value={this.state.description}
-          />
+          >
+            {this.state.description}
+          </textarea>
 
           <div className="editor-form-action-buttons">
             <button>Update Deck</button>

@@ -63,9 +63,12 @@
 }
 
 .deck-list-item h4 {
+  font-size: 18px;
+  margin: 3px;
 }
 .deck-list-item p {
-  font-size: 10px;
+  font-size: 12px;
+  margin: 3px;
 }
 
 .deck-list-item:hover {
