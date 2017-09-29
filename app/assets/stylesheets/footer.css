@@ -2,7 +2,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #e0f2fe;
+  background-color: rgba(224, 242, 254, 0.5);
+}
+
+.footer-wrapper {
+  background-image: url("https://res.cloudinary.com/arcane-lab/image/upload/c_scale,h_3300/v1506533400/Graphic_ORI_Black-Background_oh0dcq.png");
 }
 
 .footer a,

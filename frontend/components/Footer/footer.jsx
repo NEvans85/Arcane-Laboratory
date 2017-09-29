@@ -12,12 +12,14 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className="footer">
-        <a href="https://magic.wizards.com/en/new-to-magic/what-is-magic">
-          <label>Learn More About</label>
-          <img src="http://res.cloudinary.com/arcane-lab/image/upload/v1506045196/MTG_Logo_orange_i7pz50.png" />
-        </a>
-        <p>{this.copyrightMessage()}</p>
+      <div className="footer-wrapper">
+        <div className="footer">
+          <a href="https://magic.wizards.com/en/new-to-magic/what-is-magic">
+            <label>Learn More About</label>
+            <img src="http://res.cloudinary.com/arcane-lab/image/upload/v1506045196/MTG_Logo_orange_i7pz50.png" />
+          </a>
+          <p>{this.copyrightMessage()}</p>
+        </div>
       </div>
     );
   }

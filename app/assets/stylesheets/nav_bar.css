@@ -1,46 +1,44 @@
+.nav-bar-wrapper {
+  background-image: url("https://res.cloudinary.com/arcane-lab/image/upload/c_scale,h_3300/v1506533400/Graphic_ORI_Black-Background_oh0dcq.png");
+}
+
 .nav-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  background-color: #264490;
+  background-color: rgba(38, 68, 144, 0.3);
 }
-
 .site-nav {
   width: 500px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-
 .site-nav a {
   height: 20px;
   padding: 10px 20px;
   font-size: 22px;
-  background-color: #052746;
+  background-color: rgba(5, 39, 70, 0.8);
   color: #e0f2fe;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   font-family: "Goudy Bookletter 1911", serif;
 }
-
 .site-nav a:hover,
 .site-nav a:active {
   background-color: #7e001e;
 }
-
 .site-logo {
   height: 60px;
-  padding: 3px;
-  background-color: #e0f2fe;
+  padding: 3px 10px;
+  background-color: rgba(224, 242, 254, 0.7);
   border-radius: 4px;
 }
-
 .session-control {
   display: flex;
   align-items: center;
 }
-
 .session-control div {
   width: auto;
   display: flex;
@@ -48,13 +46,11 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .session-control div p {
   color: white;
   font-size: 18px;
   margin-right: 10px;
 }
-
 .header-button {
   width: 120px;
   height: 30px;
@@ -62,11 +58,9 @@
   margin: 5px;
   box-shadow: 0 2px #264490;
 }
-
 .header-button:hover {
   cursor: pointer;
 }
-
 .button-link:active {
   text-decoration: none;
 }

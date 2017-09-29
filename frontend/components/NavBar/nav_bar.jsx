@@ -9,10 +9,12 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className="nav-bar">
-        <this.homeButton />
-        <SiteNav />
-        <SessionControl />
+      <div className="nav-bar-wrapper">
+        <div className="nav-bar">
+          <this.homeButton />
+          <SiteNav />
+          <SessionControl />
+        </div>
       </div>
     );
   }
