@@ -3,9 +3,10 @@ User.create(username: "DemoUser", password: "DemoPassword", email: "Demo@email.c
 
 
 10.times do |i|
-  User.create(username: "User#{i + 1}",
+  username =Faker::Internet.user_name
+  User.create(username: username,
               password: 'password',
-              email: "User#{i + 1}@email.com")
+              email: Faker::Internet.email(username))
 end
 def create_rand_deck(user_id)
   kld_block_cards = MTG::Card.where(set: 'kld,aer').all
@@ -24,14 +25,12 @@ def create_rand_deck(user_id)
     copies = rand(1..4)
     copies.times { d.add_card!(c.id) }
     card_count += copies
-    puts "#{copies} x #{c.name} added to #{d.title}"
   end
   while card_count < 60
     c = kld_block_cards.sample
     copies = rand(1..4)
     copies.times { d.add_card!(c.id) }
     card_count += copies
-    puts "#{copies} x #{c.name} added to #{d.title}"
   end
 end
 

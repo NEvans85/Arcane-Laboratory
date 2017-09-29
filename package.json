@@ -1,5 +1,11 @@
 {
   "name": "arcane-laboratory",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "author": "Nicholas Evans",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -12,9 +18,11 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.6.0"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   },
   "engines": {
     "node": "8.4.0",
