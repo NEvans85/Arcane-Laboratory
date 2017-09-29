@@ -21,6 +21,13 @@ class DeckCommentFooter extends React.Component {
       </div>
     );
   }
+
+  handleReportButton(e) {
+    e.preventDefault();
+  }
+  handleReportButton(e) {
+    e.preventDefault();
+  }
 }
 
 export default DeckCommentFooter;

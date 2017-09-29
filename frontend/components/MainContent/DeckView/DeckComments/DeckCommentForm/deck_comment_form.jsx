@@ -25,13 +25,13 @@ class DeckCommentFrom extends React.Component {
       <div className="deck-comment-form-container">
         <h4>Leave a Comment</h4>
         {this.props.parent ? <p>Response to {this.shortParent}</p> : null}
-        <form className="deck-comment-form">
-          <input
+        <form className="deck-comment-form" onSubmit={this.handleSubmit}>
+          <textarea
             className="comment-input"
-            type="textarea"
             onChange={this.updateInput("body")}
             value={this.state.body}
           />
+
           <input type="submit" value="Leave Comment" />
         </form>
       </div>

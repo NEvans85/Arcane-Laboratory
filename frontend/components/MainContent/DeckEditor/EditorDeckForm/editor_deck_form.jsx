@@ -37,9 +37,8 @@ class EditorDeckForm extends React.Component {
             className="editor-description"
             onChange={this.updateInput("description")}
             placeholder="Deck Description"
-          >
-            {this.state.description}
-          </textarea>
+            value={this.state.description}
+          />
 
           <div className="editor-form-action-buttons">
             <button>Update Deck</button>

@@ -61,6 +61,12 @@ body {
   min-height: 700px;
 }
 
+textarea {
+  resize: none;
+  overflow-y: auto;
+  outline: none;
+}
+
 header {
   width: 100%;
 }
