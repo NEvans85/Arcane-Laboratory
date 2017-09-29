@@ -9,7 +9,7 @@ class DeckCommentMeta extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="deck-comment-meta">
         <DeckCommentFooter id={this.props.id} />
         {this.props.childComments.map(childComment => (
           <DeckCommentBox comment={childComment} />

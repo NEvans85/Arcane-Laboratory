@@ -6,7 +6,7 @@ class DeckCommentBody extends React.Component {
   }
 
   render() {
-    return <div>{this.props.content}</div>;
+    return <div className="deck-comment-body">{this.props.content}</div>;
   }
 }
 

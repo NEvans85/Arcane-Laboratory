@@ -7,7 +7,7 @@ class DeckCommentFooter extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="deck-comment-footer">
         <p className="comment-footer-text">
           Created {this.props.comment.created} ago by{" "}
           {this.props.comment.author}

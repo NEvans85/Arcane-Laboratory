@@ -9,7 +9,7 @@ class DeckCommentBox extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="deck-comment-box">
         <DeckCommentBody content={this.props.comment.body} />
         <DeckCommentMeta id={this.props.comment.id} />
       </div>
