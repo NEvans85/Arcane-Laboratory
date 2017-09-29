@@ -4,11 +4,14 @@ import { withRouter } from "react-router-dom";
 import { deleteDeck, resetCurrentDeck } from "../../../actions/deck_actions";
 
 const mapStateToProps = state => {
-  return {
+  const stp = {
     decks: state.decks,
-    loggedIn: Boolean(state.session.currentUser),
-    currentUserId: state.session.currentUser.id
+    loggedIn: Boolean(state.session.currentUser)
   };
+  if (state.session.currentUser) {
+    stp["currentUserId"] = state.session.currentUser.id;
+  }
+  return stp;
 };
 
 const mapDispatchToProps = dispatch => ({
