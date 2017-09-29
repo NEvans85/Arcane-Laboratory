@@ -18,7 +18,7 @@ Backend uses Ruby on Rails framework. Frontend sends AJAX requests to the backen
 
 ### Card search
 
-![Card Search](https://res.cloudinary.com/arcane-lab/image/upload/v1506719786/Sep-29-2017_14-14-49_upqwmr.gif)
+![Card Search](http://res.cloudinary.com/arcane-lab/image/upload/v1506725306/Screen_Shot_2017-09-29_at_3.48.06_PM_kxcbr7.png)
 
 Card search is an informational component which allows users to query the full library of Magic the Gathering cards via several parameters. The form constructs the query as a POJO which is sent off to the API via a Rudy SDK from the backend (https://github.com/MagicTheGathering/mtg-sdk-ruby). The results are received by Rails and sent back to the front end to be displayed. When the user clicks on a single card in the search results, it's image is displayed (card images are hosted by http://gatherer.wizards.com) and its details are listed. Challenges in constructing this component included:
 1. I initially thought it would be feasible to store data for any card ever printed (over 30,000 cards). After wrestling with it for several days (and discovering the limits of no-cost Heroku hosting) I found this to be much more difficult than I expected. I leaned to embrace the use of an external API and modified my application to utilize the powerful tools available. I even made a pull request to improve the Ruby SDK.
