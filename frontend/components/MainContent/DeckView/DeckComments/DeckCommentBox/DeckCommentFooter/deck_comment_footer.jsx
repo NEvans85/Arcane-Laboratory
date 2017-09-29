@@ -17,7 +17,7 @@ class DeckCommentFooter extends React.Component {
             <button onClick={this.handleReplyButton}>Reply</button>
             <button onClick={this.handleReportButton}>Report</button>
           </div>
-        ) : null}}
+        ) : null}
       </div>
     );
   }

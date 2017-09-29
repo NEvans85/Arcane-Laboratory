@@ -65,7 +65,8 @@ header {
   width: 100%;
 }
 
-button {
+button,
+.button {
   font-family: "Goudy Bookletter 1911", serif;
   font-size: 18px;
 }

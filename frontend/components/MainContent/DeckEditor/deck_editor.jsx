@@ -23,12 +23,8 @@ class DeckEditor extends React.Component {
       <div className="deck-editor">
         <SearchForm />
         <SearchResults />
-        {this.props.currentDeck ? (
-          <div>
-            <EditorDeckForm />
-            <DeckBody />
-          </div>
-        ) : null}
+        {this.props.currentDeck ? <EditorDeckForm /> : null}
+        {this.props.currentDeck ? <DeckBody /> : null}
       </div>
     );
   }

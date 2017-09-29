@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-radius: 8px;
   margin: 2%;
   padding: 2%;
   background-color: rgba(254, 226, 149, 0.9);
@@ -21,6 +22,7 @@
 .search-form h2 {
   font-size: 24px;
   margin-bottom: 5%;
+  font-weight: bolder;
 }
 
 .search-form input {
@@ -70,19 +72,31 @@
   border: 2px solid #052746;
   font-family: "Goudy Bookletter 1911", serif;
   background-color: rgba(254, 226, 149, 0.9);
+  border-radius: 8px;
 }
 
 .search-results {
   width: 20%;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-results h3 {
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 .search-results ul {
+  overflow: auto;
   height: 100%;
+  width: 100%;
 }
 
 .search-results ul li {
   height: auto;
+  width: 90%;
   border: 1px solid rgba(228, 150, 4, 0.9);
   margin: 1px;
   padding: 2%;

@@ -14,39 +14,38 @@ class EditorDeckForm extends React.Component {
     return (
       <div className="editor-form-container">
         <form className="editor-form" onSubmit={this.handleSubmit}>
-          <label>
-            Deck Title:
-            <input
-              onChange={this.updateInput("title")}
-              type="text"
-              placeholder="Deck Title"
-              value={this.state.title}
-            />
-          </label>
-          <label>
-            Format:
-            <select
-              value={this.state.format}
-              onChange={this.updateInput("format")}
-            >
-              {["Casual", "Standard", "Modern", "Legacy"].map(format => (
-                <option value={format}>{format}</option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Deck Description:
-            <input
-              className="editor-description"
-              onChange={this.updateInput("description")}
-              type="textarea"
-              placeholder="Deck Description"
-              value={this.state.description}
-            />
-          </label>
-          <input type="submit" value="Update Deck" />
+          <label>Deck Title:</label>
+          <input
+            onChange={this.updateInput("title")}
+            type="text"
+            placeholder="Deck Title"
+            value={this.state.title}
+          />
+
+          <label>Format:</label>
+          <select
+            value={this.state.format}
+            onChange={this.updateInput("format")}
+          >
+            {["Casual", "Standard", "Modern", "Legacy"].map(format => (
+              <option value={format}>{format}</option>
+            ))}
+          </select>
+
+          <label>Deck Description:</label>
+          <input
+            className="editor-description"
+            onChange={this.updateInput("description")}
+            type="textarea"
+            placeholder="Deck Description"
+            value={this.state.description}
+          />
+
+          <div className="editor-form-action-buttons">
+            <button>Update Deck</button>
+            <button onClick={this.handleDelete}>Delete Deck</button>
+          </div>
         </form>
-        <button onClick={this.handleDelete}>Delete Deck</button>
       </div>
     );
   }

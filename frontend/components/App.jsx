@@ -18,10 +18,12 @@ const App = () => (
       <Route path="/login" component={SessionForm} />
       <Route path="/signup" component={SessionForm} />
       <Route path="/cards" component={CardSearch} />
-      <Route exact path="/decks" component={DeckIndex} />
-      <Route path="/users/:userId/decks" component={UserDeckIndex} />
-      <Route exact path="/decks/:deckId" component={DeckView} />
-      <Route path="/decks/:deckId/edit" component={DeckEditor} />
+      <div className="deck-routes">
+        <Route exact path="/decks" component={DeckIndex} />
+        <Route path="/users/:userId/decks" component={UserDeckIndex} />
+        <Route exact path="/decks/:deckId" component={DeckView} />
+        <Route path="/decks/:deckId/edit" component={DeckEditor} />
+      </div>
     </div>
     <footer>
       <Route path="/" component={Footer} />

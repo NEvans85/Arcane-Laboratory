@@ -29,6 +29,7 @@ class SearchResults extends React.Component {
     });
     return (
       <div className="search-results search-component">
+        <h3>Search Results</h3>
         <ul>
           {uniqCardKeys.map(key => {
             return (
@@ -38,6 +39,9 @@ class SearchResults extends React.Component {
             );
           })}
         </ul>
+        {this.props.editor ? (
+          <p className="edit-message"> ▼ Click to Add to Deck ▼</p>
+        ) : null}
         {this.props.loading ? (
           <div className="cssload-loader">
             <div className="cssload-dot" />
