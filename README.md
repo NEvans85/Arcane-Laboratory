@@ -33,7 +33,7 @@ The deck view feature utilizes a selector method to organize card data by type a
 
 ### Deck editor
 
-![Deck Editor](https://res.cloudinary.com/arcane-lab/image/upload/v1506722437/Sep-29-2017_15-00-08_gckrms.gif)
+![Deck Editor](https://res.cloudinary.com/arcane-lab/image/upload/v1506725151/Screen_Shot_2017-09-29_at_3.45.12_PM_zeqapo.png)
 
 The Deck editor uses the components of both Card Search and Deck View with different containers to provide the user the ability to build and modify decks. Components use ternaries to pivot between regular and editing functionality where necessary. The following code is an example of this from the CardList component which adds the +/- buttons when in edit mode.
 ``` javascript
