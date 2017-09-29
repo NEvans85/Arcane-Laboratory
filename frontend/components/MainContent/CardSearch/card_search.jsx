@@ -10,7 +10,7 @@ class CardSearch extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.resetCardState();
+    this.props.resetSearchResults();
   }
 
   render() {

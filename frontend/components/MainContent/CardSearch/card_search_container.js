@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   search: queryParams => dispatch(CardActions.search(queryParams)),
   cardDetails: cardID => dispatch(CardActions.cardDetails(cardID)),
-  resetCardState: () => dispatch(CardActions.resetCardState())
+  resetSearchResults: () => dispatch(CardActions.resetSearchResults())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardSearch);

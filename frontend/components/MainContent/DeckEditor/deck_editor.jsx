@@ -13,6 +13,10 @@ class DeckEditor extends React.Component {
     this.props.fetchDeck(this.props.match.params.deckId);
   }
 
+  componentWillUnmount() {
+    this.props.resetSearchResults();
+  }
+
   render() {
     console.log(this.props);
     return (

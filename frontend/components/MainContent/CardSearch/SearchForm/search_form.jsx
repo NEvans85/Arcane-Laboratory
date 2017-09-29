@@ -117,7 +117,7 @@ class SearchForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.resetCardState();
+    this.props.resetSearchResults();
     this.props.startLoading();
     const colorsStr = this.selectedColors.toString();
     this.setState({ colors: colorsStr }, () => {
