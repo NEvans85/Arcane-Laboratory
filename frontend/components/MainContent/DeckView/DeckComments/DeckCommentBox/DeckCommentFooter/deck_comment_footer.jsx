@@ -3,6 +3,8 @@ import React from "react";
 class DeckCommentFooter extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleReplyButton = this.handleReplyButton.bind(this);
   }
 
   render() {
@@ -22,8 +24,9 @@ class DeckCommentFooter extends React.Component {
     );
   }
 
-  handleReportButton(e) {
+  handleReplyButton(e) {
     e.preventDefault();
+    this.props.sendData(this.props.comment.id);
   }
   handleReportButton(e) {
     e.preventDefault();
