@@ -5,17 +5,21 @@ import EditorCardList from "../../DeckEditor/EditorContainers/editor_card_list_c
 class DeckBody extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
-    this.sortedCards = this.props.sortedDeckCards;
+    this.state = this.props.sortedDeckCards;
     this.presentTypes = this.findPresentTypes();
-
     this.findPresentTypes = this.findPresentTypes.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log(newProps);
+    this.setState(newProps.sortedDeckCards);
+  }
+
   findPresentTypes() {
-    const types = Object.keys(this.sortedCards);
+    const types = Object.keys(this.state);
     return types.filter(
-      type => isNaN(type) && this.sortedCards[type].length > 0
+      type =>
+        isNaN(type) && Object.getOwnPropertyNames(this.state[type]).length !== 0
     );
   }
 
@@ -24,13 +28,9 @@ class DeckBody extends React.Component {
       <div className="deck-body">
         {this.presentTypes.map(type => {
           return this.props.editor ? (
-            <EditorCardList
-              key={type}
-              title={type}
-              cards={this.sortedCards[type]}
-            />
+            <EditorCardList key={type} title={type} cards={this.state[type]} />
           ) : (
-            <CardList key={type} title={type} cards={this.sortedCards[type]} />
+            <CardList key={type} title={type} cards={this.state[type]} />
           );
         })}
       </div>

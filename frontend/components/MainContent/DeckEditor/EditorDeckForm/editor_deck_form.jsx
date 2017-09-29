@@ -4,10 +4,13 @@ class EditorDeckForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.currentDeck;
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   render() {
-    console.log(this.props.currentDeck);
+    console.log(this.props);
     return (
       <div className="editor-form-container">
         <form className="editor-form" onSubmit={this.handleSubmit}>
@@ -61,6 +64,9 @@ class EditorDeckForm extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     this.props.deleteDeck(this.state.id);
+    this.props.history.push(
+      `/users/${this.props.currentDeck.creator.id}/decks`
+    );
   }
 }
 

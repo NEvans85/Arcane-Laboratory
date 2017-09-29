@@ -1,32 +1,32 @@
 export const sortCardsByType = state => {
   const sortedCards = {
-    Lands: [],
-    Creatures: [],
-    Instants: [],
-    Sorceries: [],
-    Planeswalkers: [],
-    Artifacts: [],
-    Enchantments: [],
-    other: []
+    Lands: {},
+    Creatures: {},
+    Instants: {},
+    Sorceries: {},
+    Planeswalkers: {},
+    Artifacts: {},
+    Enchantments: {},
+    other: {}
   };
   const cardIDs = Object.keys(state);
   cardIDs.forEach(cardID => {
     if (state[cardID].full_type.includes("Land")) {
-      sortedCards["Lands"].push(state[cardID]);
+      sortedCards["Lands"][cardID] = state[cardID];
     } else if (state[cardID].full_type.includes("Creature")) {
-      sortedCards["Creatures"].push(state[cardID]);
+      sortedCards["Creatures"][cardID] = state[cardID];
     } else if (state[cardID].full_type.includes("Enchantment")) {
-      sortedCards["Enchantments"].push(state[cardID]);
+      sortedCards["Enchantments"][cardID] = state[cardID];
     } else if (state[cardID].full_type.includes("Artifact")) {
-      sortedCards["Artifacts"].push(state[cardID]);
+      sortedCards["Artifacts"][cardID] = state[cardID];
     } else if (state[cardID].full_type.includes("Instant")) {
-      sortedCards["Instants"].push(state[cardID]);
+      sortedCards["Instants"][cardID] = state[cardID];
     } else if (state[cardID].full_type.includes("Sorcery")) {
-      sortedCards["Sorceries"].push(state[cardID]);
+      sortedCards["Sorceries"][cardID] = state[cardID];
     } else if (state[cardID].full_type.includes("Planeswalker")) {
-      sortedCards["Planeswalkers"].push(state[cardID]);
+      sortedCards["Planeswalkers"][cardID] = state[cardID];
     } else {
-      sortedCards["other"].push(state[cardID]);
+      sortedCards["other"][cardID] = state[cardID];
     }
   });
   return sortedCards;
