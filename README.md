@@ -59,6 +59,7 @@ cardListItem(card) {
 
 This app has massive room to grow. Potential improvements include:
 1. The comment functionality is currently buggy and needs to be addressed first. Existing comments are displayed well but new comments are not created appropriately.
+1. The code for Protected and Authorized routes is in the program but not utilized.
 2. Some indication should be provided when the user adds a card or updates a deck. Additionally, the delete deck button should have some sort of confirmation.
 2. Card images could appear as popups as the user hovers over card names.
 3. Give users the options to display decks as piles card images rather than text.

@@ -1,5 +1,5 @@
 import React from "react";
-import Splash from "./Splash/splash";
+import Splash from "./Splash/splash_container";
 
 class LandingPage extends React.Component {
   constructor(props) {
