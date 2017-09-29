@@ -43,7 +43,8 @@ class DeckList extends React.Component {
     console.log(deck);
     console.log(this.props);
     const targetUrl =
-      deck.creator.id == this.props.currentUserId
+      deck.creator.id == this.props.currentUserId &&
+      this.props.category === "user"
         ? `/decks/${deck.id}/edit`
         : `/decks/${deck.id}`;
     this.props.history.push(targetUrl);
