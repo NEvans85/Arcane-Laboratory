@@ -57,3 +57,14 @@ end
                  body: Faker::Lorem.paragraphs(rand(1..3)),
                  comment_id: response_to)
 end
+
+expansions = MTG::Set.all
+
+expansions.each do |exp|
+  Expansion.create(name: exp.name, symbol: exp.code)
+end
+
+all_types = MTG::Type.all.concat(MTG::Subtype.all).concat(MTG::Supertype.all)
+
+all_types.each do |type|
+  Type.create()
