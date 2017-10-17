@@ -67,4 +67,5 @@ end
 all_types = MTG::Type.all.concat(MTG::Subtype.all).concat(MTG::Supertype.all)
 
 all_types.each do |type|
-  Type.create()
+  Type.create(name: type)
+end
