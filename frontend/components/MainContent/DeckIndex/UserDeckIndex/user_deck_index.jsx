@@ -11,6 +11,10 @@ class UserDeckIndex extends React.Component {
     this.props.fetchUserDecks(this.currentUser.id);
   }
 
+  componentWillUnmount() {
+    this.props.resetUserDecks();
+  }
+
   content() {
     if (this.props.decks.user) {
       return (

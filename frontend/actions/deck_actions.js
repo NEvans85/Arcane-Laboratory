@@ -55,6 +55,9 @@ export const fetchUserDecks = userId => dispatch =>
     errs => dispatch(receiveErrors)
   );
 
+export const resetUserDecks = () => dispatch => () =>
+  dispatch(receiveDecks([], "user"));
+
 export const fetchDeck = deckId => dispatch =>
   DeckAPIUtil.fetchDeck(deckId).then(
     deck => dispatch(receiveDeck(deck)),

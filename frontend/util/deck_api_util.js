@@ -9,7 +9,7 @@ export const fetchDecks = category => {
 export const fetchUserDecks = userId =>
   $.ajax({
     method: "GET",
-    url: `api/user/${userId}/decks`
+    url: `api/users/${userId}/decks`
   });
 
 export const fetchDeck = deckId =>
