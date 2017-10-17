@@ -30,7 +30,7 @@
   width: 40%;
   height: 370px;
   background-color: rgba(202, 131, 65, 0.8);
-  radius: 2px solid rgba(202, 131, 65, 1);
+  border: 2px solid rgba(202, 131, 65, 1);
   border-radius: 4px;
   padding: 2%;
   margin-top: 3%;
