@@ -12,7 +12,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchUserDecks: userId => dispatch(fetchUserDecks(userId)),
-  resetUserDecks: () => dispatch(resetUserDecks())
+  resetUserDecks: () => dispatch(resetUserDecks()),
+  postDeck: id => dispatch(postDeck(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDeckIndex);

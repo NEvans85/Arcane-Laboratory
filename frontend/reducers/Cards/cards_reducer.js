@@ -17,6 +17,9 @@ const CardsReducer = (state = { search: {}, deckCards: {} }, action) => {
       newState["search"] = action.cards;
       return newState;
     case RECEIVE_DECK:
+      if (!action.deck.cards) {
+        action.deck.cards = [];
+      }
       newState["deckCards"] = sortCardsByType(action.deck.cards);
       return newState;
     default:

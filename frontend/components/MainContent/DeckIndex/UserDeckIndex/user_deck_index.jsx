@@ -5,6 +5,7 @@ class UserDeckIndex extends React.Component {
   constructor(props) {
     super(props);
     this.currentUser = this.props.currentUser;
+    this.handleNewDeck = this.handleNewDeck.bind(this);
   }
 
   componentWillMount() {
@@ -20,6 +21,9 @@ class UserDeckIndex extends React.Component {
       return (
         <div className="deck-index">
           <div className="user-decks">
+            <button className="new-deck-button" onClick={this.handleNewDeck}>
+              Create New Deck
+            </button>
             <DeckList
               title={`${this.currentUser.username}'s Decks - Click To Edit`}
               category="user"
@@ -30,6 +34,12 @@ class UserDeckIndex extends React.Component {
     } else {
       return null;
     }
+  }
+
+  handleNewDeck(e) {
+    e.preventDefault();
+    this.props.postDeck(this.currentUser.id);
+    // this.props.history.push(`/decks/${}/edit`)
   }
 
   render() {

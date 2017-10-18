@@ -25,6 +25,14 @@
   justify-content: space-around;
   border-radius: 20px;
 }
+.user-decks {
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-deck-button {
+  width: 70%;
+}
 
 .deck-list-container {
   width: 40%;
