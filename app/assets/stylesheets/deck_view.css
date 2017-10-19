@@ -34,6 +34,10 @@
   height: 200px;
 }
 
+.card-name:hover {
+  cursor: default;
+}
+
 .card-name:hover .modal {
   visibility: visible;
 }
