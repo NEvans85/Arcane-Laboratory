@@ -17,7 +17,7 @@ class CardList extends React.Component {
       <li className="editor card-list-item" key={card.id}>
         <div className="card-name">
           {card.count} x {card.name}
-          <span>
+          <span className="modal">
             <img src={card.image_url} alt={`${card.name} image`} />
           </span>
         </div>
@@ -30,7 +30,7 @@ class CardList extends React.Component {
       <li key={card.id} className="card-list-item">
         <div className="card-name">
           {card.count} x {card.name}
-          <span>
+          <span className="modal">
             <img src={card.image_url} alt={`${card.name} image`} />
           </span>
         </div>
