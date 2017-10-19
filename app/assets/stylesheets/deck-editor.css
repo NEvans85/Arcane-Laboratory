@@ -47,10 +47,6 @@
   height: 80px;
 }
 
-.editor-card-list-item {
-  display: flex;
-  justify-content: space-between;
-}
 .change-buttons {
   font-family: "Open Sans", sans-serif;
 }

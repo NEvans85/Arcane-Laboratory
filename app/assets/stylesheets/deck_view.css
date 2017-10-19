@@ -15,8 +15,27 @@
   font-size: 18px;
 }
 
-.card-list li {
+.card-list-item {
   padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: visible;
+}
+.card-name span {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  margin-top: -100px;
+  z-index: 99;
+}
+
+.card-name span img {
+  height: 200px;
+}
+
+.card-name:hover span {
+  visibility: visible;
 }
 
 .deck-header {

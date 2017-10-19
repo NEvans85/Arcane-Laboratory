@@ -14,10 +14,13 @@ class CardList extends React.Component {
 
   cardListItem(card) {
     return this.props.editor ? (
-      <li className="editor-card-list-item" key={card.id}>
-        <p>
+      <li className="editor card-list-item" key={card.id}>
+        <div className="card-name">
           {card.count} x {card.name}
-        </p>
+          <span>
+            <img src={card.image_url} alt={`${card.name} image`} />
+          </span>
+        </div>
         <div className="change-buttons">
           <button onClick={() => this.handleChange("+", card)}>+</button>
           <button onClick={() => this.handleChange("-", card)}>-</button>
@@ -25,7 +28,12 @@ class CardList extends React.Component {
       </li>
     ) : (
       <li key={card.id} className="card-list-item">
-        {card.count} x {card.name}
+        <div className="card-name">
+          {card.count} x {card.name}
+          <span>
+            <img src={card.image_url} alt={`${card.name} image`} />
+          </span>
+        </div>
       </li>
     );
   }

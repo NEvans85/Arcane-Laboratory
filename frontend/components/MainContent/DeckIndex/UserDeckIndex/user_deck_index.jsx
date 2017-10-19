@@ -39,7 +39,6 @@ class UserDeckIndex extends React.Component {
   handleNewDeck(e) {
     e.preventDefault();
     this.props.postDeck(this.currentUser.id);
-    // this.props.history.push(`/decks/${}/edit`)
   }
 
   render() {
