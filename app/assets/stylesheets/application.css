@@ -53,7 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #052746;
+  background-color: #000;
 }
 
 .maincontent {
