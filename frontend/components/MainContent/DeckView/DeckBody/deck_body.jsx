@@ -13,7 +13,6 @@ class DeckBody extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
     this.setState({
       cards: newProps.sortedDeckCards,
       types: newProps.presentTypes

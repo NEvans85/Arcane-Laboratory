@@ -9,8 +9,12 @@ class DeckList extends React.Component {
     this.handleDeckClick = this.handleDeckClick.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log(newProps);
+    this.setState({ targetDecks: newProps.decks[this.props.category] });
+  }
+
   render() {
-    console.log(this.props);
     return (
       <div className="deck-list-container">
         <h3>{this.props.title}</h3>
