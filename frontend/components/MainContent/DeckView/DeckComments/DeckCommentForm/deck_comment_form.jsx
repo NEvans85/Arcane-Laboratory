@@ -15,6 +15,8 @@ class DeckCommentFrom extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    console.log("GETTING THOSE NEW PROPS!");
+    console.log(newProps);
     this.setState({ responseTo: newProps.responseTo, body: "" });
   }
 
@@ -55,6 +57,7 @@ class DeckCommentFrom extends React.Component {
     if (this.state.responseTo) {
       comment["comment_id"] = this.state.responseTo.id;
     }
+    this.setState({ responseTo: null, body: "" });
     this.props.createComment(comment);
   }
   updateInput(key) {

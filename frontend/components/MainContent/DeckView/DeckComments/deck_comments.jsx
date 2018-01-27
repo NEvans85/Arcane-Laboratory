@@ -15,7 +15,8 @@ class DeckComments extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({ parentComments: this.newProps.parentComments });
+    console.log(newProps);
+    this.setState({ parentComments: newProps.parentComments });
   }
 
   render() {
