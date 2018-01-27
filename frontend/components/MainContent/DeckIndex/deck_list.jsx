@@ -11,13 +11,16 @@ class DeckList extends React.Component {
     this.handleDeckClick = this.handleDeckClick.bind(this);
   }
 
-  deckIds() {
-    return Object.keys(this.state.targetDecks);
+  deckIds(decks = this.state.targetDecks) {
+    return Object.keys(decks);
   }
 
   componentWillReceiveProps(newProps) {
     console.log(newProps);
-    this.setState({ targetDecks: newProps.decks[this.props.category] });
+    this.setState({
+      targetDecks: newProps.decks[this.props.category],
+      deckIds: this.deckIds(newProps.decks[newProps.category])
+    });
   }
 
   render() {
@@ -26,7 +29,7 @@ class DeckList extends React.Component {
         <h3>{this.props.title}</h3>
         <div className="deck-list">
           <ul>
-            {this.deckIds.map(deckId => {
+            {this.state.deckIds.map(deckId => {
               const deck = this.state.targetDecks[deckId];
               return (
                 <li

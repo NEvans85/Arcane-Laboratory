@@ -38,8 +38,7 @@ class UserDeckIndex extends React.Component {
 
   handleNewDeck(e) {
     e.preventDefault();
-    const test = this.props.postDeck(this.currentUser.id);
-    console.log(test);
+    this.props.postDeck(this.currentUser.id);
   }
 
   render() {

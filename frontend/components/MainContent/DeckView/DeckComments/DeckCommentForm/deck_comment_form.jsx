@@ -19,9 +19,9 @@ class DeckCommentFrom extends React.Component {
   }
 
   shortresponseTo() {
-    console.log(this.state.responseTo);
-    const short = `${this.state.responseTo.body.slice(0, 20)}... By ${this.state
-      .responseTo.author}`;
+    const short = `${this.state.responseTo.body.slice(0, 20)}... By ${
+      this.state.responseTo.author
+    }`;
     return short;
   }
 
@@ -47,17 +47,14 @@ class DeckCommentFrom extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props);
     const comment = {
       author_id: this.props.authorId,
       deck_id: this.props.deckId,
       body: this.state.body
     };
-    console.log(comment);
     if (this.state.responseTo) {
-      comment["comment_id"] = this.state.comment_id;
+      comment["comment_id"] = this.state.responseTo.id;
     }
-    console.log(comment);
     this.props.createComment(comment);
   }
   updateInput(key) {

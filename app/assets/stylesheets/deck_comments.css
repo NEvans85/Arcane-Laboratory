@@ -6,6 +6,7 @@
 
 .deck-comment-box {
   margin-left: 5%;
+  min-width: 95%;
 }
 
 .deck-comment-body {

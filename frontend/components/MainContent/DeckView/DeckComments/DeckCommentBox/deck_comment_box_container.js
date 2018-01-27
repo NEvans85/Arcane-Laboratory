@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import Component from "component_path";
+import DeckCommentBox from "./deck_comment_box";
 
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Component);
+export default connect(mapStateToProps, mapDispatchToProps)(DeckCommentBox);
