@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
 class DeckCommentFooter extends React.Component {
   constructor(props) {
@@ -16,7 +17,9 @@ class DeckCommentFooter extends React.Component {
         </p>
         {this.props.loggedIn ? (
           <div className="comment-buttons">
-            <button onClick={this.handleReplyButton}>Reply</button>
+            <Link to={`/decks/${this.props.deckId}#addComment`}>
+              <button onClick={this.handleReplyButton}>Reply</button>
+            </Link>
             <button onClick={this.handleReportButton}>Report</button>
           </div>
         ) : null}
