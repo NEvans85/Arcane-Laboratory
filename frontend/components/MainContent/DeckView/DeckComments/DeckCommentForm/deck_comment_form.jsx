@@ -30,7 +30,7 @@ class DeckCommentFrom extends React.Component {
   render() {
     return (
       <div className="deck-comment-form-container">
-        <h4>Leave a Comment</h4>
+        <h4 id="addComment">Leave a Comment</h4>
         {this.state.responseTo ? (
           <p>Response to {this.shortresponseTo()}</p>
         ) : null}
@@ -57,8 +57,8 @@ class DeckCommentFrom extends React.Component {
     if (this.state.responseTo) {
       comment["comment_id"] = this.state.responseTo.id;
     }
-    this.setState({ responseTo: null, body: "" });
     this.props.createComment(comment);
+    this.setState({ responseTo: null, body: "" });
   }
   updateInput(key) {
     return e => {

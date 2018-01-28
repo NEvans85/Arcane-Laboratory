@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
 class DeckCommentsHeader extends React.Component {
   constructor(props) {
@@ -6,14 +7,23 @@ class DeckCommentsHeader extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="deck-comments-header">
         <h3>Comments</h3>
         {this.props.loggedIn ? (
-          <button onClick={this.handleNewCommentButton}>Leave a Comment</button>
+          <Link to={`/decks/${this.props.deckId}#addComment`}>
+            <button onClick={this.handleNewCommentButton}>
+              Leave a Comment
+            </button>
+          </Link>
         ) : null}
       </div>
     );
+  }
+
+  handleNewCommentButton(e) {
+    e.preventDefault();
   }
 }
 

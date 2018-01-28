@@ -4,7 +4,8 @@ import { parentComments } from "../../../../Selectors/comments_selector";
 
 const mapStateToProps = state => ({
   parentComments: parentComments(state.comments),
-  loggedIn: Boolean(state.session.currentUser)
+  loggedIn: Boolean(state.session.currentUser),
+  deckId: state.decks.currentDeck.id
 });
 
 const mapDispatchToProps = dispatch => ({});

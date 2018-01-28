@@ -22,7 +22,10 @@ class DeckComments extends React.Component {
   render() {
     return (
       <div className="deck-comments-container">
-        <DeckCommentsHeader loggedIn={this.props.loggedIn} />
+        <DeckCommentsHeader
+          loggedIn={this.props.loggedIn}
+          deckId={this.props.deckId}
+        />
         {this.state.parentComments.map(comment => (
           <DeckCommentBox
             sendData={this.getData}
