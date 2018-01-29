@@ -7,7 +7,6 @@ class DeckCommentsHeader extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="deck-comments-header">
         <h3>Comments</h3>

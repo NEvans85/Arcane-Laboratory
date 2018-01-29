@@ -18,7 +18,6 @@ class UserDeckIndex extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.props.fetchUserDecks(this.currentUser.id);
     if (this.state.buttonClicked) {
       this.props.history.push(`/decks/${newProps.decks.currentDeck.id}/edit`);
     }

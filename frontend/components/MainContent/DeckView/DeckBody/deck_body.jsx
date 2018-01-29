@@ -5,7 +5,6 @@ import EditorCardList from "../../DeckEditor/EditorContainers/editor_card_list_c
 class DeckBody extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       cards: this.props.sortedDeckCards,
       types: this.props.presentTypes

@@ -15,8 +15,6 @@ class DeckCommentFrom extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log("GETTING THOSE NEW PROPS!");
-    console.log(newProps);
     this.setState({ responseTo: newProps.responseTo, body: "" });
   }
 

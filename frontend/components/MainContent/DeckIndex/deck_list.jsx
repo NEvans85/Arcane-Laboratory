@@ -3,7 +3,6 @@ import React from "react";
 class DeckList extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       targetDecks: this.props.decks[this.props.category]
     };
@@ -13,7 +12,6 @@ class DeckList extends React.Component {
   }
 
   deckIds(decks = this.state.targetDecks) {
-    console.log();
     return Object.keys(decks);
   }
 
@@ -22,7 +20,6 @@ class DeckList extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
     this.setState({
       targetDecks: newProps.decks[this.props.category],
       deckIds: this.deckIds(newProps.decks[newProps.category])
@@ -59,8 +56,6 @@ class DeckList extends React.Component {
 
   handleDeckClick(deck) {
     this.props.resetCurrentDeck();
-    console.log(deck);
-    console.log(this.props);
     const targetUrl =
       deck.creator.id == this.props.currentUserId &&
       this.props.category === "user"

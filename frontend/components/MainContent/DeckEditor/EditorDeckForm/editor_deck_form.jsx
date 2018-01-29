@@ -10,7 +10,6 @@ class EditorDeckForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="editor-form-container">
         <form className="editor-form" onSubmit={this.handleSubmit}>
@@ -24,7 +23,7 @@ class EditorDeckForm extends React.Component {
 
           <label>Format:</label>
           <select
-            value={this.state.format}
+            value={this.state.format || "Casual"}
             onChange={this.updateInput("format")}
           >
             {["Casual", "Standard", "Modern", "Legacy"].map(format => (
