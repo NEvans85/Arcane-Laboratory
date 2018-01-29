@@ -17,7 +17,7 @@ class Deck < ApplicationRecord
 
   has_many :deck_cards
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   has_many :cards,
            through: :deck_cards
