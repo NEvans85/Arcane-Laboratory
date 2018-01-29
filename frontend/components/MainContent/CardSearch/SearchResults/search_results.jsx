@@ -10,6 +10,7 @@ class SearchResults extends React.Component {
 
   render() {
     const cards = this.props.cards;
+    console.log(cards);
     const uniqCardKeys = [];
     const uniqCardNames = [];
     Object.keys(cards).forEach(key => {
@@ -34,6 +35,12 @@ class SearchResults extends React.Component {
             return (
               <li key={key} id={key} onClick={this.handleResultClick}>
                 {cards[key].name}
+                <span className="modal">
+                  <img
+                    src={cards[key].image_url}
+                    alt={`${cards[key].name} image`}
+                  />
+                </span>
               </li>
             );
           })}

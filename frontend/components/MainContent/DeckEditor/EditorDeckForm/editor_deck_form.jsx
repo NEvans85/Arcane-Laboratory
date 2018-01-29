@@ -28,7 +28,9 @@ class EditorDeckForm extends React.Component {
             onChange={this.updateInput("format")}
           >
             {["Casual", "Standard", "Modern", "Legacy"].map(format => (
-              <option value={format}>{format}</option>
+              <option key={format} value={format}>
+                {format}
+              </option>
             ))}
           </select>
 

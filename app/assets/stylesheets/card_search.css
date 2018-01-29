@@ -106,6 +106,10 @@
   cursor: pointer;
 }
 
+.search-results ul li:hover .modal {
+  visibility: visible;
+}
+
 .search-form-submit {
   order: 1;
 }
