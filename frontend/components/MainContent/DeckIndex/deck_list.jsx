@@ -3,16 +3,22 @@ import React from "react";
 class DeckList extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
-      targetDecks: this.props.decks[this.props.category],
-      deckIds: this.deckIds()
+      targetDecks: this.props.decks[this.props.category]
     };
     this.title = this.props.title;
     this.handleDeckClick = this.handleDeckClick.bind(this);
+    this.deckIds = this.deckIds.bind(this);
   }
 
   deckIds(decks = this.state.targetDecks) {
+    console.log();
     return Object.keys(decks);
+  }
+
+  componentWillMount() {
+    this.setState({ deckIds: this.deckIds() });
   }
 
   componentWillReceiveProps(newProps) {

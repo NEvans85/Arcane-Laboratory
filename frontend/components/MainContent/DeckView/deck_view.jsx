@@ -12,6 +12,10 @@ class DeckView extends React.Component {
     this.props.fetchDeck(this.props.match.params.deckId);
   }
 
+  componentWillUnmount() {
+    this.props.resetCurrentDeck();
+  }
+
   content() {
     if (this.props.currentDeck) {
       console.log(this.props.currentDeck);

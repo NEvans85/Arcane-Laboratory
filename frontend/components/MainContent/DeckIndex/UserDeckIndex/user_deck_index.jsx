@@ -4,6 +4,7 @@ import DeckList from "../deck_list_container";
 class UserDeckIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { buttonClicked: false };
     this.currentUser = this.props.currentUser;
     this.handleNewDeck = this.handleNewDeck.bind(this);
   }
@@ -14,6 +15,12 @@ class UserDeckIndex extends React.Component {
 
   componentWillUnmount() {
     this.props.resetUserDecks();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.state.buttonClicked) {
+      this.props.history.push(`/decks/${newProps.decks.currentDeck.id}/edit`);
+    }
   }
 
   content() {
@@ -39,6 +46,7 @@ class UserDeckIndex extends React.Component {
   handleNewDeck(e) {
     e.preventDefault();
     this.props.postDeck(this.currentUser.id);
+    this.setState({ buttonClicked: true });
   }
 
   render() {
